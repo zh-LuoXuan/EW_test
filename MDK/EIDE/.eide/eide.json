@@ -1,0 +1,172 @@
+{
+  "name": "YM502_Template",
+  "type": "ARM",
+  "dependenceList": [],
+  "srcDirs": [
+    ".eide/deps"
+  ],
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [],
+    "folders": [
+      {
+        "name": "::CMSIS",
+        "files": [],
+        "folders": []
+      },
+      {
+        "name": "::Device",
+        "files": [
+          {
+            "path": "../../Device/Source/ARM/startup_CMS32M67xx.s"
+          },
+          {
+            "path": "../../Device/Source/system_CMS32M67xx.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "App",
+        "files": [
+          {
+            "path": "../../APP/Src/retarget.c"
+          },
+          {
+            "path": "../../APP/Src/YM_ccp.c"
+          },
+          {
+            "path": "../../APP/Src/YM_dma.c"
+          },
+          {
+            "path": "../../APP/Src/YM_rgb.c"
+          },
+          {
+            "path": "../../APP/Src/YM_timer.c"
+          },
+          {
+            "path": "../../APP/Src/YM_uart.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Driver",
+        "files": [
+          {
+            "path": "../../Driver/src/ccp.c"
+          },
+          {
+            "path": "../../Driver/src/cgc.c"
+          },
+          {
+            "path": "../../Driver/src/delay.c"
+          },
+          {
+            "path": "../../Driver/src/dma.c"
+          },
+          {
+            "path": "../../Driver/src/gpio.c"
+          },
+          {
+            "path": "../../Driver/src/timer.c"
+          },
+          {
+            "path": "../../Driver/src/uart.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "MAIN",
+        "files": [
+          {
+            "path": "../../MAIN/main.c"
+          }
+        ],
+        "folders": []
+      }
+    ]
+  },
+  "outDir": "build",
+  "deviceName": "CMS32M67xx48FA",
+  "packDir": ".pack/Cmsemicon/CMS32M67xx.0.1.6",
+  "miscInfo": {
+    "uid": "7388997eeea9baea1109e2d5a3e43e98"
+  },
+  "targets": {
+    "CMS32M67xx": {
+      "excludeList": [],
+      "toolchain": "AC6",
+      "compileConfig": {
+        "cpuType": "Cortex-M0+",
+        "floatingPointHardware": "none",
+        "useCustomScatterFile": false,
+        "scatterFilePath": "<YOUR_SCATTER_FILE>.sct",
+        "storageLayout": {
+          "RAM": [
+            {
+              "tag": "IRAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x20000000",
+                "size": "0x1000"
+              },
+              "isChecked": true,
+              "noInit": false
+            }
+          ],
+          "ROM": [
+            {
+              "tag": "IROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x20000"
+              },
+              "isChecked": true,
+              "isStartup": true
+            }
+          ]
+        },
+        "options": "null"
+      },
+      "uploader": "OpenOCD",
+      "uploadConfig": {
+        "bin": "",
+        "target": "stm32f1x",
+        "interface": "stlink",
+        "baseAddr": "0x08000000"
+      },
+      "uploadConfigMap": {
+        "JLink": {
+          "bin": "",
+          "baseAddr": "",
+          "cpuInfo": {
+            "vendor": "null",
+            "cpuName": "null"
+          },
+          "proType": 1,
+          "speed": 8000,
+          "otherCmds": ""
+        }
+      },
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          "../../CMSIS/Include",
+          "../../Device/Include",
+          "../../Driver/inc",
+          "../../../../../Device/CMS32X506/Include",
+          "../../APP/Inc",
+          "../RTE/_CMS32M67xx",
+          ".eide/deps"
+        ],
+        "libList": [],
+        "sourceDirList": [],
+        "defineList": []
+      }
+    }
+  },
+  "version": "3.3"
+}

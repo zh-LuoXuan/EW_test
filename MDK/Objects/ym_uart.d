@@ -1,0 +1,13 @@
+.\objects\ym_uart.o: ..\APP\Src\YM_uart.c
+.\objects\ym_uart.o: ..\APP\Inc\YM_uart.h
+.\objects\ym_uart.o: ..\Driver\inc\uart.h
+.\objects\ym_uart.o: ..\Driver\inc\common.h
+.\objects\ym_uart.o: ..\Device\Include\CMS32M67xx.h
+.\objects\ym_uart.o: ..\CMSIS\Include\core_cm0plus.h
+.\objects\ym_uart.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\ym_uart.o: ..\CMSIS\Include\cmsis_version.h
+.\objects\ym_uart.o: ..\CMSIS\Include\cmsis_compiler.h
+.\objects\ym_uart.o: ..\CMSIS\Include\cmsis_armcc.h
+.\objects\ym_uart.o: ..\Device\Include\system_CMS32M67xx.h
+.\objects\ym_uart.o: ..\Driver\inc\cgc.h
+.\objects\ym_uart.o: ..\Driver\inc\gpio.h

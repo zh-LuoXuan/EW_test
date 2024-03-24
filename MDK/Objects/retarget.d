@@ -1,0 +1,10 @@
+.\objects\retarget.o: ..\APP\Src\retarget.c
+.\objects\retarget.o: ..\Driver\inc\common.h
+.\objects\retarget.o: ..\Device\Include\CMS32M67xx.h
+.\objects\retarget.o: ..\CMSIS\Include\core_cm0plus.h
+.\objects\retarget.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\retarget.o: ..\CMSIS\Include\cmsis_version.h
+.\objects\retarget.o: ..\CMSIS\Include\cmsis_compiler.h
+.\objects\retarget.o: ..\CMSIS\Include\cmsis_armcc.h
+.\objects\retarget.o: ..\Device\Include\system_CMS32M67xx.h
+.\objects\retarget.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdio.h

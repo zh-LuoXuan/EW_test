@@ -1,0 +1,14 @@
+.\objects\main.o: ..\MAIN\main.c
+.\objects\main.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: ..\APP\Inc\YM_ccp.h
+.\objects\main.o: ..\Driver\inc\common.h
+.\objects\main.o: ..\Device\Include\CMS32M67xx.h
+.\objects\main.o: ..\CMSIS\Include\core_cm0plus.h
+.\objects\main.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: ..\CMSIS\Include\cmsis_version.h
+.\objects\main.o: ..\CMSIS\Include\cmsis_compiler.h
+.\objects\main.o: ..\CMSIS\Include\cmsis_armcc.h
+.\objects\main.o: ..\Device\Include\system_CMS32M67xx.h
+.\objects\main.o: ..\Driver\inc\cgc.h
+.\objects\main.o: ..\Driver\inc\ccp.h
+.\objects\main.o: ..\Driver\inc\gpio.h

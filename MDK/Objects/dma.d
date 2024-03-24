@@ -1,0 +1,11 @@
+.\objects\dma.o: ..\Driver\src\dma.c
+.\objects\dma.o: ..\Driver\inc\dma.h
+.\objects\dma.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\dma.o: ..\Driver\inc\common.h
+.\objects\dma.o: ..\Device\Include\CMS32M67xx.h
+.\objects\dma.o: ..\CMSIS\Include\core_cm0plus.h
+.\objects\dma.o: ..\CMSIS\Include\cmsis_version.h
+.\objects\dma.o: ..\CMSIS\Include\cmsis_compiler.h
+.\objects\dma.o: ..\CMSIS\Include\cmsis_armcc.h
+.\objects\dma.o: ..\Device\Include\system_CMS32M67xx.h
+.\objects\dma.o: ..\Driver\inc\cgc.h

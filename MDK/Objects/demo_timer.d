@@ -1,0 +1,14 @@
+.\objects\demo_timer.o: ..\APP\demo_timer.c
+.\objects\demo_timer.o: ..\APP\demo_timer.h
+.\objects\demo_timer.o: ..\Driver\inc\common.h
+.\objects\demo_timer.o: ..\Device\Include\CMS32M67xx.h
+.\objects\demo_timer.o: ..\CMSIS\Include\core_cm0plus.h
+.\objects\demo_timer.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\demo_timer.o: D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\demo_timer.o: D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\demo_timer.o: D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\demo_timer.o: ..\Device\Include\system_CMS32M67xx.h
+.\objects\demo_timer.o: ..\Driver\inc\cgc.h
+.\objects\demo_timer.o: ..\Driver\inc\gpio.h
+.\objects\demo_timer.o: ..\Driver\inc\timer.h
+.\objects\demo_timer.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdbool.h

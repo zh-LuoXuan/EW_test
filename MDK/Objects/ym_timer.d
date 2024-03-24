@@ -1,0 +1,14 @@
+.\objects\ym_timer.o: ..\APP\Src\YM_timer.c
+.\objects\ym_timer.o: ..\APP\Inc\YM_timer.h
+.\objects\ym_timer.o: ..\Driver\inc\common.h
+.\objects\ym_timer.o: ..\Device\Include\CMS32M67xx.h
+.\objects\ym_timer.o: ..\CMSIS\Include\core_cm0plus.h
+.\objects\ym_timer.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\ym_timer.o: ..\CMSIS\Include\cmsis_version.h
+.\objects\ym_timer.o: ..\CMSIS\Include\cmsis_compiler.h
+.\objects\ym_timer.o: ..\CMSIS\Include\cmsis_armcc.h
+.\objects\ym_timer.o: ..\Device\Include\system_CMS32M67xx.h
+.\objects\ym_timer.o: ..\Driver\inc\cgc.h
+.\objects\ym_timer.o: ..\Driver\inc\gpio.h
+.\objects\ym_timer.o: ..\Driver\inc\timer.h
+.\objects\ym_timer.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdbool.h
