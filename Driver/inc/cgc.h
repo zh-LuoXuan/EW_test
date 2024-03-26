@@ -206,7 +206,7 @@ typedef enum
     PLL_DIV_1,
     PLL_DIV_2,
     PLL_DIV_4,
-		PLL_DIV_8
+	PLL_DIV_8
 } PLL_Div_t;
 
 typedef enum

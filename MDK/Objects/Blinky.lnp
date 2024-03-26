@@ -2,9 +2,14 @@
 ".\objects\main.o"
 ".\objects\retarget.o"
 ".\objects\ym_ccp.o"
+".\objects\ym_dma.o"
 ".\objects\ym_rgb.o"
 ".\objects\ym_timer.o"
 ".\objects\ym_uart.o"
+".\objects\ym_led.o"
+".\objects\ym_touch.o"
+".\objects\ym_epwm.o"
+".\objects\bsp_systick.o"
 ".\objects\dma.o"
 ".\objects\delay.o"
 ".\objects\gpio.o"
@@ -12,9 +17,10 @@
 ".\objects\ccp.o"
 ".\objects\uart.o"
 ".\objects\cgc.o"
+".\objects\epwm.o"
 ".\objects\startup_cms32m67xx.o"
 ".\objects\system_cms32m67xx.o"
---strict --scatter ".\Objects\Blinky.sct"
+--library_type=microlib --strict --scatter ".\Objects\Blinky.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\Blinky.map" -o .\Objects\Blinky.axf

@@ -9,41 +9,35 @@ License Information: Char Aznable, ew, LIC=QF82M-XU4NT-SBHEJ-U2HU1-URX7B-IWXEV
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.39.0.0
-Toolchain Path:  D:\Keil_MDK539\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 7 (build 960)
-Assembler:       Armasm.exe V5.06 update 7 (build 960)
-Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
-Library Manager: ArmAr.exe V5.06 update 7 (build 960)
-Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+Toolchain Path:  D:\Keil_MDK539\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
 CPU DLL:         SARMCM3.DLL V5.39.0.0
 Dialog DLL:      DARMCM1.DLL V1.19.6.0
-Target DLL:      UL2CM3.DLL V1.164.9.0
+Target DLL:      CMSIS_AGDI.dll V1.33.16.0
 Dialog DLL:      TARMCM1.DLL V1.14.6.0
  
 <h2>Project:</h2>
-C:\Users\CharAznable\Desktop\EW\CMS32M67xx_20240312\YM502_Template\MDK\YM502_Template.uvprojx
-Project File Date:  03/16/2024
+D:\evowera\YM502_Test_Demo\MDK\YM502_Test_Demo.uvprojx
+Project File Date:  03/26/2024
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_MDK539\ARM\ARMCC\Bin'
-Rebuild target 'CMS32M67xx'
-compiling YM_rgb.c...
-compiling YM_ccp.c...
-compiling YM_timer.c...
-compiling dma.c...
+*** Using Compiler 'V6.21', folder: 'D:\Keil_MDK539\ARM\ARMCLANG\Bin'
+Build target 'CMS32M67xx'
+compiling YM_led.c...
+compiling YM_dma.c...
 compiling YM_uart.c...
+compiling dma.c...
+compiling YM_epwm.c...
+compiling YM_rgb.c...
 compiling main.c...
 compiling delay.c...
-compiling retarget.c...
-assembling startup_CMS32M67xx.s...
-compiling gpio.c...
 compiling timer.c...
-compiling cgc.c...
-compiling uart.c...
-compiling ccp.c...
-compiling system_CMS32M67xx.c...
 linking...
-Program Size: Code=1260 RO-data=228 RW-data=20 ZI-data=1380  
+Program Size: Code=3672 RO-data=224 RW-data=104 ZI-data=1336  
 ".\Objects\Blinky.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -70,9 +64,9 @@ Package Vendor: Cmsemicon
    * Component: ARM::CMSIS:CORE@5.6.0
 
    * Component: Cmsemicon::Device:Startup@1.0.0
-      Source file:   Device/Source/system_CMS32M67xx.c
       Source file:   Device/Source/ARM/startup_CMS32M67xx.s
-Build Time Elapsed:  00:00:01
+      Source file:   Device/Source/system_CMS32M67xx.c
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

@@ -1,11 +1,8 @@
-.\objects\delay.o: ..\Driver\src\delay.c
-.\objects\delay.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\delay.o: ..\Driver\inc\delay.h
-.\objects\delay.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\delay.o: ..\Driver\inc\common.h
-.\objects\delay.o: ..\Device\Include\CMS32M67xx.h
-.\objects\delay.o: ..\CMSIS\Include\core_cm0plus.h
-.\objects\delay.o: ..\CMSIS\Include\cmsis_version.h
-.\objects\delay.o: ..\CMSIS\Include\cmsis_compiler.h
-.\objects\delay.o: ..\CMSIS\Include\cmsis_armcc.h
-.\objects\delay.o: ..\Device\Include\system_CMS32M67xx.h
+./objects/delay.o: ..\Driver\src\delay.c \
+  D:\Keil_MDK539\ARM\ARMCLANG\include\stdio.h ..\Driver\inc\delay.h \
+  D:\Keil_MDK539\ARM\ARMCLANG\include\stdint.h ..\Driver\inc\common.h \
+  ..\Device\Include\CMS32M67xx.h ..\CMSIS\Include\core_cm0plus.h \
+  D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h \
+  D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h \
+  D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h \
+  ..\Device\Include\system_CMS32M67xx.h

@@ -1,5 +1,5 @@
 {
-  "name": "YM502_Template",
+  "name": "YM502_Test_Demo",
   "type": "ARM",
   "dependenceList": [],
   "srcDirs": [
@@ -30,6 +30,9 @@
         "name": "App",
         "files": [
           {
+            "path": "../../APP/Src/bsp_SysTick.c"
+          },
+          {
             "path": "../../APP/Src/retarget.c"
           },
           {
@@ -39,10 +42,19 @@
             "path": "../../APP/Src/YM_dma.c"
           },
           {
+            "path": "../../APP/Src/YM_epwm.c"
+          },
+          {
+            "path": "../../APP/Src/YM_led.c"
+          },
+          {
             "path": "../../APP/Src/YM_rgb.c"
           },
           {
             "path": "../../APP/Src/YM_timer.c"
+          },
+          {
+            "path": "../../APP/Src/YM_touch.c"
           },
           {
             "path": "../../APP/Src/YM_uart.c"
@@ -64,6 +76,9 @@
           },
           {
             "path": "../../Driver/src/dma.c"
+          },
+          {
+            "path": "../../Driver/src/epwm.c"
           },
           {
             "path": "../../Driver/src/gpio.c"
@@ -110,7 +125,7 @@
               "id": 1,
               "mem": {
                 "startAddr": "0x20000000",
-                "size": "0x1000"
+                "size": "0x5000"
               },
               "isChecked": true,
               "noInit": false
@@ -121,8 +136,8 @@
               "tag": "IROM",
               "id": 1,
               "mem": {
-                "startAddr": "0x0",
-                "size": "0x20000"
+                "startAddr": "0x08000000",
+                "size": "0x10000"
               },
               "isChecked": true,
               "isStartup": true
@@ -154,13 +169,12 @@
       "custom_dep": {
         "name": "default",
         "incList": [
+          "../../APP/Inc",
           "../../CMSIS/Include",
           "../../Device/Include",
           "../../Driver/inc",
-          "../../../../../Device/CMS32X506/Include",
-          "../../APP/Inc",
-          "../RTE/_CMS32M67xx",
-          ".eide/deps"
+          "../../Flash",
+          "../../CMSIS/Core/Include"
         ],
         "libList": [],
         "sourceDirList": [],

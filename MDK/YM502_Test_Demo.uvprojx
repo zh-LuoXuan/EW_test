@@ -10,8 +10,8 @@
       <TargetName>CMS32M67xx</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
-      <uAC6>0</uAC6>
+      <pCCUsed>6210000::V6.21::ARMCLANG</pCCUsed>
+      <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>CMS32M67xx48FA</Device>
@@ -21,7 +21,7 @@
           <Cpu>IRAM(0x20000000,0x01000) IROM(0x00000000,0x20000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN2 -FF0CMS32M67xxGH -FS00 -FL020000 -FF1CMS32M67xx_DataFlash -FS1500000 -FL1600 -FP0($$Device:CMS32M67xx48FA$Flash\CMS32M67xxGH.FLM) -FP1($$Device:CMS32M67xx48FA$Flash\CMS32M67xx_DataFlash.FLM))</FlashDriverDll>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN2 -FF0CMS32M67xxGH -FS00 -FL020000 -FF1CMS32M67xx_DataFlash -FS1500200 -FL1400 -FP0($$Device:CMS32M67xx48FA$Flash\CMS32M67xxGH.FLM) -FP1($$Device:CMS32M67xx48FA$Flash\CMS32M67xx_DataFlash.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
           <RegisterFile>$$Device:CMS32M67xx48FA$Device\Include\CMS32M67xx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
@@ -134,7 +134,7 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
@@ -190,7 +190,7 @@
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -323,10 +323,10 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>2</wLevel>
+            <wLevel>3</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
             <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
@@ -405,6 +405,11 @@
               <FilePath>..\APP\Src\YM_ccp.c</FilePath>
             </File>
             <File>
+              <FileName>YM_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\Src\YM_dma.c</FilePath>
+            </File>
+            <File>
               <FileName>YM_rgb.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APP\Src\YM_rgb.c</FilePath>
@@ -418,6 +423,26 @@
               <FileName>YM_uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APP\Src\YM_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>YM_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\Src\YM_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>YM_touch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\Src\YM_touch.c</FilePath>
+            </File>
+            <File>
+              <FileName>YM_epwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\Src\YM_epwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_SysTick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\Src\bsp_SysTick.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -459,6 +484,11 @@
               <FileType>1</FileType>
               <FilePath>..\Driver\src\cgc.c</FilePath>
             </File>
+            <File>
+              <FileName>epwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\src\epwm.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -474,14 +504,14 @@
   <RTE>
     <apis/>
     <components>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.4.0" condition="ARMv6_7_8-M Device">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.7.0"/>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.6.0" condition="ARMv6_7_8-M Device">
+        <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
         <targetInfos>
           <targetInfo name="CMS32M67xx"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="Startup" Cvendor="Cmsemicon" Cversion="1.0.0" condition="CMS32M67xx CMSIS-CORE">
-        <package name="CMS32M67xx" schemaVersion="1.4" url="http://www.mcu.com.cn/pack/" vendor="Cmsemicon" version="0.1.4"/>
+        <package name="CMS32M67xx" schemaVersion="1.4" url="http://www.mcu.com.cn/pack/" vendor="Cmsemicon" version="0.1.6"/>
         <targetInfos>
           <targetInfo name="CMS32M67xx"/>
         </targetInfos>
@@ -564,6 +594,18 @@
         <instance index="0" removed="1">RTE\Device\CMS32M67xx28FB\system_CMS32M67xx.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Cmsemicon" Cversion="1.0.0" condition="CMS32M67xx CMSIS-CORE"/>
         <package name="CMS32M67xx" schemaVersion="1.4" url="http://www.mcu.com.cn/pack/" vendor="Cmsemicon" version="0.1.4"/>
+        <targetInfos/>
+      </file>
+      <file attr="config" category="source" condition="Startup ARM" name="Device\Source\ARM\startup_CMS32M67xx.s" version="1.0.0">
+        <instance index="0" removed="1">RTE\Device\CMS32M67xx32NB\startup_CMS32M67xx.s</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Cmsemicon" Cversion="1.0.0" condition="CMS32M67xx CMSIS-CORE"/>
+        <package name="CMS32M67xx" schemaVersion="1.4" url="http://www.mcu.com.cn/pack/" vendor="Cmsemicon" version="0.1.6"/>
+        <targetInfos/>
+      </file>
+      <file attr="config" category="source" name="Device\Source\system_CMS32M67xx.c" version="1.0.0">
+        <instance index="0" removed="1">RTE\Device\CMS32M67xx32NB\system_CMS32M67xx.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Cmsemicon" Cversion="1.0.0" condition="CMS32M67xx CMSIS-CORE"/>
+        <package name="CMS32M67xx" schemaVersion="1.4" url="http://www.mcu.com.cn/pack/" vendor="Cmsemicon" version="0.1.6"/>
         <targetInfos/>
       </file>
       <file attr="config" category="source" condition="Startup ARM" name="Device\Source\ARM\startup_CMS32M67xx.s" version="1.0.0">

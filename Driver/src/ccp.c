@@ -72,8 +72,8 @@ void CCP_Start(uint32_t CCPn )
 	if(CCP1 == CCPn)
 	{
 		CCP->CON1 |= (CCP_CCPCON1_CCP1EN_Msk);		
-	}	
-	CCP->LOCK = 0x00;	
+	}		
+	CCP->LOCK = 0x00;
 }
 
 /*****************************************************************************

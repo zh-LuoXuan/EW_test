@@ -1,0 +1,10 @@
+.\objects\uart_1.o: ..\Driver\src\uart.c
+.\objects\uart_1.o: ..\Driver\inc\uart.h
+.\objects\uart_1.o: ..\Driver\inc\common.h
+.\objects\uart_1.o: ..\Device\Include\CMS32M67xx.h
+.\objects\uart_1.o: ..\CMSIS\Include\core_cm0plus.h
+.\objects\uart_1.o: D:\Keil_538a\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\uart_1.o: D:\Keil_538a\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\uart_1.o: D:\Keil_538a\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\uart_1.o: D:\Keil_538a\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\uart_1.o: ..\Device\Include\system_CMS32M67xx.h

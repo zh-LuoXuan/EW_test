@@ -1,12 +1,8 @@
-.\objects\timer.o: ..\Driver\src\timer.c
-.\objects\timer.o: ..\Driver\inc\timer.h
-.\objects\timer.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\timer.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\timer.o: ..\Driver\inc\common.h
-.\objects\timer.o: ..\Device\Include\CMS32M67xx.h
-.\objects\timer.o: ..\CMSIS\Include\core_cm0plus.h
-.\objects\timer.o: ..\CMSIS\Include\cmsis_version.h
-.\objects\timer.o: ..\CMSIS\Include\cmsis_compiler.h
-.\objects\timer.o: ..\CMSIS\Include\cmsis_armcc.h
-.\objects\timer.o: ..\Device\Include\system_CMS32M67xx.h
-.\objects\timer.o: ..\Driver\inc\cgc.h
+./objects/timer.o: ..\Driver\src\timer.c ..\Driver\inc\timer.h \
+  D:\Keil_MDK539\ARM\ARMCLANG\include\stdint.h \
+  D:\Keil_MDK539\ARM\ARMCLANG\include\stdbool.h ..\Driver\inc\common.h \
+  ..\Device\Include\CMS32M67xx.h ..\CMSIS\Include\core_cm0plus.h \
+  D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h \
+  D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h \
+  D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h \
+  ..\Device\Include\system_CMS32M67xx.h ..\Driver\inc\cgc.h

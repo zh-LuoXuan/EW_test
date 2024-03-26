@@ -1,10 +1,8 @@
-.\objects\cgc.o: ..\Driver\src\cgc.c
-.\objects\cgc.o: ..\Driver\inc\cgc.h
-.\objects\cgc.o: ..\Driver\inc\common.h
-.\objects\cgc.o: ..\Device\Include\CMS32M67xx.h
-.\objects\cgc.o: ..\CMSIS\Include\core_cm0plus.h
-.\objects\cgc.o: D:\Keil_MDK539\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\cgc.o: ..\CMSIS\Include\cmsis_version.h
-.\objects\cgc.o: ..\CMSIS\Include\cmsis_compiler.h
-.\objects\cgc.o: ..\CMSIS\Include\cmsis_armcc.h
-.\objects\cgc.o: ..\Device\Include\system_CMS32M67xx.h
+./objects/cgc.o: ..\Driver\src\cgc.c ..\Driver\inc\cgc.h \
+  ..\Driver\inc\common.h ..\Device\Include\CMS32M67xx.h \
+  ..\CMSIS\Include\core_cm0plus.h \
+  D:\Keil_MDK539\ARM\ARMCLANG\include\stdint.h \
+  D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h \
+  D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h \
+  D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h \
+  ..\Device\Include\system_CMS32M67xx.h

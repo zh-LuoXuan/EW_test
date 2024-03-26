@@ -13,14 +13,18 @@ void TIMER0_Init_Config(void)
 	
 	TMR_EnableOverflowInt(TMR0);
 
-	// NVIC_EnableIRQ(TIMER0_IRQn);	
+	NVIC_EnableIRQ(TIMER0_IRQn);	
 	
-	// NVIC_SetPriority(TIMER0_IRQn,3);	
+	NVIC_SetPriority(TIMER0_IRQn,3);	
 	
 	TMR_Start(TMR0);			
 }
 
 
+void TIMER0_IRQHandler(void)
+{
+	TMR_ClearOverflowIntFlag(TMR0);
+}
 
 
 

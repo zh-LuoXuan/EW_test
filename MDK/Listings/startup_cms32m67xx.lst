@@ -239,9 +239,9 @@ ARM Macro Assembler    Page 4
   120 00000000                 IMPORT           SystemInit
   121 00000000                 IMPORT           __main
   122 00000000         
-  123 00000000 4808            LDR              R0, =SystemInit
+  123 00000000 4805            LDR              R0, =SystemInit
   124 00000002 4780            BLX              R0
-  125 00000004 4808            LDR              R0, =__main
+  125 00000004 4805            LDR              R0, =__main
   126 00000006 4700            BX               R0
   127 00000008                 ENDP
   128 00000008         
@@ -379,42 +379,31 @@ ARM Macro Assembler    Page 6
   213 00000018         ; User Initial Stack & Heap
   214 00000018         
   215 00000018                 IF               :DEF:__MICROLIB
-  222 00000018         
-  223 00000018                 IMPORT           __use_two_region_memory
-  224 00000018                 EXPORT           __user_initial_stackheap
-  225 00000018         __user_initial_stackheap
-  226 00000018         
-  227 00000018 4804            LDR              R0, =  Heap_Mem
-  228 0000001A 4905            LDR              R1, =(Stack_Mem + Stack_Size)
-  229 0000001C 4A05            LDR              R2, = (Heap_Mem +  Heap_Size)
-  230 0000001E 4B06            LDR              R3, = Stack_Mem
+  216 00000018         
+  217 00000018                 EXPORT           __initial_sp
+  218 00000018                 EXPORT           __heap_base
+  219 00000018                 EXPORT           __heap_limit
+  220 00000018         
+  221 00000018                 ELSE
+  235                          ENDIF
+  236 00000018         
+  237 00000018         
 
 
 
 ARM Macro Assembler    Page 7 
 
 
-  231 00000020 4770            BX               LR
-  232 00000022         
-  233 00000022 00 00           ALIGN
-  234 00000024         
-  235 00000024                 ENDIF
-  236 00000024         
-  237 00000024         
-  238 00000024                 END
+  238 00000018                 END
               00000000 
-              00000000 
-              00000000 
-              00000400 
-              00000100 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0+ --apcs=inter
 work --depend=.\objects\startup_cms32m67xx.d -o.\objects\startup_cms32m67xx.o -
-I.\RTE\_CMS32M67xx -ID:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Includ
-e -ID:\Keil_MDK539\ARM\Packs\Cmsemicon\CMS32M67xx\0.1.6\Device\Include --predef
-ine="__UVISION_VERSION SETA 539" --predefine="_RTE_ SETA 1" --predefine="_RTE_ 
-SETA 1" --list=.\listings\startup_cms32m67xx.lst RTE/Device/CMS32M67xx48FA/star
-tup_CMS32M67xx.s
+I.\RTE\_CMS32M67xx -ID:\Keil_538a\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include 
+-ID:\Keil_538a\ARM\Packs\Cmsemicon\CMS32M67xx\0.1.6\Device\Include --predefine=
+"__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 538" --predefine="_RTE_
+ SETA 1" --predefine="_RTE_ SETA 1" --list=.\listings\startup_cms32m67xx.lst RT
+E/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
 
 
 
@@ -435,9 +424,8 @@ Symbol: Stack_Mem
    Definitions
       At line 36 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
    Uses
-      At line 228 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
-      At line 230 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
-
+      None
+Comment: Stack_Mem unused
 __initial_sp 00000400
 
 Symbol: __initial_sp
@@ -445,7 +433,8 @@ Symbol: __initial_sp
       At line 37 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
    Uses
       At line 61 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
-Comment: __initial_sp used once
+      At line 217 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
+
 3 symbols
 
 
@@ -467,25 +456,24 @@ Symbol: Heap_Mem
    Definitions
       At line 48 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
    Uses
-      At line 227 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
-      At line 229 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
-
+      None
+Comment: Heap_Mem unused
 __heap_base 00000000
 
 Symbol: __heap_base
    Definitions
       At line 47 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
    Uses
-      None
-Comment: __heap_base unused
+      At line 218 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
+Comment: __heap_base used once
 __heap_limit 00000100
 
 Symbol: __heap_limit
    Definitions
       At line 49 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
    Uses
-      None
-Comment: __heap_limit unused
+      At line 219 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
+Comment: __heap_limit used once
 4 symbols
 
 
@@ -834,21 +822,7 @@ Symbol: UART1_IRQHandler
       At line 91 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
       At line 172 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
 
-__user_initial_stackheap 00000018
-
-
-
-ARM Macro Assembler    Page 6 Alphabetic symbol ordering
-Relocatable symbols
-
-
-Symbol: __user_initial_stackheap
-   Definitions
-      At line 225 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
-   Uses
-      At line 224 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
-Comment: __user_initial_stackheap used once
-33 symbols
+32 symbols
 
 
 
@@ -862,8 +836,7 @@ Symbol: Heap_Size
       At line 44 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
    Uses
       At line 48 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
-      At line 229 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
-
+Comment: Heap_Size used once
 Stack_Size 00000400
 
 Symbol: Stack_Size
@@ -871,8 +844,7 @@ Symbol: Stack_Size
       At line 33 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
    Uses
       At line 36 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
-      At line 228 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
-
+Comment: Stack_Size used once
 2 symbols
 
 
@@ -896,13 +868,5 @@ Symbol: __main
    Uses
       At line 125 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
 Comment: __main used once
-__use_two_region_memory 00000000
-
-Symbol: __use_two_region_memory
-   Definitions
-      At line 223 in file RTE/Device/CMS32M67xx48FA/startup_CMS32M67xx.s
-   Uses
-      None
-Comment: __use_two_region_memory unused
-3 symbols
-383 symbols in table
+2 symbols
+380 symbols in table

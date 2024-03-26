@@ -10,15 +10,16 @@ static void getCamplarBuff(RGB_DataTypdef* RGB_Stracture)
         return;
     }
 
+		uint8_t i, j;
     uint32_t GRB[3];
 
     RGBTOGRB(WHITE, GRB[0])
     RGBTOGRB(CYAN, GRB[1]) 
     RGBTOGRB(PURPLE, GRB[2])
 
-    for(uint8_t i = 0; i < 3; i++)
+    for(i = 0; i < 3; i++)
     {
-        for(uint8_t j = 0; i < 23; j++)
+        for(j = 0; j < 24; j++)
         GETCOMPLAR(RGB_Stracture->campareBuff[i][j], (GRB[i] >> (23 - j)) & 0x01)
     }
 }
@@ -32,20 +33,11 @@ static void RGB_DataInit(RGB_DataTypdef* RGB_Stracture)
 
     RGB_Stracture->Status = On;
     RGB_Stracture->Mode = Normal;
-    RGB_Stracture->Color = White;
+    RGB_Stracture->Color = Purple;
     RGB_Stracture->breath_val = 255;
     getCamplarBuff(RGB_Stracture);
 }
 
-uint32_t RGB_Normal_Output(RGB_DataTypdef* RGB_Stracture, uint32_t campler)
-{
-    getCamplarBuff(RGB_Stracture);
-    return (255 * campler / 1000);
-}
-uint32_t RGB_Breath_Output(uint32_t campler, uint8_t breath)
-{
-    return (breath * campler / 1000);
-}
 
 uint32_t RGB_Output(RGB_DataTypdef* RGB_Stracture)
 {

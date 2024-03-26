@@ -39,9 +39,9 @@
 /* ToDo: initialize SystemCoreClock with the system core clock frequency value
          achieved after system intitialization.
          This means system core clock frequency after call to SystemInit()    */
-uint32_t SystemCoreClock = HSI_64M_VAL;  /*!< System Clock Frequency (Core Clock)*/
-uint32_t SystemAPBClock  = HSI_64M_VAL;  /*!< System APB Clock Frequency (APB Clock)*/
-uint32_t CyclesPerUs = ( HSI_64M_VAL / 1000000 ); /* Cycles per micro second */
+uint32_t SystemCoreClock = HSI_72M_VAL;  /*!< System Clock Frequency (Core Clock)*/
+uint32_t SystemAPBClock  = HSI_72M_VAL;  /*!< System APB Clock Frequency (APB Clock)*/
+uint32_t CyclesPerUs = ( HSI_72M_VAL / 1000000 ); /* Cycles per micro second */
 
 
 /** @addtogroup Configuration_of_User_Option_Byte
@@ -157,7 +157,7 @@ const volatile uint8_t user_opt_data[4] __attribute__((section(".option_byte")))
  */
 // <h> HOCO Control Option Byte (C2H)
 //   <o.0..4> High-speed OCO clock setting                  <0xF0=> fHOCO = 72MHz, fIH = 72MHz
-//																													<0xF1=> fHOCO = 72MHz, fIH = 36MHz
+//															<0xF1=> fHOCO = 72MHz, fIH = 36MHz
 //                                                          <0xF2=> fHOCO = 72MHz, fIH = 18MHz
 //                                                          <0xF3=> fHOCO = 72MHz, fIH = 9MHz
 //                                                          <0xF4=> fHOCO = 72MHz, fIH = 4.5MHz
@@ -194,16 +194,16 @@ const volatile uint8_t user_opt_data[4] __attribute__((section(".option_byte")))
          This means system core clock frequency after call to SystemInit() */
 uint32_t SystemCoreClock;  		/* System Clock Frequency (Core Clock)*/
 
-
-
+uint32_t freq;
+uint8_t  frqsel;
 /*----------------------------------------------------------------------------
   Clock functions
  *----------------------------------------------------------------------------*/
 uint32_t CLK_GetHocoFreq(void)
 {
 
-  uint32_t freq;
-  uint8_t  frqsel  = (*(uint8_t *)0x000000C2U);
+  
+           frqsel  = (*(uint8_t *)0x000000C2U);
            frqsel &= 0xF8;  	/* Mask the lower 3 bits */
            frqsel |= CGC->HOCODIV;	/* Refer the value of HOCODIV */ 
 		   
@@ -255,6 +255,7 @@ void SystemCoreClockUpdate (void)            /* Get Core Clock Frequency      */
          register settings.
          This function can be used to retrieve the system core clock frequeny
          after user changed register sittings. */
+
   SystemCoreClock = CLK_GetHocoFreq();
 }
 
@@ -271,6 +272,7 @@ void SystemInit (void)
   CGC->WDTCFG1 = 0x2B;
   CGC->WDTCFG2 = 0x3C;
   CGC->WDTCFG3 = 0x4D;
+  CGC->HOCODIV = 0x00;
   DBG->DBGSTOPCR = 0;
 
   SystemCoreClock = CLK_GetHocoFreq();

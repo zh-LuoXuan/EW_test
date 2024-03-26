@@ -1,32 +1,11 @@
-/*******************************************************************************
-* Copyright (C) 2019 China Micro Semiconductor Limited Company. All Rights Reserved.
-*
-* This software is owned and published by:
-* CMS LLC, No 2609-10, Taurus Plaza, TaoyuanRoad, NanshanDistrict, Shenzhen, China.
-*
-* BY DOWNLOADING, INSTALLING OR USING THIS SOFTWARE, YOU AGREE TO BE BOUND
-* BY ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT.
-*
-* This software contains source code for use with CMS
-* components. This software is licensed by CMS to be adapted only
-* for use in systems utilizing CMS components. CMS shall not be
-* responsible for misuse or illegal use of this software for devices not
-* supported herein. CMS is providing this software "AS IS" and will
-* not be responsible for issues arising from incorrect user implementation
-* of the software.
-*
-* This software may be replicated in part or whole for the licensed use,
-* with the restriction that this Disclaimer and Copyright notice must be
-* included with each copy of this software, whether used in part or whole,
-* at all times.
-*/
-
-/*****************************************************************************/
-/** \file YM_ccp.h
-**
-** History:
-** 
-*****************************************************************************/
+/*
+ * @Author: EW_Luo 1153589792@qq.com
+ * @Date: 2024-03-25 18:41:42
+ * @LastEditors: EW_Luo 1153589792@qq.com
+ * @LastEditTime: 2024-03-26 15:47:37
+ * @FilePath: \EIDE (工作区)e:\ZL\CMS32M67xx_20240312\YM502_Test_Demo\APP\Inc\YM_ccp.h
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 #ifndef __YM_CCP_H_
 #define __YM_CCP_H_
 
@@ -35,45 +14,12 @@ extern "C"
 {
 #endif
 
-/*****************************************************************************/
-/* Include files */
-/*****************************************************************************/
+
 #include "common.h"
 #include "cgc.h"
 #include "ccp.h"
 #include "gpio.h"
-/*****************************************************************************/
-/* Global pre-processor symbols/macros ('#define') */
-/*****************************************************************************/
-
-							
-/*****************************************************************************/
-/* Global type definitions ('typedef') */
-/*****************************************************************************/
-
-
-/*****************************************************************************/
-/* Global variable declarations ('extern', definition in C source) */
-/*****************************************************************************/
-
-
-/*****************************************************************************/
-/* Global function prototypes ('extern', definition in C source) */
-/*****************************************************************************/
-
-/*****************************************************************************
- ** \brief	CCP_Capture_Mode0_Config
- **			
- ** \param [in] none
- ** \return  none
- ** \note	
-*****************************************************************************/
-
-#define Code(n)                                 \
-        {                                       \
-            if(n)      (uint32_t)(0x1004BUL);   \
-            else       (uint32_t)(0x10019UL);   \
-        }                                         
+                             
 
 
 

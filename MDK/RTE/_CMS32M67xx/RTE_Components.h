@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'YM502_Template' 
+ * Project: 'YM502_Test_Demo' 
  * Target:  'CMS32M67xx' 
  */
 

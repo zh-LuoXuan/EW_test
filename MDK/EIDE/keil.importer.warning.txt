@@ -1,0 +1,92 @@
+!!! 警告 !!!
+
+存在未解决的依赖项，请手动添加它们 !, 完成添加后，请删除该文件，避免再次弹出提示。
+
+项目位置：'e:\ZL\CMS32M67xx_20240312\YM502_Template\MDK\EIDE\EIDE.code-workspace'
+
+---
+
+FileName: 'Device\Source\ARM\startup_BAT32G127.s'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/BAT32G127GH48FA/startup_BAT32G127.s'
+
+FileName: 'Device\Source\system_BAT32G127.c'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/BAT32G127GH48FA/system_BAT32G127.c'
+
+FileName: 'Device\Source\userdefine.h'
+	Class:     'Device'
+	Category:  'header'
+	Location:  '../RTE/Device/BAT32G127GH48FA/userdefine.h'
+
+FileName: 'Device\Source\isr_BAT32G127.c'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/BAT32G127GH64FB/isr_BAT32G127.c'
+
+FileName: 'Device\Source\ARM\startup_BAT32G127.s'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/BAT32G127GH64FB/startup_BAT32G127.s'
+
+FileName: 'Device\Source\system_BAT32G127.c'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/BAT32G127GH64FB/system_BAT32G127.c'
+
+FileName: 'Device\Source\userdefine.h'
+	Class:     'Device'
+	Category:  'header'
+	Location:  '../RTE/Device/BAT32G127GH64FB/userdefine.h'
+
+FileName: 'Device\Source\ARM\startup_BAT32G127.s'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/BAT32G127GK64FA/startup_BAT32G127.s'
+
+FileName: 'Device\Source\system_BAT32G127.c'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/BAT32G127GK64FA/system_BAT32G127.c'
+
+FileName: 'Device\Source\ARM\startup_CMS32M6510.s'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/CMS32M6510GE24SS/startup_CMS32M6510.s'
+
+FileName: 'Device\Source\system_CMS32M6510.c'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/CMS32M6510GE24SS/system_CMS32M6510.c'
+
+FileName: 'Device\Source\ARM\startup_CMS32M67xx.s'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/CMS32M67xx28FB/startup_CMS32M67xx.s'
+
+FileName: 'Device\Source\system_CMS32M67xx.c'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/CMS32M67xx28FB/system_CMS32M67xx.c'
+
+FileName: 'Device\Source\ARM\startup_CMS32M67xx.s'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/CMS32M67xx48FB/startup_CMS32M67xx.s'
+
+FileName: 'Device\Source\system_CMS32M67xx.c'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/CMS32M67xx48FB/system_CMS32M67xx.c'
+
+FileName: 'Device\CMS32X506\Source\ARM\startup_CMS32X506.s'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/CMS32X506GE24SS/startup_CMS32X506.s'
+
+FileName: 'Device\CMS32X506\Source\system_CMS32X506.c'
+	Class:     'Device'
+	Category:  'source'
+	Location:  '../RTE/Device/CMS32X506GE24SS/system_CMS32X506.c'

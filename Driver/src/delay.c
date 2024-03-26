@@ -14,7 +14,7 @@ void delay1_us(uint32_t num)
 	SysTick->LOAD = num * Value_us;
 	SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk |
                     SysTick_CTRL_ENABLE_Msk;                         /* Enable SysTick IRQ and SysTick Timer */
-	while(!(SysTick->CTRL&SysTick_CTRL_COUNTFLAG_Msk));
+	while(!(SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk));
 	SysTick->CTRL= SysTick_CTRL_CLKSOURCE_Msk;     
 }
 

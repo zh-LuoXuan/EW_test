@@ -233,7 +233,7 @@ typedef struct {                                /*!< (@ 0x40020400) CGC Structur
   __IOM uint8_t   RESERVED8;                       /*!< (@ 0x00001C00)  */
   __IM  uint8_t   RESERVED4;
   __IM  uint16_t  RESERVED5[15];
-  __IOM uint8_t   HOCODIV;                      /*!< (@ 0x00001820) High-speed on-chip oscillator frequency select
+  __IOM uint8_t   HOCODIV;                      /*!< (@ 0x00001C20) High-speed on-chip oscillator frequency select
                                                                     register                                                   */
   __IM  uint8_t   RESERVED6[1];
   __IM  uint16_t  RESERVED7;
