@@ -71,10 +71,10 @@ typedef enum {
   I2C0_IRQn                 =  10,              /*!< 10 I2C IRQ                                                              */
   UART0_IRQn                =  11,              /*!< 11 UART0 IRQ                                                                */
   UART1_IRQn                =  12,              /*!< 12 SSP0 IRQ                                                               */
-	EPWM_IRQn                 =  13,              /*!< 13 EPWM IRQ                                                             */
+  EPWM_IRQn                 =  13,              /*!< 13 EPWM IRQ                                                             */
   TIMER0_IRQn               =  14,              /*!< 13 Timer0 IRQ                                                             */
   TIMER1_IRQn               =  15,              /*!< 14 Timer1 IRQ                                                             */
-	HALL_IRQn                 =  16,              /*!< 14 HALL IRQ                                                             */
+  HALL_IRQn                 =  16,              /*!< 14 HALL IRQ                                                             */
   LSITIMER_IRQn             =  17,              /*!< 15 LSI Timer IRQ                                                          */
   TM00_IRQn                 =  19,              /*!< 17 TM00 channel 0 interrupt request                                       */
   TM01_IRQn                 =  20,              /*!< 18 TM00 channel 1 interrupt request                                       */

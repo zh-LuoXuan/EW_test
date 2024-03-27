@@ -39,9 +39,9 @@
 /* ToDo: initialize SystemCoreClock with the system core clock frequency value
          achieved after system intitialization.
          This means system core clock frequency after call to SystemInit()    */
-uint32_t SystemCoreClock = HSI_72M_VAL;  /*!< System Clock Frequency (Core Clock)*/
-uint32_t SystemAPBClock  = HSI_72M_VAL;  /*!< System APB Clock Frequency (APB Clock)*/
-uint32_t CyclesPerUs = ( HSI_72M_VAL / 1000000 ); /* Cycles per micro second */
+uint32_t SystemCoreClock = HSI_64M_VAL;  /*!< System Clock Frequency (Core Clock)*/
+uint32_t SystemAPBClock  = HSI_64M_VAL;  /*!< System APB Clock Frequency (APB Clock)*/
+uint32_t CyclesPerUs = ( HSI_64M_VAL / 1000000 ); /* Cycles per micro second */
 
 
 /** @addtogroup Configuration_of_User_Option_Byte
@@ -201,11 +201,15 @@ uint8_t  frqsel;
  *----------------------------------------------------------------------------*/
 uint32_t CLK_GetHocoFreq(void)
 {
+  frqsel  = (*(uint8_t *)0x000000C2U);
 
-  
-           frqsel  = (*(uint8_t *)0x000000C2U);
-           frqsel &= 0xF8;  	/* Mask the lower 3 bits */
-           frqsel |= CGC->HOCODIV;	/* Refer the value of HOCODIV */ 
+/*-----------------------------USER_CONFIG------------------------------------*/
+  frqsel |= 0xF0;
+  CGC->HOCODIV &= 0x00;
+  CGC->HOCODIV |= 0x00;
+/*----------------------------------------------------------------------------*/
+  frqsel &= 0xF8;  	/* Mask the lower 3 bits */
+  frqsel |= CGC->HOCODIV;	/* Refer the value of HOCODIV */ 
 		   
   freq = 1000000U;  /* fIH = 1MHz except for the following cases */
 		
@@ -272,7 +276,6 @@ void SystemInit (void)
   CGC->WDTCFG1 = 0x2B;
   CGC->WDTCFG2 = 0x3C;
   CGC->WDTCFG3 = 0x4D;
-  CGC->HOCODIV = 0x00;
   DBG->DBGSTOPCR = 0;
 
   SystemCoreClock = CLK_GetHocoFreq();
@@ -297,14 +300,19 @@ void SystemInit (void)
   WDT->WDTE = 0xACU;   
 }
 
-/***********************************************************************************************************************
-* Function Name: LVI_IRQHandler
-* Description  : LVD Handler
-* Arguments    : None
-* Return Value : None
-***********************************************************************************************************************/
+
+
 void LVI_IRQHandler(void)
 {
 	NVIC_ClearPendingIRQ(LVI_IRQn);
+}
+
+
+void HardFault_Handler(void)
+{
+    while(1)
+    {
+        ;
+    }
 }
 

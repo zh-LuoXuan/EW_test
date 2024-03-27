@@ -173,7 +173,7 @@ Default_Handler PROC
                 EXPORT  EPWM_IRQHandler           [WEAK]                                                					                                
                 EXPORT  TIMER0_IRQHandler         [WEAK]
                 EXPORT  TIMER1_IRQHandler         [WEAK]
-				EXPORT  HALL_IRQHandler          [WEAK]
+				EXPORT  HALL_IRQHandler           [WEAK]
                 EXPORT  LSITIMER_IRQHandler       [WEAK]
                 EXPORT  TM00_IRQHandler           [WEAK]
                 EXPORT  TM01_IRQHandler           [WEAK]

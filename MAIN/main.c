@@ -1,10 +1,10 @@
 /*
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2024-03-25 09:16:17
- * @LastEditors: EW_Luo 1153589792@qq.com
- * @LastEditTime: 2024-03-26 18:34:52
- * @FilePath: \EIDE (å·¥ä½œåŒº)c:\Users\xuan.luo\Desktop\EW_test\MAIN\main.c
- * @Description: è¿™æ˜¯é»˜è®¤è®¾ç½®,è¯·è®¾ç½®`customMade`, æ‰“å¼€koroFileHeaderæŸ¥çœ‹é…ç½® è¿›è¡Œè®¾ç½®: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @LastEditors: zh-LuoXuan 1153589792@qq.com
+ * @LastEditTime: 2024-03-28 01:16:38
+ * @FilePath: \EIDE (¹¤×÷Çø)c:\Users\xuan.luo\Desktop\EW_test\MAIN\main.c
+ * @Description: ÕâÊÇÄ¬ÈÏÉèÖÃ,ÇëÉèÖÃ`customMade`, ´ò¿ªkoroFileHeader²é¿´ÅäÖÃ ½øĞĞÉèÖÃ: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include <stdio.h>
 #include "YM_ccp.h"
@@ -17,16 +17,18 @@
 #include "YM_epwm.h"
 #include "bsp_SysTick.h"
 
-/**ç”¨äº Debug ç›‘æ§çš„å…¨å±€å˜é‡**/
+/**ÓÃÓÚ Debug ¼à¿ØµÄÈ«¾Ö±äÁ¿**/
 
 char touchVal = 1;
 CGC_Type* CGCdata;
+TMR_T* TIMER0Data;
 
 /***************************/
 int main(void)
 {
 	
     CGCdata = CGC;
+	TIMER0Data = TMR0;
 	
 	Systick_Init_Config();
 	// Touch_Init_Config();
@@ -34,28 +36,28 @@ int main(void)
 	// LED_Init_Config();
 	RGB_Init_Config();
 	CCP_PWM_Config(20);
-	DMA_CCP0A_Config();
+	// DMA_CCP0A_Config();
 	TIMER0_Init_Config();
 
 	while(1)
 	{
-		touchVal = PORT_GetBitValue(TOUCH_PORT, TOUCH_PIN);
-		if(!touchVal)
-		{   
-			Delay_ms(5);
-			if(!touchVal)
-			{				
-				ALL_LED(ON)
-			}
-		}	
-		else
-		{
-			Delay_ms(5);
-			if(touchVal)
-			{
-				ALL_LED(OFF)
-			}
-		}	
+//		touchVal = PORT_GetBitValue(TOUCH_PORT, TOUCH_PIN);
+//		if(!touchVal)
+//		{   
+//			Delay_ms(5);
+//			if(!touchVal)
+//			{				
+//				ALL_LED(ON)
+//			}
+//		}	
+//		else
+//		{
+//			Delay_ms(5);
+//			if(touchVal)
+//			{
+//				ALL_LED(OFF)
+//			}
+//		}	
 	}
 }
 

@@ -201,11 +201,15 @@ uint32_t SystemCoreClock;  		/* System Clock Frequency (Core Clock)*/
  *----------------------------------------------------------------------------*/
 uint32_t CLK_GetHocoFreq(void)
 {
+  frqsel  = (*(uint8_t *)0x000000C2U);
 
-           frqsel  = (*(uint8_t *)0x000000C2U);
-           frqsel &= 0xF8;  	/* Mask the lower 3 bits */
-           frqsel |= CGC->HOCODIV;	/* Refer the value of HOCODIV */ 
-		   
+/*-----------------------------USER_CONFIG------------------------------------*/
+  frqsel |= 0xF0;
+  CGC->HOCODIV &= 0x00;
+  CGC->HOCODIV |= 0x00;
+/*----------------------------------------------------------------------------*/
+  frqsel &= 0xF8;  	/* Mask the lower 3 bits */
+  frqsel |= CGC->HOCODIV;	/* Refer the value of HOCODIV */ 
   freq = 1000000U;  /* fIH = 1MHz except for the following cases */
 		
   switch(frqsel)
@@ -295,14 +299,19 @@ void SystemInit (void)
   WDT->WDTE = 0xACU;   
 }
 
-/***********************************************************************************************************************
-* Function Name: LVI_IRQHandler
-* Description  : LVD Handler
-* Arguments    : None
-* Return Value : None
-***********************************************************************************************************************/
+
+
 void LVI_IRQHandler(void)
 {
 	NVIC_ClearPendingIRQ(LVI_IRQn);
+}
+
+
+void HardFault_Handler(void)
+{
+    while(1)
+    {
+        ;
+    }
 }
 

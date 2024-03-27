@@ -7,6 +7,7 @@ void TIMER0_Init_Config(void)
 	TMR_ConfigClk(TMR0,TMR_CLK_DIV_1);		
 	
 	TMR_ConfigRunMode(TMR0,TMR_COUNT_PERIOD_MODE, TMR_BIT_16_MODE);		
+	
 	TMR_DisableOneShotMode(TMR0);										
 		
 	TMR_SetPeriod(TMR0,100);				
@@ -23,7 +24,11 @@ void TIMER0_Init_Config(void)
 
 void TIMER0_IRQHandler(void)
 {
-	TMR_ClearOverflowIntFlag(TMR0);
+	if(TMR_GetOverflowIntFlag(TMR0))
+	{
+		
+		TMR_ClearOverflowIntFlag(TMR0);		
+	}			
 }
 
 

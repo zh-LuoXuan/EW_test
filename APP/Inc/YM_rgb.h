@@ -1,3 +1,11 @@
+/*
+ * @Author: zh-LuoXuan 1153589792@qq.com
+ * @Date: 2024-03-26 22:21:43
+ * @LastEditors: zh-LuoXuan 1153589792@qq.com
+ * @LastEditTime: 2024-03-28 00:56:07
+ * @FilePath: \EIDE (工作区)d:\evowera\CMS32M67xx_20240312\YM502_Test_Demo\APP\Inc\YM_rgb.h
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 #ifndef __YM_RGB_H_
 #define __YM_RGB_H_
 
@@ -61,7 +69,7 @@ typedef struct
 }RGB_DataTypdef;
 
 extern RGB_DataTypdef RGB_DataStracture;
-
+extern uint32_t testData[24];
 
 void RGB_Init_Config(void);
 uint32_t RGB_Output(RGB_DataTypdef* RGB_Stracture);

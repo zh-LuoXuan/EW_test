@@ -1,7 +1,19 @@
+/*
+ * @Author: zh-LuoXuan 1153589792@qq.com
+ * @Date: 2024-03-26 22:21:43
+ * @LastEditors: zh-LuoXuan 1153589792@qq.com
+ * @LastEditTime: 2024-03-28 00:54:40
+ * @FilePath: \EIDE (工作区)d:\evowera\CMS32M67xx_20240312\YM502_Test_Demo\APP\Src\YM_rgb.c
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 #include "YM_rgb.h"
 
 uint8_t breath;
 RGB_DataTypdef RGB_DataStracture;
+
+uint32_t testData[24] = {75,75,75,75,75,75,75,75, \
+                         50,50,50,50,50,50,50,50, \
+						 25,25,25,25,25,25,25,25};
 
 static void getCamplarBuff(RGB_DataTypdef* RGB_Stracture)
 {
