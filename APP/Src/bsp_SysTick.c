@@ -1,9 +1,9 @@
 /*
- * @Author: EW_Luo 1153589792@qq.com
- * @Date: 2024-03-26 12:07:13
+ * @Author: zh-LuoXuan 1153589792@qq.com
+ * @Date: 2024-03-26 22:21:43
  * @LastEditors: zh-LuoXuan 1153589792@qq.com
- * @LastEditTime: 2024-03-28 01:22:22
- * @FilePath: \EIDE (工作区)e:\ZL\CMS32M67xx_20240312\YM502_Test_Demo\APP\Src\bsp_SysTick.c
+ * @LastEditTime: 2024-03-29 00:40:04
+ * @FilePath: \EIDE (工作区)d:\evowera\CMS32M67xx_20240312\YM502_Test_Demo\APP\Src\bsp_SysTick.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include "bsp_SysTick.h"
@@ -28,10 +28,8 @@ void SysTick_Delay_us(__IO uint32_t us)
     SysTick_Config(SystemCoreClock / 1000000);
     for(i = 0; i < us; i++)
     {
-        // 当计数器的值减小到0的时候，CRTL寄存器的位16会置1
         while(!((SysTick->CTRL) & (1 << 16)));
     }
-    //关闭SysTick定时器
     SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
 }
 
@@ -42,10 +40,8 @@ void SysTick_Delay_ms(__IO uint32_t ms)
     SysTick_Config(SystemCoreClock / 1000);
     for(i = 0; i < ms; i++)
     {
-        // 当计数器的值减小到0的时候，CRTL寄存器的位16会置1
         while(!((SysTick->CTRL) & (1 << 16)));
     }
-    //关闭SysTick定时器
     SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
 }
 
@@ -65,20 +61,20 @@ void Delay_ms(__IO uint32_t times)
     while(Ticks);
 }
 
-uint32_t* ccpCamplerDataPoint = testData;
+// uint32_t* ccpCamplerDataPoint = testData;
 void SysTick_Handler(void)
 {
-    static uint8_t camplerTicks = 0;
-    if(CCP->CON0 & CCP_CCPCON0_CCP0EN_Msk)
-    {
-        camplerTicks++;
-        if(camplerTicks >= 24)
-        {
-            camplerTicks = 0;
-            ccpCamplerDataPoint = testData;
-        }
-        CCP->D0A = *ccpCamplerDataPoint++;
-    }
+    // static uint8_t camplerTicks = 0;
+    // if(CCP->CON0 & CCP_CCPCON0_CCP0EN_Msk)
+    // {
+    //     camplerTicks++;
+    //     if(camplerTicks >= 24)
+    //     {
+    //         camplerTicks = 0;
+    //         ccpCamplerDataPoint = testData;
+    //     }
+    //     CCP->D0A = *ccpCamplerDataPoint++;
+    // }
     if(Ticks)
     {
         Ticks--;

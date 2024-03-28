@@ -6,4 +6,4 @@
   D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h \
   D:\Keil_MDK539\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h \
   ..\Device\Include\system_CMS32M67xx.h ..\Driver\inc\cgc.h \
-  ..\Driver\inc\ccp.h ..\Driver\inc\gpio.h
+  ..\Driver\inc\ccp.h ..\Driver\inc\gpio.h ..\APP\Inc\YM_rgb.h
