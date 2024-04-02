@@ -21,7 +21,9 @@
             "editor.tabSize": 4,
             "editor.autoIndent": "advanced"
         },
-        "commentTranslate.source": "Bing"
+        "commentTranslate.source": "Bing",
+        "commentTranslate.multiLineMerge": true,
+        "commentTranslate.hover.enabled": true
     },
     "extensions": {
         "recommendations": [

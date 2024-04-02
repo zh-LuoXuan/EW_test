@@ -260,7 +260,7 @@ void CCP_DisablePWMHalfCycleMode(uint32_t CCPn, uint32_t CCPChannel)
  ** \return  none
  ** \note	
 *****************************************************************************/
-void CCP_ConfigCompare(uint32_t CCPn, uint32_t CCPChannel ,uint32_t Compare)
+void CCP_ConfigCompare(uint32_t CCPn, uint32_t CCPChannel, uint32_t Compare)
 {
 	uint32_t CCPTemp=0;
 	

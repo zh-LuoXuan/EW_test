@@ -26,7 +26,6 @@ void TIMER0_IRQHandler(void)
 {
 	if(TMR_GetOverflowIntFlag(TMR0))
 	{
-		
 		TMR_ClearOverflowIntFlag(TMR0);		
 	}			
 }

@@ -2,9 +2,9 @@
  * @Author: zh-LuoXuan 1153589792@qq.com
  * @Date: 2024-03-26 22:21:43
  * @LastEditors: zh-LuoXuan 1153589792@qq.com
- * @LastEditTime: 2024-03-28 00:56:07
- * @FilePath: \EIDE (å·¥ä½œåŒº)d:\evowera\CMS32M67xx_20240312\YM502_Test_Demo\APP\Inc\YM_rgb.h
- * @Description: è¿™æ˜¯é»˜è®¤è®¾ç½®,è¯·è®¾ç½®`customMade`, æ‰“å¼€koroFileHeaderæŸ¥çœ‹é…ç½® è¿›è¡Œè®¾ç½®: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @LastEditTime: 2024-04-03 00:36:50
+ * @FilePath: \EIDE (¹¤×÷Çø)d:\evowera\CMS32M67xx_20240312\YM502_Test_Demo\APP\Inc\YM_rgb.h
+ * @Description: ÕâÊÇÄ¬ÈÏÉèÖÃ,ÇëÉèÖÃ`customMade`, ´ò¿ªkoroFileHeader²é¿´ÅäÖÃ ½øÐÐÉèÖÃ: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #ifndef __YM_RGB_H_
 #define __YM_RGB_H_
@@ -13,32 +13,39 @@
 #include "gpio.h"
 
 
-#define WHITE     (uint32_t)(0xFFFFFFUL)
-#define PURPLE    (uint32_t)(0xABCAFBUL)
-#define CYAN      (uint32_t)(0xC8F578UL)
+#define CCP0A_PERIPH         (80)
+#define COMPLAR_CODE_1       (CCP0A_PERIPH * 0.25)
+#define COMPLAR_CODE_0       (CCP0A_PERIPH * 0.75)
 
-#define RGBTOGRB(DEFINE_COLOR, GRB_VAL) {   \
+
+// #define WHITE                (uint32_t) (0xFFFFFF)
+// #define CYAN                 (uint32_t) (0xABEFF4)
+// #define PURPLE               (uint32_t) (0xB2ADEA)
+
+#define WHITE                 (uint32_t) (0xA1A2A3)
+#define CYAN                  (uint32_t) (0xA4A5A6)
+#define PURPLE                (uint32_t) (0xA7A8A9)
+
+
+
+
+#define RGBTOGRB(DEFINE_COLOR) ({   \
+                uint32_t GRB_VAL;  \
                 GRB_VAL = (uint32_t)((((uint8_t)((DEFINE_COLOR >> 16) & 0xFF)) << 8) |    \
                                      (((uint8_t)((DEFINE_COLOR >> 8) & 0xFF)) << 16) |    \
-                                     ((uint8_t)(DEFINE_COLOR & 0xFF)));  \
-}
+                                     ((uint8_t)(DEFINE_COLOR & 0xFF)));   \
+                GRB_VAL;   \
+})
 
-#define GETCOMPLAR(COMPLAR_VAL, RGB_BIT) {   \
+#define GETCOMPLAR(RGB_BIT) ({   \
+                uint8_t COMPLAR_VAL;   \
                 if(RGB_BIT)   \
-                COMPLAR_VAL = (uint32_t)(75 * 1000 / 255);   \
+                COMPLAR_VAL = (uint8_t)COMPLAR_CODE_1;   \
                 else   \
-                COMPLAR_VAL = (uint32_t)(25 * 1000 / 255);   \
-}
+                COMPLAR_VAL = (uint8_t)COMPLAR_CODE_0;   \
+                COMPLAR_VAL;   \
+})
 
-#define MODEOUTPUT(INPUT_VAL ,K_VAL) {   \
-                uint32_t OUTPUT_VAL   \
-                if(K_VAL > 255)   \
-                K_VAL = 255;   \
-                else if(K_VAL < 0)   \
-                K_VAL = 0;   \
-                else ;   \
-                OUTPUT_VAL = K_VAL * INPUT_VAL;   \
-}
                 
 typedef enum
 {
@@ -61,17 +68,19 @@ typedef enum
 
 typedef struct
 {
+    uint8_t WhiteBuff[24];
+    uint8_t PurpleBuff[24];
+    uint8_t CyanBuff[24];
+    uint8_t breath_val;
     RGB_Status_e Status;
     RGB_Mode_e Mode;
     RGB_Color_e Color;
-    uint32_t campareBuff[3][24];
-    uint8_t breath_val;
 }RGB_DataTypdef;
 
 extern RGB_DataTypdef RGB_DataStracture;
-extern uint32_t testData[24];
+// extern uint16_t testData[24];
 
 void RGB_Init_Config(void);
-uint32_t RGB_Output(RGB_DataTypdef* RGB_Stracture);
+const uint8_t* RGB_GetColorBuffPoint(void);
 
 #endif
