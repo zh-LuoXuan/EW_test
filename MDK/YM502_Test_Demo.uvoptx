@@ -207,6 +207,11 @@
           <WinNumber>2</WinNumber>
           <ItemText>RGB_DataStracture,0x0A</ItemText>
         </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>\\Blinky\../APP/Src/YM_rgb.c\RGB_DataStracture.WhiteBuff[15]</ItemText>
+        </Ww>
       </WatchWindow2>
       <Tracepoint>
         <THDelay>0</THDelay>
