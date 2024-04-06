@@ -36,6 +36,9 @@
             "path": "../../APP/Src/retarget.c"
           },
           {
+            "path": "../../APP/Src/Sys_OptionByte.c"
+          },
+          {
             "path": "../../APP/Src/YM_ccp.c"
           },
           {
@@ -79,6 +82,9 @@
           },
           {
             "path": "../../Driver/src/epwm.c"
+          },
+          {
+            "path": "../../Driver/src/flash.c"
           },
           {
             "path": "../../Driver/src/gpio.c"

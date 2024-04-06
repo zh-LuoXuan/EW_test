@@ -55,6 +55,7 @@ int EraseChip (uint32_t adr)
 int EraseSector (uint32_t adr)
 {
 	  __DI;
+      
     FMC->FLERMD = 0x10;
     FMC->FLPROT = 0xF1;
     FMC->FLOPMD1 = 0x55;

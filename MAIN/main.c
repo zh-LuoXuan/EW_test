@@ -16,6 +16,7 @@
 #include "YM_touch.h"
 #include "YM_epwm.h"
 #include "bsp_SysTick.h"
+#include "Sys_OptionByte.h"
 
 /**用于 Debug 监控的全局变量**/
 
@@ -26,6 +27,7 @@ TMR_T* TIMER0Data;
 CCP_Type* CCPdata;
 PORT_Type* PORTdata;
 SysTick_Type* SysTickdata;
+OPB_Type* OPBdata;
 
 /***************************/
 int main(void)
@@ -40,17 +42,20 @@ int main(void)
     // EPWM_Init_Config();
 	// LED_Init_Config();
 	
-	RGB_Init_Config();
-	CCP_Init_Config(80);
-	GPIO_Init_Config();
+//	RGB_Init_Config();
+//	CCP_Init_Config(80);
 	Systick_Init_Config();
+	GPIO_Init_Config();
 	
 	// DMA_CCP0A_Config();
 	// TIMER0_Init_Config();
 
 	while(1)
 	{	
-		;
+		PORT_SetBit(PORT1, PIN0);
+		Delay_ms(1);
+		PORT_ClrBit(PORT1, PIN0);
+		Delay_ms(1);
 	}
 }
 

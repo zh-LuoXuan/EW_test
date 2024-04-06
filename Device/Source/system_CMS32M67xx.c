@@ -25,6 +25,7 @@
 #include <stdint.h>
 #include "CMS32M67xx.h"
 #include "system_CMS32M67xx.h"
+#include "Sys_OptionByte.h"
 
 /*----------------------------------------------------------------------------
   Define clocks
@@ -74,7 +75,7 @@ __root const uint8_t user_opt_data[4] @ (0x000000C0) =
 #elif defined(__CC_ARM)
 const uint8_t user_opt_data[4] __attribute__((used)) __attribute__((section(".ARM.__AT_0x000000C0"))) =
 #elif defined(__GNUC__)
-const volatile uint8_t user_opt_data[4] __attribute__((section(".option_byte"))) = 
+const volatile uint8_t user_opt_data[4] __attribute__((used, section(".option_byte"))) = 
 #endif
 {
 
@@ -194,17 +195,20 @@ const volatile uint8_t user_opt_data[4] __attribute__((section(".option_byte")))
          This means system core clock frequency after call to SystemInit() */
 uint32_t SystemCoreClock;  		/* System Clock Frequency (Core Clock)*/
 
-uint32_t freq;
-uint8_t  frqsel;
+
 /*----------------------------------------------------------------------------
   Clock functions
  *----------------------------------------------------------------------------*/
 uint32_t CLK_GetHocoFreq(void)
 {
-  frqsel  = (*(uint8_t *)0x000000C2U);
+  uint32_t freq;
+  uint8_t frqsel;
+  uint8_t data = 0xF0;
+
+  frqsel  = *(uint8_t *)0x000000C2U;
 
 /*-----------------------------USER_CONFIG___LUOXUAN------------------------------------*/
-  
+
   frqsel |= 0xF0;
   CGC->HOCODIV &= 0x00;
 	
@@ -280,6 +284,7 @@ void SystemInit (void)
   CGC->WDTCFG3 = 0x4D;
   DBG->DBGSTOPCR = 0;
 
+  Option_Byte_Config(HOCO_CTRL_BYTE, 0xF8);
   SystemCoreClock = CLK_GetHocoFreq();
 
   /* NVIC Clear Pending IRQ */

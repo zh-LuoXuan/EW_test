@@ -21,5 +21,5 @@ void LED_Init_Config(void)
 void GPIO_Init_Config(void)
 {
     GPIO_Init(PORT1, PIN0, OUTPUT);
-    PORT_ClrBit(PORT1, PIN0);
+    PORT_SetBit(PORT1, PIN0);
 }
