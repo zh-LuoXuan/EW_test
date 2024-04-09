@@ -75,7 +75,8 @@ __root const uint8_t user_opt_data[4] @ (0x000000C0) =
 #elif defined(__CC_ARM)
 const uint8_t user_opt_data[4] __attribute__((used)) __attribute__((section(".ARM.__AT_0x000000C0"))) =
 #elif defined(__GNUC__)
-const volatile uint8_t user_opt_data[4] __attribute__((used, section(".option_byte"))) = 
+const uint8_t user_opt_data[4] __attribute__((used, section(".ARM.__AT_0x000000C0"))) =
+// const volatile uint8_t user_opt_data[4] __attribute__((used, section(".option_byte"))) = 
 #endif
 {
 
@@ -206,14 +207,6 @@ uint32_t CLK_GetHocoFreq(void)
   uint8_t data = 0xF0;
 
   frqsel  = *(uint8_t *)0x000000C2U;
-
-/*-----------------------------USER_CONFIG___LUOXUAN------------------------------------*/
-
-  frqsel |= 0xF0;
-  CGC->HOCODIV &= 0x00;
-	
-/*----------------------------------------------------------------------------*/
-
   frqsel &= 0xF8;  	/* Mask the lower 3 bits */
   frqsel |= CGC->HOCODIV;	/* Refer the value of HOCODIV */ 
 		   
@@ -284,7 +277,7 @@ void SystemInit (void)
   CGC->WDTCFG3 = 0x4D;
   DBG->DBGSTOPCR = 0;
 
-  Option_Byte_Config(HOCO_CTRL_BYTE, 0xF8);
+  // Option_Byte_Config(HOCO_CTRL_BYTE, 0xF8);
   SystemCoreClock = CLK_GetHocoFreq();
 
   /* NVIC Clear Pending IRQ */
@@ -305,6 +298,7 @@ void SystemInit (void)
 
   /* restart watchdog timer */
   WDT->WDTE = 0xACU;   
+
 }
 
 

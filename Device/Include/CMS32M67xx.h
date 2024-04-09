@@ -283,7 +283,7 @@ typedef struct {                                /*!< (@ 0x40020440) LVD Structur
   * @brief Port functions (PORT)
   */
 
-typedef struct {                                /*!< (@ 0x40040000) PORT Structure                                             */
+__volatile__ typedef struct {                                /*!< (@ 0x40040000) PORT Structure                                             */
   __IOM uint8_t   P0;                           /*!< (@ 0x00000000) Port register 0                                            */
   __IOM uint8_t   P1;                           /*!< (@ 0x00000001) Port register 1                                            */
   __IOM uint8_t   P2;                           /*!< (@ 0x00000002) Port register 2                                            */

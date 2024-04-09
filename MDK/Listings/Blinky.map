@@ -1,19 +1,25 @@
-Component: Arm Compiler for Embedded 6.21 Tool: armlink [5ec1fa00]
+Component: Arm Compiler for Embedded 6.19 Tool: armlink [5e73cb00]
 
 ==============================================================================
 
 Section Cross References
 
+    main.o(.text.main) refers to ym_gpio.o(.text.Touch_Init_Config) for Touch_Init_Config
+    main.o(.text.main) refers to ym_epwm.o(.text.EPWM_Init_Config) for EPWM_Init_Config
+    main.o(.text.main) refers to ym_gpio.o(.text.LED_Init_Config) for LED_Init_Config
+    main.o(.text.main) refers to ym_gpio.o(.text.GPIO_Init_Config) for GPIO_Init_Config
+    main.o(.text.main) refers to ym_rgb.o(.text.RGB_Init_Config) for RGB_Init_Config
+    main.o(.text.main) refers to ym_gpio.o(.text.KEY_Init_Config) for KEY_Init_Config
+    main.o(.text.main) refers to ym_timer.o(.text.TIMER0_Init_Config) for TIMER0_Init_Config
+    main.o(.text.main) refers to ym_ccp.o(.text.CCP_Init_Config) for CCP_Init_Config
     main.o(.text.main) refers to bsp_systick.o(.text.Systick_Init_Config) for Systick_Init_Config
-    main.o(.text.main) refers to ym_led.o(.text.GPIO_Init_Config) for GPIO_Init_Config
-    main.o(.text.main) refers to gpio.o(.text.PORT_SetBit) for PORT_SetBit
-    main.o(.text.main) refers to bsp_systick.o(.text.Delay_ms) for Delay_ms
-    main.o(.text.main) refers to gpio.o(.text.PORT_ClrBit) for PORT_ClrBit
+    main.o(.text.main) refers to ym_rgb.o(.text.RGB_GetColorBuffPoint) for RGB_GetColorBuffPoint
     main.o(.text.main) refers to main.o(.bss.CGCdata) for CGCdata
     main.o(.text.main) refers to main.o(.bss.TIMER0Data) for TIMER0Data
     main.o(.text.main) refers to main.o(.bss.CCPdata) for CCPdata
     main.o(.text.main) refers to main.o(.bss.PORTdata) for PORTdata
     main.o(.text.main) refers to main.o(.bss.SysTickdata) for SysTickdata
+    main.o(.text.main) refers to ym_rgb.o(.bss.RGB_DataStracture) for RGB_DataStracture
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
     retarget.o(.ARM.exidx.text.fputc) refers to retarget.o(.text.fputc) for [Anonymous Symbol]
     retarget.o(.ARM.exidx.text.fgetc) refers to retarget.o(.text.fgetc) for [Anonymous Symbol]
@@ -23,34 +29,51 @@ Section Cross References
     ym_ccp.o(.text.CCP_Init_Config) refers to ccp.o(.text.CCP_ConfigCLK) for CCP_ConfigCLK
     ym_ccp.o(.text.CCP_Init_Config) refers to ccp.o(.text.CCP_EnableReverseOutput) for CCP_EnableReverseOutput
     ym_ccp.o(.text.CCP_Init_Config) refers to ccp.o(.text.CCP_ConfigCompare) for CCP_ConfigCompare
+    ym_ccp.o(.text.CCP_Init_Config) refers to ccp.o(.text.CCP_EnableCompareInt) for CCP_EnableCompareInt
+    ym_ccp.o(.text.CCP_Init_Config) refers to ym_ccp.o(.text.__NVIC_SetPriority) for __NVIC_SetPriority
+    ym_ccp.o(.text.CCP_Init_Config) refers to ym_ccp.o(.text.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
     ym_ccp.o(.text.CCP_Init_Config) refers to ccp.o(.text.CCP_EnableRun) for CCP_EnableRun
     ym_ccp.o(.text.CCP_Init_Config) refers to ccp.o(.text.CCP_Start) for CCP_Start
     ym_ccp.o(.ARM.exidx.text.CCP_Init_Config) refers to ym_ccp.o(.text.CCP_Init_Config) for [Anonymous Symbol]
+    ym_ccp.o(.ARM.exidx.text.__NVIC_SetPriority) refers to ym_ccp.o(.text.__NVIC_SetPriority) for [Anonymous Symbol]
+    ym_ccp.o(.ARM.exidx.text.__NVIC_EnableIRQ) refers to ym_ccp.o(.text.__NVIC_EnableIRQ) for [Anonymous Symbol]
+    ym_ccp.o(.text.CCP_IRQHandler) refers to ccp.o(.text.CCP_GetCompareIntFlag) for CCP_GetCompareIntFlag
+    ym_ccp.o(.text.CCP_IRQHandler) refers to ccp.o(.text.CCP_ClearCompareIntFlag) for CCP_ClearCompareIntFlag
+    ym_ccp.o(.text.CCP_IRQHandler) refers to ccp.o(.text.CCP_Stop) for CCP_Stop
+    ym_ccp.o(.text.CCP_IRQHandler) refers to ccp.o(.text.CCP_DisableRun) for CCP_DisableRun
+    ym_ccp.o(.text.CCP_IRQHandler) refers to ym_rgb.o(.bss.RGB_DataStracture) for RGB_DataStracture
+    ym_ccp.o(.text.CCP_IRQHandler) refers to ym_ccp.o(.bss.CCP_IRQHandler.camplerTicks) for [Anonymous Symbol]
+    ym_ccp.o(.text.CCP_IRQHandler) refers to ym_ccp.o(.bss.CCP_IRQHandler.rgb_num) for [Anonymous Symbol]
+    ym_ccp.o(.text.CCP_IRQHandler) refers to ym_ccp.o(.bss.CCP_IRQHandler.control_times) for [Anonymous Symbol]
+    ym_ccp.o(.ARM.exidx.text.CCP_IRQHandler) refers to ym_ccp.o(.text.CCP_IRQHandler) for [Anonymous Symbol]
     ym_dma.o(.text.DMA_CCP0A_Config) refers to dma.o(.text.DMA_Init) for DMA_Init
     ym_dma.o(.text.DMA_CCP0A_Config) refers to dma.o(.text.DMA_Trigger) for DMA_Trigger
     ym_dma.o(.text.DMA_CCP0A_Config) refers to dma.o(.text.DMA_Start) for DMA_Start
     ym_dma.o(.ARM.exidx.text.DMA_CCP0A_Config) refers to ym_dma.o(.text.DMA_CCP0A_Config) for [Anonymous Symbol]
-    ym_rgb.o(.text.RGB_GetColorBuffPoint) refers to ym_rgb.o(.bss.RGB_DataStracture) for RGB_DataStracture
+    ym_rgb.o(.text.RGB_GetColorBuffPoint) refers to ccp.o(.text.CCP_EnableRun) for CCP_EnableRun
+    ym_rgb.o(.text.RGB_GetColorBuffPoint) refers to ccp.o(.text.CCP_Start) for CCP_Start
+    ym_rgb.o(.text.RGB_GetColorBuffPoint) refers to ym_rgb.o(.bss.PurpleBuff) for PurpleBuff
+    ym_rgb.o(.text.RGB_GetColorBuffPoint) refers to ym_rgb.o(.bss.CyanBuff) for CyanBuff
+    ym_rgb.o(.text.RGB_GetColorBuffPoint) refers to ym_rgb.o(.bss.WhiteBuff) for WhiteBuff
     ym_rgb.o(.ARM.exidx.text.RGB_GetColorBuffPoint) refers to ym_rgb.o(.text.RGB_GetColorBuffPoint) for [Anonymous Symbol]
     ym_rgb.o(.text.RGB_Init_Config) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
     ym_rgb.o(.text.RGB_Init_Config) refers to ym_rgb.o(.text.RGB_DataInit) for RGB_DataInit
     ym_rgb.o(.text.RGB_Init_Config) refers to ym_rgb.o(.bss.RGB_DataStracture) for RGB_DataStracture
     ym_rgb.o(.ARM.exidx.text.RGB_Init_Config) refers to ym_rgb.o(.text.RGB_Init_Config) for [Anonymous Symbol]
     ym_rgb.o(.text.RGB_DataInit) refers to ym_rgb.o(.text.getCamplarBuff) for getCamplarBuff
+    ym_rgb.o(.text.RGB_DataInit) refers to ym_rgb.o(.text.RGB_GetColorBuffPoint) for RGB_GetColorBuffPoint
     ym_rgb.o(.ARM.exidx.text.RGB_DataInit) refers to ym_rgb.o(.text.RGB_DataInit) for [Anonymous Symbol]
+    ym_rgb.o(.text.getCamplarBuff) refers to ym_rgb.o(.bss.PurpleBuff) for PurpleBuff
+    ym_rgb.o(.text.getCamplarBuff) refers to ym_rgb.o(.bss.CyanBuff) for CyanBuff
+    ym_rgb.o(.text.getCamplarBuff) refers to ym_rgb.o(.bss.WhiteBuff) for WhiteBuff
     ym_rgb.o(.ARM.exidx.text.getCamplarBuff) refers to ym_rgb.o(.text.getCamplarBuff) for [Anonymous Symbol]
     ym_timer.o(.text.TIMER0_Init_Config) refers to cgc.o(.text.CGC_PER11PeriphClockCmd) for CGC_PER11PeriphClockCmd
     ym_timer.o(.text.TIMER0_Init_Config) refers to timer.o(.text.TMR_ConfigClk) for TMR_ConfigClk
     ym_timer.o(.text.TIMER0_Init_Config) refers to timer.o(.text.TMR_ConfigRunMode) for TMR_ConfigRunMode
     ym_timer.o(.text.TIMER0_Init_Config) refers to timer.o(.text.TMR_DisableOneShotMode) for TMR_DisableOneShotMode
     ym_timer.o(.text.TIMER0_Init_Config) refers to timer.o(.text.TMR_SetPeriod) for TMR_SetPeriod
-    ym_timer.o(.text.TIMER0_Init_Config) refers to timer.o(.text.TMR_EnableOverflowInt) for TMR_EnableOverflowInt
-    ym_timer.o(.text.TIMER0_Init_Config) refers to ym_timer.o(.text.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
-    ym_timer.o(.text.TIMER0_Init_Config) refers to ym_timer.o(.text.__NVIC_SetPriority) for __NVIC_SetPriority
     ym_timer.o(.text.TIMER0_Init_Config) refers to timer.o(.text.TMR_Start) for TMR_Start
     ym_timer.o(.ARM.exidx.text.TIMER0_Init_Config) refers to ym_timer.o(.text.TIMER0_Init_Config) for [Anonymous Symbol]
-    ym_timer.o(.ARM.exidx.text.__NVIC_EnableIRQ) refers to ym_timer.o(.text.__NVIC_EnableIRQ) for [Anonymous Symbol]
-    ym_timer.o(.ARM.exidx.text.__NVIC_SetPriority) refers to ym_timer.o(.text.__NVIC_SetPriority) for [Anonymous Symbol]
     ym_timer.o(.text.TIMER0_IRQHandler) refers to timer.o(.text.TMR_GetOverflowIntFlag) for TMR_GetOverflowIntFlag
     ym_timer.o(.text.TIMER0_IRQHandler) refers to timer.o(.text.TMR_ClearOverflowIntFlag) for TMR_ClearOverflowIntFlag
     ym_timer.o(.ARM.exidx.text.TIMER0_IRQHandler) refers to ym_timer.o(.text.TIMER0_IRQHandler) for [Anonymous Symbol]
@@ -61,14 +84,6 @@ Section Cross References
     ym_uart.o(.ARM.exidx.text.UART0_Config) refers to ym_uart.o(.text.UART0_Config) for [Anonymous Symbol]
     ym_uart.o(.ARM.exidx.text.Uart0_putchar) refers to ym_uart.o(.text.Uart0_putchar) for [Anonymous Symbol]
     ym_uart.o(.ARM.exidx.text.Uart0_getchar) refers to ym_uart.o(.text.Uart0_getchar) for [Anonymous Symbol]
-    ym_led.o(.text.LED_Init_Config) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
-    ym_led.o(.text.LED_Init_Config) refers to gpio.o(.text.PORT_SetBit) for PORT_SetBit
-    ym_led.o(.ARM.exidx.text.LED_Init_Config) refers to ym_led.o(.text.LED_Init_Config) for [Anonymous Symbol]
-    ym_led.o(.text.GPIO_Init_Config) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
-    ym_led.o(.text.GPIO_Init_Config) refers to gpio.o(.text.PORT_SetBit) for PORT_SetBit
-    ym_led.o(.ARM.exidx.text.GPIO_Init_Config) refers to ym_led.o(.text.GPIO_Init_Config) for [Anonymous Symbol]
-    ym_touch.o(.text.Touch_Init_Config) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
-    ym_touch.o(.ARM.exidx.text.Touch_Init_Config) refers to ym_touch.o(.text.Touch_Init_Config) for [Anonymous Symbol]
     ym_epwm.o(.text.EPWM_Init_Config) refers to cgc.o(.text.CGC_PER11PeriphClockCmd) for CGC_PER11PeriphClockCmd
     ym_epwm.o(.text.EPWM_Init_Config) refers to epwm.o(.text.EPWM_ConfigRunMode) for EPWM_ConfigRunMode
     ym_epwm.o(.text.EPWM_Init_Config) refers to epwm.o(.text.EPWM_ConfigChannelClk) for EPWM_ConfigChannelClk
@@ -104,6 +119,16 @@ Section Cross References
     bsp_systick.o(.ARM.exidx.text.__NVIC_SetPriority) refers to bsp_systick.o(.text.__NVIC_SetPriority) for [Anonymous Symbol]
     sys_optionbyte.o(ram_fetch_code) refers to flash.o(ram_fetch_code) for flashRead
     sys_optionbyte.o(.ARM.exidxram_fetch_code) refers to sys_optionbyte.o(ram_fetch_code) for [Anonymous Symbol]
+    ym_gpio.o(.text.LED_Init_Config) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
+    ym_gpio.o(.text.LED_Init_Config) refers to gpio.o(.text.PORT_SetBit) for PORT_SetBit
+    ym_gpio.o(.ARM.exidx.text.LED_Init_Config) refers to ym_gpio.o(.text.LED_Init_Config) for [Anonymous Symbol]
+    ym_gpio.o(.text.GPIO_Init_Config) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
+    ym_gpio.o(.text.GPIO_Init_Config) refers to gpio.o(.text.PORT_SetBit) for PORT_SetBit
+    ym_gpio.o(.ARM.exidx.text.GPIO_Init_Config) refers to ym_gpio.o(.text.GPIO_Init_Config) for [Anonymous Symbol]
+    ym_gpio.o(.text.KEY_Init_Config) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
+    ym_gpio.o(.ARM.exidx.text.KEY_Init_Config) refers to ym_gpio.o(.text.KEY_Init_Config) for [Anonymous Symbol]
+    ym_gpio.o(.text.Touch_Init_Config) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
+    ym_gpio.o(.ARM.exidx.text.Touch_Init_Config) refers to ym_gpio.o(.text.Touch_Init_Config) for [Anonymous Symbol]
     dma.o(.text.DMA_Init) refers to cgc.o(.text.CGC_PER10PeriphClockCmd) for CGC_PER10PeriphClockCmd
     dma.o(.ARM.exidx.text.DMA_Init) refers to dma.o(.text.DMA_Init) for [Anonymous Symbol]
     dma.o(.ARM.exidx.text.DMA_Start) refers to dma.o(.text.DMA_Start) for [Anonymous Symbol]
@@ -320,6 +345,7 @@ Section Cross References
     startup_cms32m67xx.o(RESET) refers to system_cms32m67xx.o(.text.HardFault_Handler) for HardFault_Handler
     startup_cms32m67xx.o(RESET) refers to bsp_systick.o(.text.SysTick_Handler) for SysTick_Handler
     startup_cms32m67xx.o(RESET) refers to system_cms32m67xx.o(.text.LVI_IRQHandler) for LVI_IRQHandler
+    startup_cms32m67xx.o(RESET) refers to ym_ccp.o(.text.CCP_IRQHandler) for CCP_IRQHandler
     startup_cms32m67xx.o(RESET) refers to ym_timer.o(.text.TIMER0_IRQHandler) for TIMER0_IRQHandler
     startup_cms32m67xx.o(.text) refers to system_cms32m67xx.o(.text.SystemInit) for SystemInit
     startup_cms32m67xx.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
@@ -327,7 +353,6 @@ Section Cross References
     system_cms32m67xx.o(.text.SystemCoreClockUpdate) refers to system_cms32m67xx.o(.text.CLK_GetHocoFreq) for CLK_GetHocoFreq
     system_cms32m67xx.o(.text.SystemCoreClockUpdate) refers to system_cms32m67xx.o(.data.SystemCoreClock) for SystemCoreClock
     system_cms32m67xx.o(.ARM.exidx.text.SystemCoreClockUpdate) refers to system_cms32m67xx.o(.text.SystemCoreClockUpdate) for [Anonymous Symbol]
-    system_cms32m67xx.o(.text.SystemInit) refers to sys_optionbyte.o(ram_fetch_code) for Option_Byte_Config
     system_cms32m67xx.o(.text.SystemInit) refers to system_cms32m67xx.o(.text.CLK_GetHocoFreq) for CLK_GetHocoFreq
     system_cms32m67xx.o(.text.SystemInit) refers to system_cms32m67xx.o(.data.SystemCoreClock) for SystemCoreClock
     system_cms32m67xx.o(.ARM.exidx.text.SystemInit) refers to system_cms32m67xx.o(.text.SystemInit) for [Anonymous Symbol]
@@ -373,29 +398,21 @@ Removing Unused input sections from the image.
     Removing retarget.o(.bss.__stdout), (84 bytes).
     Removing retarget.o(.bss.__stdin), (84 bytes).
     Removing ym_ccp.o(.text), (0 bytes).
-    Removing ym_ccp.o(.text.CCP_Init_Config), (96 bytes).
     Removing ym_ccp.o(.ARM.exidx.text.CCP_Init_Config), (8 bytes).
+    Removing ym_ccp.o(.ARM.exidx.text.__NVIC_SetPriority), (8 bytes).
+    Removing ym_ccp.o(.ARM.exidx.text.__NVIC_EnableIRQ), (8 bytes).
+    Removing ym_ccp.o(.ARM.exidx.text.CCP_IRQHandler), (8 bytes).
     Removing ym_dma.o(.text), (0 bytes).
     Removing ym_dma.o(.text.DMA_CCP0A_Config), (76 bytes).
     Removing ym_dma.o(.ARM.exidx.text.DMA_CCP0A_Config), (8 bytes).
     Removing ym_rgb.o(.text), (0 bytes).
-    Removing ym_rgb.o(.text.RGB_GetColorBuffPoint), (68 bytes).
     Removing ym_rgb.o(.ARM.exidx.text.RGB_GetColorBuffPoint), (8 bytes).
-    Removing ym_rgb.o(.text.RGB_Init_Config), (40 bytes).
     Removing ym_rgb.o(.ARM.exidx.text.RGB_Init_Config), (8 bytes).
-    Removing ym_rgb.o(.text.RGB_DataInit), (58 bytes).
     Removing ym_rgb.o(.ARM.exidx.text.RGB_DataInit), (8 bytes).
-    Removing ym_rgb.o(.text.getCamplarBuff), (320 bytes).
     Removing ym_rgb.o(.ARM.exidx.text.getCamplarBuff), (8 bytes).
-    Removing ym_rgb.o(.bss.RGB_DataStracture), (76 bytes).
     Removing ym_rgb.o(.bss.breath), (1 bytes).
     Removing ym_timer.o(.text), (0 bytes).
-    Removing ym_timer.o(.text.TIMER0_Init_Config), (84 bytes).
     Removing ym_timer.o(.ARM.exidx.text.TIMER0_Init_Config), (8 bytes).
-    Removing ym_timer.o(.text.__NVIC_EnableIRQ), (44 bytes).
-    Removing ym_timer.o(.ARM.exidx.text.__NVIC_EnableIRQ), (8 bytes).
-    Removing ym_timer.o(.text.__NVIC_SetPriority), (132 bytes).
-    Removing ym_timer.o(.ARM.exidx.text.__NVIC_SetPriority), (8 bytes).
     Removing ym_timer.o(.ARM.exidx.text.TIMER0_IRQHandler), (8 bytes).
     Removing ym_uart.o(.text), (0 bytes).
     Removing ym_uart.o(.text.UART0_Config), (92 bytes).
@@ -404,15 +421,7 @@ Removing Unused input sections from the image.
     Removing ym_uart.o(.ARM.exidx.text.Uart0_putchar), (8 bytes).
     Removing ym_uart.o(.text.Uart0_getchar), (32 bytes).
     Removing ym_uart.o(.ARM.exidx.text.Uart0_getchar), (8 bytes).
-    Removing ym_led.o(.text), (0 bytes).
-    Removing ym_led.o(.text.LED_Init_Config), (110 bytes).
-    Removing ym_led.o(.ARM.exidx.text.LED_Init_Config), (8 bytes).
-    Removing ym_led.o(.ARM.exidx.text.GPIO_Init_Config), (8 bytes).
-    Removing ym_touch.o(.text), (0 bytes).
-    Removing ym_touch.o(.text.Touch_Init_Config), (14 bytes).
-    Removing ym_touch.o(.ARM.exidx.text.Touch_Init_Config), (8 bytes).
     Removing ym_epwm.o(.text), (0 bytes).
-    Removing ym_epwm.o(.text.EPWM_Init_Config), (424 bytes).
     Removing ym_epwm.o(.ARM.exidx.text.EPWM_Init_Config), (8 bytes).
     Removing bsp_systick.o(.text), (0 bytes).
     Removing bsp_systick.o(.ARM.exidx.text.Systick_Init_Config), (8 bytes).
@@ -423,11 +432,18 @@ Removing Unused input sections from the image.
     Removing bsp_systick.o(.ARM.exidx.text.SysTick_Delay_ms), (8 bytes).
     Removing bsp_systick.o(.text.Delay_us), (48 bytes).
     Removing bsp_systick.o(.ARM.exidx.text.Delay_us), (8 bytes).
+    Removing bsp_systick.o(.text.Delay_ms), (52 bytes).
     Removing bsp_systick.o(.ARM.exidx.text.Delay_ms), (8 bytes).
     Removing bsp_systick.o(.ARM.exidx.text.SysTick_Handler), (8 bytes).
     Removing bsp_systick.o(.ARM.exidx.text.__NVIC_SetPriority), (8 bytes).
     Removing sys_optionbyte.o(.text), (0 bytes).
+    Removing sys_optionbyte.o(ram_fetch_code), (248 bytes).
     Removing sys_optionbyte.o(.ARM.exidxram_fetch_code), (8 bytes).
+    Removing ym_gpio.o(.text), (0 bytes).
+    Removing ym_gpio.o(.ARM.exidx.text.LED_Init_Config), (8 bytes).
+    Removing ym_gpio.o(.ARM.exidx.text.GPIO_Init_Config), (8 bytes).
+    Removing ym_gpio.o(.ARM.exidx.text.KEY_Init_Config), (8 bytes).
+    Removing ym_gpio.o(.ARM.exidx.text.Touch_Init_Config), (8 bytes).
     Removing dma.o(.text), (0 bytes).
     Removing dma.o(.text.DMA_Init), (268 bytes).
     Removing dma.o(.ARM.exidx.text.DMA_Init), (8 bytes).
@@ -449,6 +465,7 @@ Removing Unused input sections from the image.
     Removing delay.o(.bss.Value_us), (1 bytes).
     Removing gpio.o(.text), (0 bytes).
     Removing gpio.o(.ARM.exidx.text.PORT_SetBit), (8 bytes).
+    Removing gpio.o(.text.PORT_ClrBit), (44 bytes).
     Removing gpio.o(.ARM.exidx.text.PORT_ClrBit), (8 bytes).
     Removing gpio.o(.text.PORT_ToggleBit), (44 bytes).
     Removing gpio.o(.ARM.exidx.text.PORT_ToggleBit), (8 bytes).
@@ -464,19 +481,14 @@ Removing Unused input sections from the image.
     Removing gpio.o(.text.RESTPinGpio_Set), (40 bytes).
     Removing gpio.o(.ARM.exidx.text.RESTPinGpio_Set), (8 bytes).
     Removing timer.o(.text), (0 bytes).
-    Removing timer.o(.text.TMR_Start), (18 bytes).
     Removing timer.o(.ARM.exidx.text.TMR_Start), (8 bytes).
     Removing timer.o(.text.TMR_Stop), (18 bytes).
     Removing timer.o(.ARM.exidx.text.TMR_Stop), (8 bytes).
-    Removing timer.o(.text.TMR_ConfigRunMode), (36 bytes).
     Removing timer.o(.ARM.exidx.text.TMR_ConfigRunMode), (8 bytes).
     Removing timer.o(.text.TMR_EnableOneShotMode), (18 bytes).
     Removing timer.o(.ARM.exidx.text.TMR_EnableOneShotMode), (8 bytes).
-    Removing timer.o(.text.TMR_DisableOneShotMode), (18 bytes).
     Removing timer.o(.ARM.exidx.text.TMR_DisableOneShotMode), (8 bytes).
-    Removing timer.o(.text.TMR_ConfigClk), (30 bytes).
     Removing timer.o(.ARM.exidx.text.TMR_ConfigClk), (8 bytes).
-    Removing timer.o(.text.TMR_SetPeriod), (16 bytes).
     Removing timer.o(.ARM.exidx.text.TMR_SetPeriod), (8 bytes).
     Removing timer.o(.text.TMR_EnableOverflowInt), (18 bytes).
     Removing timer.o(.ARM.exidx.text.TMR_EnableOverflowInt), (8 bytes).
@@ -487,25 +499,17 @@ Removing Unused input sections from the image.
     Removing timer.o(.text.TMR_GetTimingData), (12 bytes).
     Removing timer.o(.ARM.exidx.text.TMR_GetTimingData), (8 bytes).
     Removing ccp.o(.text), (0 bytes).
-    Removing ccp.o(.text.CCP_Start), (72 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_Start), (8 bytes).
-    Removing ccp.o(.text.CCP_Stop), (72 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_Stop), (8 bytes).
-    Removing ccp.o(.text.CCP_ConfigCLK), (128 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_ConfigCLK), (8 bytes).
-    Removing ccp.o(.text.CCP_EnableRun), (40 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_EnableRun), (8 bytes).
-    Removing ccp.o(.text.CCP_DisableRun), (40 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_DisableRun), (8 bytes).
-    Removing ccp.o(.text.CCP_EnablePWMMode), (72 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_EnablePWMMode), (8 bytes).
     Removing ccp.o(.text.CCP_EnablePWMHalfCycleMode), (144 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_EnablePWMHalfCycleMode), (8 bytes).
     Removing ccp.o(.text.CCP_DisablePWMHalfCycleMode), (144 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_DisablePWMHalfCycleMode), (8 bytes).
-    Removing ccp.o(.text.CCP_ConfigCompare), (176 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_ConfigCompare), (8 bytes).
-    Removing ccp.o(.text.CCP_EnableReverseOutput), (148 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_EnableReverseOutput), (8 bytes).
     Removing ccp.o(.text.CCP_DisableReverseOutput), (148 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_DisableReverseOutput), (8 bytes).
@@ -517,13 +521,10 @@ Removing Unused input sections from the image.
     Removing ccp.o(.ARM.exidx.text.CCP_GetOverflowIntFlag), (8 bytes).
     Removing ccp.o(.text.CCP_ClearOverflowIntFlag), (28 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_ClearOverflowIntFlag), (8 bytes).
-    Removing ccp.o(.text.CCP_EnableCompareInt), (40 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_EnableCompareInt), (8 bytes).
     Removing ccp.o(.text.CCP_DisableCompareInt), (40 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_DisableCompareInt), (8 bytes).
-    Removing ccp.o(.text.CCP_GetCompareIntFlag), (24 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_GetCompareIntFlag), (8 bytes).
-    Removing ccp.o(.text.CCP_ClearCompareIntFlag), (28 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_ClearCompareIntFlag), (8 bytes).
     Removing ccp.o(.text.CCP_EnableCAPMode0), (88 bytes).
     Removing ccp.o(.ARM.exidx.text.CCP_EnableCAPMode0), (8 bytes).
@@ -609,7 +610,6 @@ Removing Unused input sections from the image.
     Removing cgc.o(.ARM.exidx.text.CGC_PER0PeriphClockCmd), (8 bytes).
     Removing cgc.o(.text.CGC_PER10PeriphClockCmd), (52 bytes).
     Removing cgc.o(.ARM.exidx.text.CGC_PER10PeriphClockCmd), (8 bytes).
-    Removing cgc.o(.text.CGC_PER11PeriphClockCmd), (48 bytes).
     Removing cgc.o(.ARM.exidx.text.CGC_PER11PeriphClockCmd), (8 bytes).
     Removing cgc.o(.text.CGC_PER12PeriphClockCmd), (48 bytes).
     Removing cgc.o(.ARM.exidx.text.CGC_PER12PeriphClockCmd), (8 bytes).
@@ -660,41 +660,31 @@ Removing Unused input sections from the image.
     Removing cgc.o(.bss.USE_LSE_SYSTYEM_CLOCK), (1 bytes).
     Removing cgc.o(.bss.USE_LSI_SYSTYEM_CLOCK), (1 bytes).
     Removing epwm.o(.text), (0 bytes).
-    Removing epwm.o(.text.EPWM_ConfigRunMode), (48 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_ConfigRunMode), (8 bytes).
-    Removing epwm.o(.text.EPWM_ConfigChannelClk), (72 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_ConfigChannelClk), (8 bytes).
-    Removing epwm.o(.text.EPWM_ConfigChannelPeriod), (60 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_ConfigChannelPeriod), (8 bytes).
-    Removing epwm.o(.text.EPWM_ConfigChannelSymDuty), (88 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_ConfigChannelSymDuty), (8 bytes).
     Removing epwm.o(.text.EPWM_ConfigChannelAsymDuty), (68 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_ConfigChannelAsymDuty), (8 bytes).
     Removing epwm.o(.text.EPWM_EnableOneShotMode), (36 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_EnableOneShotMode), (8 bytes).
-    Removing epwm.o(.text.EPWM_EnableAutoLoadMode), (36 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_EnableAutoLoadMode), (8 bytes).
-    Removing epwm.o(.text.EPWM_ConfigLoadAndIntMode), (64 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_ConfigLoadAndIntMode), (8 bytes).
     Removing epwm.o(.text.EPWM_EnableEventLoad), (40 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_EnableEventLoad), (8 bytes).
     Removing epwm.o(.text.EPWM_EnableReverseOutput), (40 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_EnableReverseOutput), (8 bytes).
-    Removing epwm.o(.text.EPWM_DisableReverseOutput), (40 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_DisableReverseOutput), (8 bytes).
     Removing epwm.o(.text.EPWM_EnableDeadZone), (448 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_EnableDeadZone), (8 bytes).
-    Removing epwm.o(.text.EPWM_DisableDeadZone), (144 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_DisableDeadZone), (8 bytes).
     Removing epwm.o(.text.EPWM_EnableChannelRemap), (68 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_EnableChannelRemap), (8 bytes).
     Removing epwm.o(.text.EPWM_DisableChannelRemap), (32 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_DisableChannelRemap), (8 bytes).
-    Removing epwm.o(.text.EPWM_EnableOutput), (36 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_EnableOutput), (8 bytes).
     Removing epwm.o(.text.EPWM_DisableOutput), (36 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_DisableOutput), (8 bytes).
-    Removing epwm.o(.text.EPWM_Start), (36 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_Start), (8 bytes).
     Removing epwm.o(.text.EPWM_Stop), (52 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_Stop), (8 bytes).
@@ -722,7 +712,6 @@ Removing Unused input sections from the image.
     Removing epwm.o(.ARM.exidx.text.EPWM_ClearHallErrorState), (8 bytes).
     Removing epwm.o(.text.EPWM_AllBrakeEnable), (32 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_AllBrakeEnable), (8 bytes).
-    Removing epwm.o(.text.EPWM_AllBrakeDisable), (32 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_AllBrakeDisable), (8 bytes).
     Removing epwm.o(.text.EPWM_ConfigBrakeMode), (48 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_ConfigBrakeMode), (8 bytes).
@@ -831,6 +820,7 @@ Removing Unused input sections from the image.
     Removing epwm.o(.text.EPWM_DisableDebugSuspend), (32 bytes).
     Removing epwm.o(.ARM.exidx.text.EPWM_DisableDebugSuspend), (8 bytes).
     Removing flash.o(.text), (0 bytes).
+    Removing flash.o(ram_fetch_code), (940 bytes).
     Removing flash.o(.ARM.exidxram_fetch_code), (40 bytes).
     Removing startup_cms32m67xx.o(HEAP), (256 bytes).
     Removing system_cms32m67xx.o(.text), (0 bytes).
@@ -844,7 +834,7 @@ Removing Unused input sections from the image.
     Removing system_cms32m67xx.o(.data.SystemAPBClock), (4 bytes).
     Removing system_cms32m67xx.o(.data.CyclesPerUs), (4 bytes).
 
-486 unused section(s) (total 13916 bytes) removed from the image.
+451 unused section(s) (total 12088 bytes) removed from the image.
 
 ==============================================================================
 
@@ -878,10 +868,9 @@ Image Symbol Table
     YM_ccp.c                                 0x00000000   Number         0  ym_ccp.o ABSOLUTE
     YM_dma.c                                 0x00000000   Number         0  ym_dma.o ABSOLUTE
     YM_epwm.c                                0x00000000   Number         0  ym_epwm.o ABSOLUTE
-    YM_led.c                                 0x00000000   Number         0  ym_led.o ABSOLUTE
+    YM_gpio.c                                0x00000000   Number         0  ym_gpio.o ABSOLUTE
     YM_rgb.c                                 0x00000000   Number         0  ym_rgb.o ABSOLUTE
     YM_timer.c                               0x00000000   Number         0  ym_timer.o ABSOLUTE
-    YM_touch.c                               0x00000000   Number         0  ym_touch.o ABSOLUTE
     YM_uart.c                                0x00000000   Number         0  ym_uart.o ABSOLUTE
     bsp_SysTick.c                            0x00000000   Number         0  bsp_systick.o ABSOLUTE
     ccp.c                                    0x00000000   Number         0  ccp.o ABSOLUTE
@@ -900,120 +889,204 @@ Image Symbol Table
     timer.c                                  0x00000000   Number         0  timer.o ABSOLUTE
     uart.c                                   0x00000000   Number         0  uart.o ABSOLUTE
     RESET                                    0x00000000   Section      192  startup_cms32m67xx.o(RESET)
-    .ARM.Collect$$$$00000000                 0x000000c0   Section        0  entry.o(.ARM.Collect$$$$00000000)
-    .ARM.Collect$$$$00000001                 0x000000c0   Section        4  entry2.o(.ARM.Collect$$$$00000001)
-    .ARM.Collect$$$$00000004                 0x000000c4   Section        4  entry5.o(.ARM.Collect$$$$00000004)
-    .ARM.Collect$$$$00000008                 0x000000c8   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
-    .ARM.Collect$$$$0000000A                 0x000000c8   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
-    .ARM.Collect$$$$0000000B                 0x000000c8   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
-    __lit__00000000                          0x000000d0   Data           4  entry2.o(.ARM.Collect$$$$00002712)
-    .ARM.Collect$$$$0000000D                 0x000000d0   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
-    .ARM.Collect$$$$0000000F                 0x000000d0   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
-    .ARM.Collect$$$$00002712                 0x000000d0   Section        4  entry2.o(.ARM.Collect$$$$00002712)
-    .text                                    0x000000d4   Section       32  startup_cms32m67xx.o(.text)
-    .text                                    0x000000f4   Section       48  init.o(.text)
-    [Anonymous Symbol]                       0x00000124   Section        0  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_0                             0x00000204   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_1                             0x00000208   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_2                             0x0000020c   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_3                             0x00000210   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_4                             0x00000214   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_5                             0x00000218   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_6                             0x0000021c   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_7                             0x00000220   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_8                             0x00000224   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_9                             0x00000228   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_10                            0x0000022c   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_11                            0x00000230   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    __arm_cp.0_12                            0x00000234   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    [Anonymous Symbol]                       0x00000238   Section        0  bsp_systick.o(.text.Delay_ms)
-    [Anonymous Symbol]                       0x00000264   Section        0  gpio.o(.text.GPIO_Init)
-    __arm_cp.7_0                             0x00000420   Number         4  gpio.o(.text.GPIO_Init)
-    __arm_cp.7_1                             0x00000424   Number         4  gpio.o(.text.GPIO_Init)
-    __arm_cp.7_2                             0x00000428   Number         4  gpio.o(.text.GPIO_Init)
-    __arm_cp.7_3                             0x0000042c   Number         4  gpio.o(.text.GPIO_Init)
-    __arm_cp.7_4                             0x00000430   Number         4  gpio.o(.text.GPIO_Init)
-    [Anonymous Symbol]                       0x00000434   Section        0  ym_led.o(.text.GPIO_Init_Config)
-    [Anonymous Symbol]                       0x00000452   Section        0  system_cms32m67xx.o(.text.HardFault_Handler)
-    [Anonymous Symbol]                       0x00000456   Section        0  system_cms32m67xx.o(.text.LVI_IRQHandler)
-    [Anonymous Symbol]                       0x00000460   Section        0  gpio.o(.text.PORT_ClrBit)
-    __arm_cp.1_0                             0x00000488   Number         4  gpio.o(.text.PORT_ClrBit)
-    [Anonymous Symbol]                       0x0000048c   Section        0  gpio.o(.text.PORT_SetBit)
-    __arm_cp.0_0                             0x000004b0   Number         4  gpio.o(.text.PORT_SetBit)
-    SysTick_Config                           0x000004b5   Thumb Code    68  bsp_systick.o(.text.SysTick_Config)
-    [Anonymous Symbol]                       0x000004b4   Section        0  bsp_systick.o(.text.SysTick_Config)
-    __arm_cp.1_0                             0x000004f8   Number         4  bsp_systick.o(.text.SysTick_Config)
-    __arm_cp.1_1                             0x000004fc   Number         4  bsp_systick.o(.text.SysTick_Config)
-    __arm_cp.1_2                             0x00000500   Number         4  bsp_systick.o(.text.SysTick_Config)
-    [Anonymous Symbol]                       0x00000504   Section        0  bsp_systick.o(.text.SysTick_Handler)
-    __arm_cp.6_0                             0x0000051c   Number         4  bsp_systick.o(.text.SysTick_Handler)
-    [Anonymous Symbol]                       0x00000520   Section        0  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_0                             0x00000594   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_1                             0x00000598   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_2                             0x0000059c   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_3                             0x000005a0   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_4                             0x000005a4   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_5                             0x000005a8   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_6                             0x000005ac   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_8                             0x000005b0   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_10                            0x000005b4   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_11                            0x000005b8   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_12                            0x000005bc   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_13                            0x000005c0   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_14                            0x000005c4   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_15                            0x000005c8   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_16                            0x000005cc   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_17                            0x000005d0   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    __arm_cp.2_18                            0x000005d4   Number         4  system_cms32m67xx.o(.text.SystemInit)
-    [Anonymous Symbol]                       0x000005d8   Section        0  bsp_systick.o(.text.Systick_Init_Config)
-    [Anonymous Symbol]                       0x000005ec   Section        0  ym_timer.o(.text.TIMER0_IRQHandler)
-    [Anonymous Symbol]                       0x00000604   Section        0  timer.o(.text.TMR_ClearOverflowIntFlag)
-    [Anonymous Symbol]                       0x00000614   Section        0  timer.o(.text.TMR_GetOverflowIntFlag)
-    __NVIC_ClearPendingIRQ                   0x00000625   Thumb Code    40  system_cms32m67xx.o(.text.__NVIC_ClearPendingIRQ)
-    [Anonymous Symbol]                       0x00000624   Section        0  system_cms32m67xx.o(.text.__NVIC_ClearPendingIRQ)
-    __arm_cp.4_0                             0x0000064c   Number         4  system_cms32m67xx.o(.text.__NVIC_ClearPendingIRQ)
-    __NVIC_SetPriority                       0x00000651   Thumb Code   124  bsp_systick.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x00000650   Section        0  bsp_systick.o(.text.__NVIC_SetPriority)
-    __arm_cp.7_0                             0x000006cc   Number         4  bsp_systick.o(.text.__NVIC_SetPriority)
-    __arm_cp.7_1                             0x000006d0   Number         4  bsp_systick.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x000006d4   Section        0  main.o(.text.main)
-    __arm_cp.0_0                             0x00000728   Number         4  main.o(.text.main)
-    __arm_cp.0_1                             0x0000072c   Number         4  main.o(.text.main)
-    __arm_cp.0_2                             0x00000730   Number         4  main.o(.text.main)
-    __arm_cp.0_3                             0x00000734   Number         4  main.o(.text.main)
-    __arm_cp.0_4                             0x00000738   Number         4  main.o(.text.main)
-    __arm_cp.0_5                             0x0000073c   Number         4  main.o(.text.main)
-    __arm_cp.0_6                             0x00000740   Number         4  main.o(.text.main)
-    __arm_cp.0_7                             0x00000744   Number         4  main.o(.text.main)
-    __arm_cp.0_8                             0x00000748   Number         4  main.o(.text.main)
-    __arm_cp.0_9                             0x0000074c   Number         4  main.o(.text.main)
-    i.__scatterload_copy                     0x00000750   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x0000075e   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00000760   Section       14  handlers.o(i.__scatterload_zeroinit)
-    [Anonymous Symbol]                       0x00000770   Section        0  sys_optionbyte.o(ram_fetch_code)
-    [Anonymous Symbol]                       0x00000850   Section        0  flash.o(ram_fetch_code)
-    __arm_cp.0_0                             0x000008a0   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.0_1                             0x000008a4   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.0_2                             0x000008a8   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.0_3                             0x000008ac   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.0_4                             0x000008b0   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.1_0                             0x00000924   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.1_1                             0x00000928   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.1_2                             0x0000092c   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.1_3                             0x00000930   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.1_4                             0x00000934   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.2_0                             0x000009a8   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.2_1                             0x000009ac   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.2_2                             0x000009b0   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.2_3                             0x000009b4   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.3_0                             0x00000bac   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.3_1                             0x00000bb0   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.3_2                             0x00000bb4   Number         4  flash.o(ram_fetch_code)
-    __arm_cp.3_3                             0x00000bb8   Number         4  flash.o(ram_fetch_code)
-    __tagsym$$used.0                         0x00000bfc   Number         0  system_cms32m67xx.o(.option_byte)
-    Ticks                                    0x2000001c   Data           4  bsp_systick.o(.bss.Ticks)
-    [Anonymous Symbol]                       0x2000001c   Section        0  bsp_systick.o(.bss.Ticks)
-    STACK                                    0x20000020   Section     1024  startup_cms32m67xx.o(STACK)
+    __tagsym$$used.0                         0x000000c0   Number         0  system_cms32m67xx.o(.ARM.__AT_0x000000C0)
+    .ARM.Collect$$$$00000000                 0x000000c4   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000c4   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000c8   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000cc   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000000cc   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000000cc   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    __lit__00000000                          0x000000d4   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .ARM.Collect$$$$0000000D                 0x000000d4   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000000d4   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000000d4   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000d8   Section       32  startup_cms32m67xx.o(.text)
+    .text                                    0x000000f8   Section       36  init.o(.text)
+    [Anonymous Symbol]                       0x0000011c   Section        0  ccp.o(.text.CCP_ClearCompareIntFlag)
+    __arm_cp.18_0                            0x00000134   Number         4  ccp.o(.text.CCP_ClearCompareIntFlag)
+    [Anonymous Symbol]                       0x00000138   Section        0  ccp.o(.text.CCP_ConfigCLK)
+    __arm_cp.2_2                             0x000001a4   Number         4  ccp.o(.text.CCP_ConfigCLK)
+    __arm_cp.2_4                             0x000001a8   Number         4  ccp.o(.text.CCP_ConfigCLK)
+    [Anonymous Symbol]                       0x000001ac   Section        0  ccp.o(.text.CCP_ConfigCompare)
+    __arm_cp.8_3                             0x00000248   Number         4  ccp.o(.text.CCP_ConfigCompare)
+    __arm_cp.8_4                             0x0000024c   Number         4  ccp.o(.text.CCP_ConfigCompare)
+    [Anonymous Symbol]                       0x00000250   Section        0  ccp.o(.text.CCP_DisableRun)
+    [Anonymous Symbol]                       0x00000270   Section        0  ccp.o(.text.CCP_EnableCompareInt)
+    __arm_cp.15_1                            0x00000290   Number         4  ccp.o(.text.CCP_EnableCompareInt)
+    [Anonymous Symbol]                       0x00000294   Section        0  ccp.o(.text.CCP_EnablePWMMode)
+    __arm_cp.5_1                             0x000002d0   Number         4  ccp.o(.text.CCP_EnablePWMMode)
+    [Anonymous Symbol]                       0x000002d4   Section        0  ccp.o(.text.CCP_EnableReverseOutput)
+    __arm_cp.9_2                             0x00000358   Number         4  ccp.o(.text.CCP_EnableReverseOutput)
+    [Anonymous Symbol]                       0x0000035c   Section        0  ccp.o(.text.CCP_EnableRun)
+    __arm_cp.3_1                             0x0000037c   Number         4  ccp.o(.text.CCP_EnableRun)
+    [Anonymous Symbol]                       0x00000380   Section        0  ccp.o(.text.CCP_GetCompareIntFlag)
+    __arm_cp.17_0                            0x00000394   Number         4  ccp.o(.text.CCP_GetCompareIntFlag)
+    [Anonymous Symbol]                       0x00000398   Section        0  ym_ccp.o(.text.CCP_IRQHandler)
+    __arm_cp.3_0                             0x00000468   Number         4  ym_ccp.o(.text.CCP_IRQHandler)
+    __arm_cp.3_1                             0x0000046c   Number         4  ym_ccp.o(.text.CCP_IRQHandler)
+    __arm_cp.3_2                             0x00000470   Number         4  ym_ccp.o(.text.CCP_IRQHandler)
+    __arm_cp.3_3                             0x00000474   Number         4  ym_ccp.o(.text.CCP_IRQHandler)
+    __arm_cp.3_4                             0x00000478   Number         4  ym_ccp.o(.text.CCP_IRQHandler)
+    __arm_cp.3_5                             0x0000047c   Number         4  ym_ccp.o(.text.CCP_IRQHandler)
+    [Anonymous Symbol]                       0x00000480   Section        0  ym_ccp.o(.text.CCP_Init_Config)
+    __arm_cp.0_0                             0x000004f0   Number         4  ym_ccp.o(.text.CCP_Init_Config)
+    __arm_cp.0_1                             0x000004f4   Number         4  ym_ccp.o(.text.CCP_Init_Config)
+    [Anonymous Symbol]                       0x000004f8   Section        0  ccp.o(.text.CCP_Start)
+    __arm_cp.0_0                             0x00000534   Number         4  ccp.o(.text.CCP_Start)
+    __arm_cp.0_2                             0x00000538   Number         4  ccp.o(.text.CCP_Start)
+    [Anonymous Symbol]                       0x0000053c   Section        0  ccp.o(.text.CCP_Stop)
+    __arm_cp.1_0                             0x00000578   Number         4  ccp.o(.text.CCP_Stop)
+    __arm_cp.1_1                             0x0000057c   Number         4  ccp.o(.text.CCP_Stop)
+    __arm_cp.1_2                             0x00000580   Number         4  ccp.o(.text.CCP_Stop)
+    [Anonymous Symbol]                       0x00000584   Section        0  cgc.o(.text.CGC_PER11PeriphClockCmd)
+    __arm_cp.2_0                             0x000005b0   Number         4  cgc.o(.text.CGC_PER11PeriphClockCmd)
+    [Anonymous Symbol]                       0x000005b4   Section        0  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_0                             0x0000068c   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_1                             0x00000690   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_2                             0x00000694   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_3                             0x00000698   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_4                             0x0000069c   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_5                             0x000006a0   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_6                             0x000006a4   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_7                             0x000006a8   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_8                             0x000006ac   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_9                             0x000006b0   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_10                            0x000006b4   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_11                            0x000006b8   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    __arm_cp.0_12                            0x000006bc   Number         4  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    [Anonymous Symbol]                       0x000006c0   Section        0  epwm.o(.text.EPWM_AllBrakeDisable)
+    __arm_cp.31_1                            0x000006d8   Number         4  epwm.o(.text.EPWM_AllBrakeDisable)
+    [Anonymous Symbol]                       0x000006dc   Section        0  epwm.o(.text.EPWM_ConfigChannelClk)
+    __arm_cp.1_1                             0x00000714   Number         4  epwm.o(.text.EPWM_ConfigChannelClk)
+    __arm_cp.1_2                             0x00000718   Number         4  epwm.o(.text.EPWM_ConfigChannelClk)
+    __arm_cp.1_3                             0x0000071c   Number         4  epwm.o(.text.EPWM_ConfigChannelClk)
+    [Anonymous Symbol]                       0x00000720   Section        0  epwm.o(.text.EPWM_ConfigChannelPeriod)
+    __arm_cp.2_1                             0x00000750   Number         4  epwm.o(.text.EPWM_ConfigChannelPeriod)
+    [Anonymous Symbol]                       0x00000754   Section        0  epwm.o(.text.EPWM_ConfigChannelSymDuty)
+    __arm_cp.3_1                             0x000007a0   Number         4  epwm.o(.text.EPWM_ConfigChannelSymDuty)
+    [Anonymous Symbol]                       0x000007a4   Section        0  epwm.o(.text.EPWM_ConfigLoadAndIntMode)
+    __arm_cp.7_1                             0x000007dc   Number         4  epwm.o(.text.EPWM_ConfigLoadAndIntMode)
+    [Anonymous Symbol]                       0x000007e0   Section        0  epwm.o(.text.EPWM_ConfigRunMode)
+    [Anonymous Symbol]                       0x00000808   Section        0  epwm.o(.text.EPWM_DisableDeadZone)
+    [Anonymous Symbol]                       0x00000890   Section        0  epwm.o(.text.EPWM_DisableReverseOutput)
+    [Anonymous Symbol]                       0x000008b0   Section        0  epwm.o(.text.EPWM_EnableAutoLoadMode)
+    __arm_cp.6_1                             0x000008cc   Number         4  epwm.o(.text.EPWM_EnableAutoLoadMode)
+    [Anonymous Symbol]                       0x000008d0   Section        0  epwm.o(.text.EPWM_EnableOutput)
+    __arm_cp.15_0                            0x000008ec   Number         4  epwm.o(.text.EPWM_EnableOutput)
+    __arm_cp.15_1                            0x000008f0   Number         4  epwm.o(.text.EPWM_EnableOutput)
+    [Anonymous Symbol]                       0x000008f4   Section        0  ym_epwm.o(.text.EPWM_Init_Config)
+    __arm_cp.0_0                             0x00000a84   Number         4  ym_epwm.o(.text.EPWM_Init_Config)
+    __arm_cp.0_1                             0x00000a88   Number         4  ym_epwm.o(.text.EPWM_Init_Config)
+    __arm_cp.0_2                             0x00000a8c   Number         4  ym_epwm.o(.text.EPWM_Init_Config)
+    __arm_cp.0_3                             0x00000a90   Number         4  ym_epwm.o(.text.EPWM_Init_Config)
+    __arm_cp.0_4                             0x00000a94   Number         4  ym_epwm.o(.text.EPWM_Init_Config)
+    __arm_cp.0_5                             0x00000a98   Number         4  ym_epwm.o(.text.EPWM_Init_Config)
+    [Anonymous Symbol]                       0x00000a9c   Section        0  epwm.o(.text.EPWM_Start)
+    __arm_cp.17_0                            0x00000ab8   Number         4  epwm.o(.text.EPWM_Start)
+    __arm_cp.17_1                            0x00000abc   Number         4  epwm.o(.text.EPWM_Start)
+    [Anonymous Symbol]                       0x00000ac0   Section        0  gpio.o(.text.GPIO_Init)
+    __arm_cp.7_0                             0x00000c7c   Number         4  gpio.o(.text.GPIO_Init)
+    __arm_cp.7_1                             0x00000c80   Number         4  gpio.o(.text.GPIO_Init)
+    __arm_cp.7_2                             0x00000c84   Number         4  gpio.o(.text.GPIO_Init)
+    __arm_cp.7_3                             0x00000c88   Number         4  gpio.o(.text.GPIO_Init)
+    __arm_cp.7_4                             0x00000c8c   Number         4  gpio.o(.text.GPIO_Init)
+    [Anonymous Symbol]                       0x00000c90   Section        0  ym_gpio.o(.text.GPIO_Init_Config)
+    [Anonymous Symbol]                       0x00000cae   Section        0  system_cms32m67xx.o(.text.HardFault_Handler)
+    [Anonymous Symbol]                       0x00000cb2   Section        0  ym_gpio.o(.text.KEY_Init_Config)
+    [Anonymous Symbol]                       0x00000cd0   Section        0  ym_gpio.o(.text.LED_Init_Config)
+    [Anonymous Symbol]                       0x00000d3e   Section        0  system_cms32m67xx.o(.text.LVI_IRQHandler)
+    [Anonymous Symbol]                       0x00000d48   Section        0  gpio.o(.text.PORT_SetBit)
+    __arm_cp.0_0                             0x00000d6c   Number         4  gpio.o(.text.PORT_SetBit)
+    RGB_DataInit                             0x00000d71   Thumb Code    62  ym_rgb.o(.text.RGB_DataInit)
+    [Anonymous Symbol]                       0x00000d70   Section        0  ym_rgb.o(.text.RGB_DataInit)
+    [Anonymous Symbol]                       0x00000db0   Section        0  ym_rgb.o(.text.RGB_GetColorBuffPoint)
+    __arm_cp.0_0                             0x00000e20   Number         4  ym_rgb.o(.text.RGB_GetColorBuffPoint)
+    __arm_cp.0_1                             0x00000e24   Number         4  ym_rgb.o(.text.RGB_GetColorBuffPoint)
+    __arm_cp.0_2                             0x00000e28   Number         4  ym_rgb.o(.text.RGB_GetColorBuffPoint)
+    __arm_cp.0_3                             0x00000e2c   Number         4  ym_rgb.o(.text.RGB_GetColorBuffPoint)
+    [Anonymous Symbol]                       0x00000e30   Section        0  ym_rgb.o(.text.RGB_Init_Config)
+    __arm_cp.1_0                             0x00000e50   Number         4  ym_rgb.o(.text.RGB_Init_Config)
+    __arm_cp.1_1                             0x00000e54   Number         4  ym_rgb.o(.text.RGB_Init_Config)
+    SysTick_Config                           0x00000e59   Thumb Code    68  bsp_systick.o(.text.SysTick_Config)
+    [Anonymous Symbol]                       0x00000e58   Section        0  bsp_systick.o(.text.SysTick_Config)
+    __arm_cp.1_0                             0x00000e9c   Number         4  bsp_systick.o(.text.SysTick_Config)
+    __arm_cp.1_1                             0x00000ea0   Number         4  bsp_systick.o(.text.SysTick_Config)
+    __arm_cp.1_2                             0x00000ea4   Number         4  bsp_systick.o(.text.SysTick_Config)
+    [Anonymous Symbol]                       0x00000ea8   Section        0  bsp_systick.o(.text.SysTick_Handler)
+    __arm_cp.6_0                             0x00000ec0   Number         4  bsp_systick.o(.text.SysTick_Handler)
+    [Anonymous Symbol]                       0x00000ec4   Section        0  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_0                             0x00000f30   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_1                             0x00000f34   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_2                             0x00000f38   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_3                             0x00000f3c   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_4                             0x00000f40   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_5                             0x00000f44   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_6                             0x00000f48   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_10                            0x00000f4c   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_11                            0x00000f50   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_12                            0x00000f54   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_13                            0x00000f58   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_14                            0x00000f5c   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_15                            0x00000f60   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_16                            0x00000f64   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_17                            0x00000f68   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    __arm_cp.2_18                            0x00000f6c   Number         4  system_cms32m67xx.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x00000f70   Section        0  bsp_systick.o(.text.Systick_Init_Config)
+    [Anonymous Symbol]                       0x00000f84   Section        0  ym_timer.o(.text.TIMER0_IRQHandler)
+    [Anonymous Symbol]                       0x00000f9c   Section        0  ym_timer.o(.text.TIMER0_Init_Config)
+    __arm_cp.0_0                             0x00000fd8   Number         4  ym_timer.o(.text.TIMER0_Init_Config)
+    [Anonymous Symbol]                       0x00000fdc   Section        0  timer.o(.text.TMR_ClearOverflowIntFlag)
+    [Anonymous Symbol]                       0x00000fec   Section        0  timer.o(.text.TMR_ConfigClk)
+    [Anonymous Symbol]                       0x0000100a   Section        0  timer.o(.text.TMR_ConfigRunMode)
+    [Anonymous Symbol]                       0x0000102e   Section        0  timer.o(.text.TMR_DisableOneShotMode)
+    [Anonymous Symbol]                       0x00001040   Section        0  timer.o(.text.TMR_GetOverflowIntFlag)
+    [Anonymous Symbol]                       0x00001050   Section        0  timer.o(.text.TMR_SetPeriod)
+    [Anonymous Symbol]                       0x00001060   Section        0  timer.o(.text.TMR_Start)
+    [Anonymous Symbol]                       0x00001072   Section        0  ym_gpio.o(.text.Touch_Init_Config)
+    __NVIC_ClearPendingIRQ                   0x00001081   Thumb Code    40  system_cms32m67xx.o(.text.__NVIC_ClearPendingIRQ)
+    [Anonymous Symbol]                       0x00001080   Section        0  system_cms32m67xx.o(.text.__NVIC_ClearPendingIRQ)
+    __arm_cp.4_0                             0x000010a8   Number         4  system_cms32m67xx.o(.text.__NVIC_ClearPendingIRQ)
+    __NVIC_EnableIRQ                         0x000010ad   Thumb Code    40  ym_ccp.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x000010ac   Section        0  ym_ccp.o(.text.__NVIC_EnableIRQ)
+    __arm_cp.2_0                             0x000010d4   Number         4  ym_ccp.o(.text.__NVIC_EnableIRQ)
+    __NVIC_SetPriority                       0x000010d9   Thumb Code   124  ym_ccp.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x000010d8   Section        0  ym_ccp.o(.text.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x00001155   Thumb Code   124  bsp_systick.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x00001154   Section        0  bsp_systick.o(.text.__NVIC_SetPriority)
+    __arm_cp.7_0                             0x000011d0   Number         4  bsp_systick.o(.text.__NVIC_SetPriority)
+    __arm_cp.7_1                             0x000011d4   Number         4  bsp_systick.o(.text.__NVIC_SetPriority)
+    getCamplarBuff                           0x000011d9   Thumb Code   300  ym_rgb.o(.text.getCamplarBuff)
+    [Anonymous Symbol]                       0x000011d8   Section        0  ym_rgb.o(.text.getCamplarBuff)
+    __arm_cp.3_0                             0x00001304   Number         4  ym_rgb.o(.text.getCamplarBuff)
+    __arm_cp.3_1                             0x00001308   Number         4  ym_rgb.o(.text.getCamplarBuff)
+    __arm_cp.3_2                             0x0000130c   Number         4  ym_rgb.o(.text.getCamplarBuff)
+    __arm_cp.3_3                             0x00001310   Number         4  ym_rgb.o(.text.getCamplarBuff)
+    __arm_cp.3_4                             0x00001314   Number         4  ym_rgb.o(.text.getCamplarBuff)
+    __arm_cp.3_5                             0x00001318   Number         4  ym_rgb.o(.text.getCamplarBuff)
+    [Anonymous Symbol]                       0x0000131c   Section        0  main.o(.text.main)
+    __arm_cp.0_0                             0x00001374   Number         4  main.o(.text.main)
+    __arm_cp.0_1                             0x00001378   Number         4  main.o(.text.main)
+    __arm_cp.0_2                             0x0000137c   Number         4  main.o(.text.main)
+    __arm_cp.0_3                             0x00001380   Number         4  main.o(.text.main)
+    __arm_cp.0_4                             0x00001384   Number         4  main.o(.text.main)
+    __arm_cp.0_5                             0x00001388   Number         4  main.o(.text.main)
+    __arm_cp.0_6                             0x0000138c   Number         4  main.o(.text.main)
+    __arm_cp.0_7                             0x00001390   Number         4  main.o(.text.main)
+    __arm_cp.0_8                             0x00001394   Number         4  main.o(.text.main)
+    __arm_cp.0_9                             0x00001398   Number         4  main.o(.text.main)
+    __arm_cp.0_10                            0x0000139c   Number         4  main.o(.text.main)
+    i.__scatterload_copy                     0x000013a0   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x000013ae   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x000013b0   Section       14  handlers.o(i.__scatterload_zeroinit)
+    CCP_IRQHandler.camplerTicks              0x20000008   Data           1  ym_ccp.o(.bss.CCP_IRQHandler.camplerTicks)
+    [Anonymous Symbol]                       0x20000008   Section        0  ym_ccp.o(.bss.CCP_IRQHandler.camplerTicks)
+    CCP_IRQHandler.control_times             0x20000009   Data           1  ym_ccp.o(.bss.CCP_IRQHandler.control_times)
+    [Anonymous Symbol]                       0x20000009   Section        0  ym_ccp.o(.bss.CCP_IRQHandler.control_times)
+    CCP_IRQHandler.rgb_num                   0x2000000a   Data           1  ym_ccp.o(.bss.CCP_IRQHandler.rgb_num)
+    [Anonymous Symbol]                       0x2000000a   Section        0  ym_ccp.o(.bss.CCP_IRQHandler.rgb_num)
+    Ticks                                    0x2000005c   Data           4  bsp_systick.o(.bss.Ticks)
+    [Anonymous Symbol]                       0x2000005c   Section        0  bsp_systick.o(.bss.Ticks)
+    STACK                                    0x20000078   Section     1024  startup_cms32m67xx.o(STACK)
 
     Global Symbols
 
@@ -1026,77 +1099,109 @@ Image Symbol Table
     __decompress                              - Undefined Weak Reference
     _clock_init                               - Undefined Weak Reference
     _microlib_exit                            - Undefined Weak Reference
-    __main                                   0x000000c1   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
-    _main_stk                                0x000000c1   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
-    _main_scatterload                        0x000000c5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
-    __main_after_scatterload                 0x000000c9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
-    _main_clock                              0x000000c9   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
-    _main_cpp_init                           0x000000c9   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
-    _main_init                               0x000000c9   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
-    __rt_final_cpp                           0x000000d1   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
-    __rt_final_exit                          0x000000d1   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
-    Reset_Handler                            0x000000d5   Thumb Code     8  startup_cms32m67xx.o(.text)
-    NMI_Handler                              0x000000dd   Thumb Code     2  startup_cms32m67xx.o(.text)
-    SVC_Handler                              0x000000e1   Thumb Code     2  startup_cms32m67xx.o(.text)
-    PendSV_Handler                           0x000000e3   Thumb Code     2  startup_cms32m67xx.o(.text)
-    Reserved_IRQHandler                      0x000000e7   Thumb Code     2  startup_cms32m67xx.o(.text)
-    ACMP_IRQHandler                          0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    ADC_IRQHandler                           0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    CCP_IRQHandler                           0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    EPWM_IRQHandler                          0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    FMC_IRQHandler                           0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    HALL_IRQHandler                          0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    I2C0_IRQHandler                          0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    INTP0_IRQHandler                         0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    INTP1_IRQHandler                         0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    INTP2_IRQHandler                         0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    INTP3_IRQHandler                         0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    LSITIMER_IRQHandler                      0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    SSP0_IRQHandler                          0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    TIMER1_IRQHandler                        0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    TM00_IRQHandler                          0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    TM01H_IRQHandler                         0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    TM01_IRQHandler                          0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    TM02_IRQHandler                          0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    TM03_IRQHandler                          0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    UART0_IRQHandler                         0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    UART1_IRQHandler                         0x000000e9   Thumb Code     0  startup_cms32m67xx.o(.text)
-    __scatterload                            0x000000f5   Thumb Code    38  init.o(.text)
-    __scatterload_rt2                        0x000000f5   Thumb Code     0  init.o(.text)
-    CLK_GetHocoFreq                          0x00000125   Thumb Code   224  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
-    Delay_ms                                 0x00000239   Thumb Code    44  bsp_systick.o(.text.Delay_ms)
-    GPIO_Init                                0x00000265   Thumb Code   444  gpio.o(.text.GPIO_Init)
-    GPIO_Init_Config                         0x00000435   Thumb Code    30  ym_led.o(.text.GPIO_Init_Config)
-    HardFault_Handler                        0x00000453   Thumb Code     4  system_cms32m67xx.o(.text.HardFault_Handler)
-    LVI_IRQHandler                           0x00000457   Thumb Code    10  system_cms32m67xx.o(.text.LVI_IRQHandler)
-    PORT_ClrBit                              0x00000461   Thumb Code    40  gpio.o(.text.PORT_ClrBit)
-    PORT_SetBit                              0x0000048d   Thumb Code    36  gpio.o(.text.PORT_SetBit)
-    SysTick_Handler                          0x00000505   Thumb Code    24  bsp_systick.o(.text.SysTick_Handler)
-    SystemInit                               0x00000521   Thumb Code   116  system_cms32m67xx.o(.text.SystemInit)
-    Systick_Init_Config                      0x000005d9   Thumb Code    20  bsp_systick.o(.text.Systick_Init_Config)
-    TIMER0_IRQHandler                        0x000005ed   Thumb Code    24  ym_timer.o(.text.TIMER0_IRQHandler)
-    TMR_ClearOverflowIntFlag                 0x00000605   Thumb Code    16  timer.o(.text.TMR_ClearOverflowIntFlag)
-    TMR_GetOverflowIntFlag                   0x00000615   Thumb Code    16  timer.o(.text.TMR_GetOverflowIntFlag)
-    main                                     0x000006d5   Thumb Code    84  main.o(.text.main)
-    __scatterload_copy                       0x00000751   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x0000075f   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00000761   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Option_Byte_Config                       0x00000771   Thumb Code   224  sys_optionbyte.o(ram_fetch_code)
-    EraseChip                                0x00000851   Thumb Code    80  flash.o(ram_fetch_code)
-    EraseSector                              0x000008b5   Thumb Code   112  flash.o(ram_fetch_code)
-    ProgramPage                              0x00000939   Thumb Code   112  flash.o(ram_fetch_code)
-    flash_write                              0x000009b9   Thumb Code   500  flash.o(ram_fetch_code)
-    flashRead                                0x00000bbd   Thumb Code    64  flash.o(ram_fetch_code)
-    user_opt_data                            0x00000bfc   Data           4  system_cms32m67xx.o(.option_byte)
-    Region$$Table$$Base                      0x00000c00   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000c20   Number         0  anon$$obj.o(Region$$Table)
+    user_opt_data                            0x000000c0   Data           4  system_cms32m67xx.o(.ARM.__AT_0x000000C0)
+    __main                                   0x000000c5   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000c5   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000c9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000cd   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000cd   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000000cd   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000000cd   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000000d5   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000000d5   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x000000d9   Thumb Code     8  startup_cms32m67xx.o(.text)
+    NMI_Handler                              0x000000e1   Thumb Code     2  startup_cms32m67xx.o(.text)
+    SVC_Handler                              0x000000e5   Thumb Code     2  startup_cms32m67xx.o(.text)
+    PendSV_Handler                           0x000000e7   Thumb Code     2  startup_cms32m67xx.o(.text)
+    Reserved_IRQHandler                      0x000000eb   Thumb Code     2  startup_cms32m67xx.o(.text)
+    ACMP_IRQHandler                          0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    ADC_IRQHandler                           0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    EPWM_IRQHandler                          0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    FMC_IRQHandler                           0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    HALL_IRQHandler                          0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    I2C0_IRQHandler                          0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    INTP0_IRQHandler                         0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    INTP1_IRQHandler                         0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    INTP2_IRQHandler                         0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    INTP3_IRQHandler                         0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    LSITIMER_IRQHandler                      0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    SSP0_IRQHandler                          0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    TIMER1_IRQHandler                        0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    TM00_IRQHandler                          0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    TM01H_IRQHandler                         0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    TM01_IRQHandler                          0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    TM02_IRQHandler                          0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    TM03_IRQHandler                          0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    UART0_IRQHandler                         0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    UART1_IRQHandler                         0x000000ed   Thumb Code     0  startup_cms32m67xx.o(.text)
+    __scatterload                            0x000000f9   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x000000f9   Thumb Code     0  init.o(.text)
+    CCP_ClearCompareIntFlag                  0x0000011d   Thumb Code    24  ccp.o(.text.CCP_ClearCompareIntFlag)
+    CCP_ConfigCLK                            0x00000139   Thumb Code   108  ccp.o(.text.CCP_ConfigCLK)
+    CCP_ConfigCompare                        0x000001ad   Thumb Code   156  ccp.o(.text.CCP_ConfigCompare)
+    CCP_DisableRun                           0x00000251   Thumb Code    32  ccp.o(.text.CCP_DisableRun)
+    CCP_EnableCompareInt                     0x00000271   Thumb Code    32  ccp.o(.text.CCP_EnableCompareInt)
+    CCP_EnablePWMMode                        0x00000295   Thumb Code    60  ccp.o(.text.CCP_EnablePWMMode)
+    CCP_EnableReverseOutput                  0x000002d5   Thumb Code   132  ccp.o(.text.CCP_EnableReverseOutput)
+    CCP_EnableRun                            0x0000035d   Thumb Code    32  ccp.o(.text.CCP_EnableRun)
+    CCP_GetCompareIntFlag                    0x00000381   Thumb Code    20  ccp.o(.text.CCP_GetCompareIntFlag)
+    CCP_IRQHandler                           0x00000399   Thumb Code   208  ym_ccp.o(.text.CCP_IRQHandler)
+    CCP_Init_Config                          0x00000481   Thumb Code   112  ym_ccp.o(.text.CCP_Init_Config)
+    CCP_Start                                0x000004f9   Thumb Code    60  ccp.o(.text.CCP_Start)
+    CCP_Stop                                 0x0000053d   Thumb Code    60  ccp.o(.text.CCP_Stop)
+    CGC_PER11PeriphClockCmd                  0x00000585   Thumb Code    44  cgc.o(.text.CGC_PER11PeriphClockCmd)
+    CLK_GetHocoFreq                          0x000005b5   Thumb Code   216  system_cms32m67xx.o(.text.CLK_GetHocoFreq)
+    EPWM_AllBrakeDisable                     0x000006c1   Thumb Code    24  epwm.o(.text.EPWM_AllBrakeDisable)
+    EPWM_ConfigChannelClk                    0x000006dd   Thumb Code    56  epwm.o(.text.EPWM_ConfigChannelClk)
+    EPWM_ConfigChannelPeriod                 0x00000721   Thumb Code    48  epwm.o(.text.EPWM_ConfigChannelPeriod)
+    EPWM_ConfigChannelSymDuty                0x00000755   Thumb Code    76  epwm.o(.text.EPWM_ConfigChannelSymDuty)
+    EPWM_ConfigLoadAndIntMode                0x000007a5   Thumb Code    56  epwm.o(.text.EPWM_ConfigLoadAndIntMode)
+    EPWM_ConfigRunMode                       0x000007e1   Thumb Code    40  epwm.o(.text.EPWM_ConfigRunMode)
+    EPWM_DisableDeadZone                     0x00000809   Thumb Code   136  epwm.o(.text.EPWM_DisableDeadZone)
+    EPWM_DisableReverseOutput                0x00000891   Thumb Code    32  epwm.o(.text.EPWM_DisableReverseOutput)
+    EPWM_EnableAutoLoadMode                  0x000008b1   Thumb Code    28  epwm.o(.text.EPWM_EnableAutoLoadMode)
+    EPWM_EnableOutput                        0x000008d1   Thumb Code    28  epwm.o(.text.EPWM_EnableOutput)
+    EPWM_Init_Config                         0x000008f5   Thumb Code   400  ym_epwm.o(.text.EPWM_Init_Config)
+    EPWM_Start                               0x00000a9d   Thumb Code    28  epwm.o(.text.EPWM_Start)
+    GPIO_Init                                0x00000ac1   Thumb Code   444  gpio.o(.text.GPIO_Init)
+    GPIO_Init_Config                         0x00000c91   Thumb Code    30  ym_gpio.o(.text.GPIO_Init_Config)
+    HardFault_Handler                        0x00000caf   Thumb Code     4  system_cms32m67xx.o(.text.HardFault_Handler)
+    KEY_Init_Config                          0x00000cb3   Thumb Code    30  ym_gpio.o(.text.KEY_Init_Config)
+    LED_Init_Config                          0x00000cd1   Thumb Code   110  ym_gpio.o(.text.LED_Init_Config)
+    LVI_IRQHandler                           0x00000d3f   Thumb Code    10  system_cms32m67xx.o(.text.LVI_IRQHandler)
+    PORT_SetBit                              0x00000d49   Thumb Code    36  gpio.o(.text.PORT_SetBit)
+    RGB_GetColorBuffPoint                    0x00000db1   Thumb Code   112  ym_rgb.o(.text.RGB_GetColorBuffPoint)
+    RGB_Init_Config                          0x00000e31   Thumb Code    32  ym_rgb.o(.text.RGB_Init_Config)
+    SysTick_Handler                          0x00000ea9   Thumb Code    24  bsp_systick.o(.text.SysTick_Handler)
+    SystemInit                               0x00000ec5   Thumb Code   108  system_cms32m67xx.o(.text.SystemInit)
+    Systick_Init_Config                      0x00000f71   Thumb Code    20  bsp_systick.o(.text.Systick_Init_Config)
+    TIMER0_IRQHandler                        0x00000f85   Thumb Code    24  ym_timer.o(.text.TIMER0_IRQHandler)
+    TIMER0_Init_Config                       0x00000f9d   Thumb Code    60  ym_timer.o(.text.TIMER0_Init_Config)
+    TMR_ClearOverflowIntFlag                 0x00000fdd   Thumb Code    16  timer.o(.text.TMR_ClearOverflowIntFlag)
+    TMR_ConfigClk                            0x00000fed   Thumb Code    30  timer.o(.text.TMR_ConfigClk)
+    TMR_ConfigRunMode                        0x0000100b   Thumb Code    36  timer.o(.text.TMR_ConfigRunMode)
+    TMR_DisableOneShotMode                   0x0000102f   Thumb Code    18  timer.o(.text.TMR_DisableOneShotMode)
+    TMR_GetOverflowIntFlag                   0x00001041   Thumb Code    16  timer.o(.text.TMR_GetOverflowIntFlag)
+    TMR_SetPeriod                            0x00001051   Thumb Code    16  timer.o(.text.TMR_SetPeriod)
+    TMR_Start                                0x00001061   Thumb Code    18  timer.o(.text.TMR_Start)
+    Touch_Init_Config                        0x00001073   Thumb Code    14  ym_gpio.o(.text.Touch_Init_Config)
+    main                                     0x0000131d   Thumb Code    88  main.o(.text.main)
+    __scatterload_copy                       0x000013a1   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x000013af   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x000013b1   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x000013c0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000013e0   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_cms32m67xx.o(.data.SystemCoreClock)
-    CCPdata                                  0x20000008   Data           4  main.o(.bss.CCPdata)
-    CGCdata                                  0x2000000c   Data           4  main.o(.bss.CGCdata)
-    PORTdata                                 0x20000010   Data           4  main.o(.bss.PORTdata)
-    SysTickdata                              0x20000014   Data           4  main.o(.bss.SysTickdata)
-    TIMER0Data                               0x20000018   Data           4  main.o(.bss.TIMER0Data)
-    __initial_sp                             0x20000420   Data           0  startup_cms32m67xx.o(STACK)
+    CCPdata                                  0x2000000c   Data           4  main.o(.bss.CCPdata)
+    CGCdata                                  0x20000010   Data           4  main.o(.bss.CGCdata)
+    CyanBuff                                 0x20000014   Data          24  ym_rgb.o(.bss.CyanBuff)
+    PORTdata                                 0x2000002c   Data           4  main.o(.bss.PORTdata)
+    PurpleBuff                               0x20000030   Data          24  ym_rgb.o(.bss.PurpleBuff)
+    RGB_DataStracture                        0x20000048   Data          12  ym_rgb.o(.bss.RGB_DataStracture)
+    SysTickdata                              0x20000054   Data           4  main.o(.bss.SysTickdata)
+    TIMER0Data                               0x20000058   Data           4  main.o(.bss.TIMER0Data)
+    WhiteBuff                                0x20000060   Data          24  ym_rgb.o(.bss.WhiteBuff)
+    __initial_sp                             0x20000478   Data           0  startup_cms32m67xx.o(STACK)
 
 
 
@@ -1104,67 +1209,113 @@ Image Symbol Table
 
 Memory Map of the image
 
-  Image Entry point : 0x000000c1
+  Image Entry point : 0x000000c5
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000c28, Max: 0x00020000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000013e8, Max: 0x00020000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000c20, Max: 0x00020000, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x00000000   0x00000000   0x000000c0   Data   RO          618    RESET               startup_cms32m67xx.o
-    0x000000c0   0x000000c0   0x00000000   Code   RO          648  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
-    0x000000c0   0x000000c0   0x00000004   Code   RO          655    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
-    0x000000c4   0x000000c4   0x00000004   Code   RO          658    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
-    0x000000c8   0x000000c8   0x00000000   Code   RO          660    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
-    0x000000c8   0x000000c8   0x00000000   Code   RO          662    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
-    0x000000c8   0x000000c8   0x00000008   Code   RO          663    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
-    0x000000d0   0x000000d0   0x00000000   Code   RO          665    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
-    0x000000d0   0x000000d0   0x00000000   Code   RO          667    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
-    0x000000d0   0x000000d0   0x00000004   Code   RO          656    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
-    0x000000d4   0x000000d4   0x00000020   Code   RO          619    .text               startup_cms32m67xx.o
-    0x000000f4   0x000000f4   0x00000030   Code   RO          677    .text               mc_p.l(init.o)
-    0x00000124   0x00000124   0x00000114   Code   RO          626    .text.CLK_GetHocoFreq  system_cms32m67xx.o
-    0x00000238   0x00000238   0x0000002c   Code   RO          132    .text.Delay_ms      bsp_systick.o
-    0x00000264   0x00000264   0x000001d0   Code   RO          199    .text.GPIO_Init     gpio.o
-    0x00000434   0x00000434   0x0000001e   Code   RO           97    .text.GPIO_Init_Config  ym_led.o
-    0x00000452   0x00000452   0x00000004   Code   RO          636    .text.HardFault_Handler  system_cms32m67xx.o
-    0x00000456   0x00000456   0x0000000a   Code   RO          632    .text.LVI_IRQHandler  system_cms32m67xx.o
-    0x00000460   0x00000460   0x0000002c   Code   RO          187    .text.PORT_ClrBit   gpio.o
-    0x0000048c   0x0000048c   0x00000028   Code   RO          185    .text.PORT_SetBit   gpio.o
-    0x000004b4   0x000004b4   0x00000050   Code   RO          124    .text.SysTick_Config  bsp_systick.o
-    0x00000504   0x00000504   0x0000001c   Code   RO          134    .text.SysTick_Handler  bsp_systick.o
-    0x00000520   0x00000520   0x000000b8   Code   RO          630    .text.SystemInit    system_cms32m67xx.o
-    0x000005d8   0x000005d8   0x00000014   Code   RO          122    .text.Systick_Init_Config  bsp_systick.o
-    0x000005ec   0x000005ec   0x00000018   Code   RO           73    .text.TIMER0_IRQHandler  ym_timer.o
-    0x00000604   0x00000604   0x00000010   Code   RO          230    .text.TMR_ClearOverflowIntFlag  timer.o
-    0x00000614   0x00000614   0x00000010   Code   RO          228    .text.TMR_GetOverflowIntFlag  timer.o
-    0x00000624   0x00000624   0x0000002c   Code   RO          634    .text.__NVIC_ClearPendingIRQ  system_cms32m67xx.o
-    0x00000650   0x00000650   0x00000084   Code   RO          136    .text.__NVIC_SetPriority  bsp_systick.o
-    0x000006d4   0x000006d4   0x0000007c   Code   RO            2    .text.main          main.o
-    0x00000750   0x00000750   0x0000000e   Code   RO          681    i.__scatterload_copy  mc_p.l(handlers.o)
-    0x0000075e   0x0000075e   0x00000002   Code   RO          682    i.__scatterload_null  mc_p.l(handlers.o)
-    0x00000760   0x00000760   0x0000000e   Code   RO          683    i.__scatterload_zeroinit  mc_p.l(handlers.o)
-    0x0000076e   0x0000076e   0x00000002   PAD
-    0x00000770   0x00000770   0x000000e0   Code   RO          146    ram_fetch_code      sys_optionbyte.o
-    0x00000850   0x00000850   0x000003ac   Code   RO          609    ram_fetch_code      flash.o
-    0x00000bfc   0x00000bfc   0x00000004   Data   RO          641    .option_byte        system_cms32m67xx.o
-    0x00000c00   0x00000c00   0x00000020   Data   RO          680    Region$$Table       anon$$obj.o
-
-
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00000c20, Size: 0x00000420, Max: 0x00001000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000013e0, Max: 0x00020000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000c20   0x00000004   Data   RW          638    .data.SystemCoreClock  system_cms32m67xx.o
-    0x20000004   0x00000c24   0x00000004   PAD
-    0x20000008        -       0x00000004   Zero   RW            7    .bss.CCPdata        main.o
-    0x2000000c        -       0x00000004   Zero   RW            5    .bss.CGCdata        main.o
-    0x20000010        -       0x00000004   Zero   RW            8    .bss.PORTdata       main.o
-    0x20000014        -       0x00000004   Zero   RW            9    .bss.SysTickdata    main.o
-    0x20000018        -       0x00000004   Zero   RW            6    .bss.TIMER0Data     main.o
-    0x2000001c        -       0x00000004   Zero   RW          138    .bss.Ticks          bsp_systick.o
-    0x20000020        -       0x00000400   Zero   RW          616    STACK               startup_cms32m67xx.o
+    0x00000000   0x00000000   0x000000c0   Data   RO          623    RESET               startup_cms32m67xx.o
+    0x000000c0   0x000000c0   0x00000004   Data   RO          646    .ARM.__AT_0x000000C0  system_cms32m67xx.o
+    0x000000c4   0x000000c4   0x00000000   Code   RO          653  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x000000c4   0x000000c4   0x00000004   Code   RO          660    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x000000c8   0x000000c8   0x00000004   Code   RO          663    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x000000cc   0x000000cc   0x00000000   Code   RO          665    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x000000cc   0x000000cc   0x00000000   Code   RO          667    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x000000cc   0x000000cc   0x00000008   Code   RO          668    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x000000d4   0x000000d4   0x00000000   Code   RO          670    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x000000d4   0x000000d4   0x00000000   Code   RO          672    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x000000d4   0x000000d4   0x00000004   Code   RO          661    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x000000d8   0x000000d8   0x00000020   Code   RO          624    .text               startup_cms32m67xx.o
+    0x000000f8   0x000000f8   0x00000024   Code   RO          682    .text               mc_p.l(init.o)
+    0x0000011c   0x0000011c   0x0000001c   Code   RO          282    .text.CCP_ClearCompareIntFlag  ccp.o
+    0x00000138   0x00000138   0x00000074   Code   RO          250    .text.CCP_ConfigCLK  ccp.o
+    0x000001ac   0x000001ac   0x000000a4   Code   RO          262    .text.CCP_ConfigCompare  ccp.o
+    0x00000250   0x00000250   0x00000020   Code   RO          254    .text.CCP_DisableRun  ccp.o
+    0x00000270   0x00000270   0x00000024   Code   RO          276    .text.CCP_EnableCompareInt  ccp.o
+    0x00000294   0x00000294   0x00000040   Code   RO          256    .text.CCP_EnablePWMMode  ccp.o
+    0x000002d4   0x000002d4   0x00000088   Code   RO          264    .text.CCP_EnableReverseOutput  ccp.o
+    0x0000035c   0x0000035c   0x00000024   Code   RO          252    .text.CCP_EnableRun  ccp.o
+    0x00000380   0x00000380   0x00000018   Code   RO          280    .text.CCP_GetCompareIntFlag  ccp.o
+    0x00000398   0x00000398   0x000000e8   Code   RO           40    .text.CCP_IRQHandler  ym_ccp.o
+    0x00000480   0x00000480   0x00000078   Code   RO           34    .text.CCP_Init_Config  ym_ccp.o
+    0x000004f8   0x000004f8   0x00000044   Code   RO          246    .text.CCP_Start     ccp.o
+    0x0000053c   0x0000053c   0x00000048   Code   RO          248    .text.CCP_Stop      ccp.o
+    0x00000584   0x00000584   0x00000030   Code   RO          380    .text.CGC_PER11PeriphClockCmd  cgc.o
+    0x000005b4   0x000005b4   0x0000010c   Code   RO          631    .text.CLK_GetHocoFreq  system_cms32m67xx.o
+    0x000006c0   0x000006c0   0x0000001c   Code   RO          499    .text.EPWM_AllBrakeDisable  epwm.o
+    0x000006dc   0x000006dc   0x00000044   Code   RO          439    .text.EPWM_ConfigChannelClk  epwm.o
+    0x00000720   0x00000720   0x00000034   Code   RO          441    .text.EPWM_ConfigChannelPeriod  epwm.o
+    0x00000754   0x00000754   0x00000050   Code   RO          443    .text.EPWM_ConfigChannelSymDuty  epwm.o
+    0x000007a4   0x000007a4   0x0000003c   Code   RO          451    .text.EPWM_ConfigLoadAndIntMode  epwm.o
+    0x000007e0   0x000007e0   0x00000028   Code   RO          437    .text.EPWM_ConfigRunMode  epwm.o
+    0x00000808   0x00000808   0x00000088   Code   RO          461    .text.EPWM_DisableDeadZone  epwm.o
+    0x00000890   0x00000890   0x00000020   Code   RO          457    .text.EPWM_DisableReverseOutput  epwm.o
+    0x000008b0   0x000008b0   0x00000020   Code   RO          449    .text.EPWM_EnableAutoLoadMode  epwm.o
+    0x000008d0   0x000008d0   0x00000024   Code   RO          467    .text.EPWM_EnableOutput  epwm.o
+    0x000008f4   0x000008f4   0x000001a8   Code   RO          104    .text.EPWM_Init_Config  ym_epwm.o
+    0x00000a9c   0x00000a9c   0x00000024   Code   RO          471    .text.EPWM_Start    epwm.o
+    0x00000ac0   0x00000ac0   0x000001d0   Code   RO          204    .text.GPIO_Init     gpio.o
+    0x00000c90   0x00000c90   0x0000001e   Code   RO          146    .text.GPIO_Init_Config  ym_gpio.o
+    0x00000cae   0x00000cae   0x00000004   Code   RO          641    .text.HardFault_Handler  system_cms32m67xx.o
+    0x00000cb2   0x00000cb2   0x0000001e   Code   RO          148    .text.KEY_Init_Config  ym_gpio.o
+    0x00000cd0   0x00000cd0   0x0000006e   Code   RO          144    .text.LED_Init_Config  ym_gpio.o
+    0x00000d3e   0x00000d3e   0x0000000a   Code   RO          637    .text.LVI_IRQHandler  system_cms32m67xx.o
+    0x00000d48   0x00000d48   0x00000028   Code   RO          190    .text.PORT_SetBit   gpio.o
+    0x00000d70   0x00000d70   0x0000003e   Code   RO           64    .text.RGB_DataInit  ym_rgb.o
+    0x00000dae   0x00000dae   0x00000002   PAD
+    0x00000db0   0x00000db0   0x00000080   Code   RO           60    .text.RGB_GetColorBuffPoint  ym_rgb.o
+    0x00000e30   0x00000e30   0x00000028   Code   RO           62    .text.RGB_Init_Config  ym_rgb.o
+    0x00000e58   0x00000e58   0x00000050   Code   RO          114    .text.SysTick_Config  bsp_systick.o
+    0x00000ea8   0x00000ea8   0x0000001c   Code   RO          124    .text.SysTick_Handler  bsp_systick.o
+    0x00000ec4   0x00000ec4   0x000000ac   Code   RO          635    .text.SystemInit    system_cms32m67xx.o
+    0x00000f70   0x00000f70   0x00000014   Code   RO          112    .text.Systick_Init_Config  bsp_systick.o
+    0x00000f84   0x00000f84   0x00000018   Code   RO           82    .text.TIMER0_IRQHandler  ym_timer.o
+    0x00000f9c   0x00000f9c   0x00000040   Code   RO           80    .text.TIMER0_Init_Config  ym_timer.o
+    0x00000fdc   0x00000fdc   0x00000010   Code   RO          235    .text.TMR_ClearOverflowIntFlag  timer.o
+    0x00000fec   0x00000fec   0x0000001e   Code   RO          225    .text.TMR_ConfigClk  timer.o
+    0x0000100a   0x0000100a   0x00000024   Code   RO          219    .text.TMR_ConfigRunMode  timer.o
+    0x0000102e   0x0000102e   0x00000012   Code   RO          223    .text.TMR_DisableOneShotMode  timer.o
+    0x00001040   0x00001040   0x00000010   Code   RO          233    .text.TMR_GetOverflowIntFlag  timer.o
+    0x00001050   0x00001050   0x00000010   Code   RO          227    .text.TMR_SetPeriod  timer.o
+    0x00001060   0x00001060   0x00000012   Code   RO          215    .text.TMR_Start     timer.o
+    0x00001072   0x00001072   0x0000000e   Code   RO          150    .text.Touch_Init_Config  ym_gpio.o
+    0x00001080   0x00001080   0x0000002c   Code   RO          639    .text.__NVIC_ClearPendingIRQ  system_cms32m67xx.o
+    0x000010ac   0x000010ac   0x0000002c   Code   RO           38    .text.__NVIC_EnableIRQ  ym_ccp.o
+    0x000010d8   0x000010d8   0x0000007c   Code   RO           36    .text.__NVIC_SetPriority  ym_ccp.o
+    0x00001154   0x00001154   0x00000084   Code   RO          126    .text.__NVIC_SetPriority  bsp_systick.o
+    0x000011d8   0x000011d8   0x00000144   Code   RO           66    .text.getCamplarBuff  ym_rgb.o
+    0x0000131c   0x0000131c   0x00000084   Code   RO            2    .text.main          main.o
+    0x000013a0   0x000013a0   0x0000000e   Code   RO          686    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x000013ae   0x000013ae   0x00000002   Code   RO          687    i.__scatterload_null  mc_p.l(handlers.o)
+    0x000013b0   0x000013b0   0x0000000e   Code   RO          688    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x000013be   0x000013be   0x00000002   PAD
+    0x000013c0   0x000013c0   0x00000020   Data   RO          685    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x000013e0, Size: 0x00000478, Max: 0x00001000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x000013e0   0x00000004   Data   RW          643    .data.SystemCoreClock  system_cms32m67xx.o
+    0x20000004   0x000013e4   0x00000004   PAD
+    0x20000008        -       0x00000001   Zero   RW           42    .bss.CCP_IRQHandler.camplerTicks  ym_ccp.o
+    0x20000009        -       0x00000001   Zero   RW           44    .bss.CCP_IRQHandler.control_times  ym_ccp.o
+    0x2000000a        -       0x00000001   Zero   RW           43    .bss.CCP_IRQHandler.rgb_num  ym_ccp.o
+    0x2000000b   0x000013e4   0x00000001   PAD
+    0x2000000c        -       0x00000004   Zero   RW            7    .bss.CCPdata        main.o
+    0x20000010        -       0x00000004   Zero   RW            5    .bss.CGCdata        main.o
+    0x20000014        -       0x00000018   Zero   RW           68    .bss.CyanBuff       ym_rgb.o
+    0x2000002c        -       0x00000004   Zero   RW            8    .bss.PORTdata       main.o
+    0x20000030        -       0x00000018   Zero   RW           69    .bss.PurpleBuff     ym_rgb.o
+    0x20000048        -       0x0000000c   Zero   RW           71    .bss.RGB_DataStracture  ym_rgb.o
+    0x20000054        -       0x00000004   Zero   RW            9    .bss.SysTickdata    main.o
+    0x20000058        -       0x00000004   Zero   RW            6    .bss.TIMER0Data     main.o
+    0x2000005c        -       0x00000004   Zero   RW          128    .bss.Ticks          bsp_systick.o
+    0x20000060        -       0x00000018   Zero   RW           70    .bss.WhiteBuff      ym_rgb.o
+    0x20000078        -       0x00000400   Zero   RW          621    STACK               startup_cms32m67xx.o
 
 
 ==============================================================================
@@ -1174,21 +1325,25 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       304         24          0          0          4       3233   bsp_systick.o
-       940         72          0          0          0       3103   flash.o
-       548         56          0          0          0       7557   gpio.o
-       124         40          0          0         20       6791   main.o
-        32         10        192          0       1024        712   startup_cms32m67xx.o
-       224          0          0          0          0       1881   sys_optionbyte.o
-       518        208          4          4          0       4588   system_cms32m67xx.o
-        32          0          0          0          0       2139   timer.o
-        30          0          0          0          0        886   ym_led.o
-        24          0          0          0          0       2652   ym_timer.o
+       260         24          0          0          4       3210   bsp_systick.o
+       776         60          0          0          0       8931   ccp.o
+        48          4          0          0          0       5085   cgc.o
+       600         48          0          0          0      12480   epwm.o
+       504         52          0          0          0       7533   gpio.o
+       132         44          0          0         20       6579   main.o
+        32         10        192          0       1024        696   startup_cms32m67xx.o
+       498        204          4          4          0       4184   system_cms32m67xx.o
+       150          0          0          0          0       2109   timer.o
+       520         36          0          0          3       7152   ym_ccp.o
+       424         24          0          0          0       5064   ym_epwm.o
+       184          0          0          0          0       1055   ym_gpio.o
+       554         48          0          0         84       7028   ym_rgb.o
+        88          4          0          0          0       1003   ym_timer.o
 
     ----------------------------------------------------------------------
-      2776        410        228          4       1052      33542   Object Totals
+      4772        558        228          4       1140      72109   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         0          0          0          0          4          0   (incl. Padding)
+         2          0          0          0          5          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1203,20 +1358,20 @@ Image component sizes
          0          0          0          0          0          0   entry8b.o
          8          4          0          0          0          0   entry9a.o
         30          0          0          0          0          0   handlers.o
-        48         10          0          0          0         68   init.o
+        36          8          0          0          0         68   init.o
 
     ----------------------------------------------------------------------
-       100         18          0          0          0         68   Library Totals
+        88         16          0          0          0         68   Library Totals
          2          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-        98         18          0          0          0         68   mc_p.l
+        86         16          0          0          0         68   mc_p.l
 
     ----------------------------------------------------------------------
-       100         18          0          0          0         68   Library Totals
+        88         16          0          0          0         68   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -1225,15 +1380,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2876        428        228          4       1052      33602   Grand Totals
-      2876        428        228          4       1052      33602   ELF Image Totals
-      2876        428        228          4          0          0   ROM Totals
+      4860        574        228          4       1140      72089   Grand Totals
+      4860        574        228          4       1140      72089   ELF Image Totals
+      4860        574        228          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 3104 (   3.03kB)
-    Total RW  Size (RW Data + ZI Data)              1056 (   1.03kB)
-    Total ROM Size (Code + RO Data + RW Data)       3108 (   3.04kB)
+    Total RO  Size (Code + RO Data)                 5088 (   4.97kB)
+    Total RW  Size (RW Data + ZI Data)              1144 (   1.12kB)
+    Total ROM Size (Code + RO Data + RW Data)       5092 (   4.97kB)
 
 ==============================================================================
 

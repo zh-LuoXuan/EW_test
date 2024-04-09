@@ -27,45 +27,6 @@
         "folders": []
       },
       {
-        "name": "App",
-        "files": [
-          {
-            "path": "../../APP/Src/bsp_SysTick.c"
-          },
-          {
-            "path": "../../APP/Src/retarget.c"
-          },
-          {
-            "path": "../../APP/Src/Sys_OptionByte.c"
-          },
-          {
-            "path": "../../APP/Src/YM_ccp.c"
-          },
-          {
-            "path": "../../APP/Src/YM_dma.c"
-          },
-          {
-            "path": "../../APP/Src/YM_epwm.c"
-          },
-          {
-            "path": "../../APP/Src/YM_led.c"
-          },
-          {
-            "path": "../../APP/Src/YM_rgb.c"
-          },
-          {
-            "path": "../../APP/Src/YM_timer.c"
-          },
-          {
-            "path": "../../APP/Src/YM_touch.c"
-          },
-          {
-            "path": "../../APP/Src/YM_uart.c"
-          }
-        ],
-        "folders": []
-      },
-      {
         "name": "Driver",
         "files": [
           {
@@ -94,6 +55,42 @@
           },
           {
             "path": "../../Driver/src/uart.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Hardware",
+        "files": [
+          {
+            "path": "../../APP/Src/bsp_SysTick.c"
+          },
+          {
+            "path": "../../APP/Src/retarget.c"
+          },
+          {
+            "path": "../../APP/Src/Sys_OptionByte.c"
+          },
+          {
+            "path": "../../APP/Src/YM_ccp.c"
+          },
+          {
+            "path": "../../APP/Src/YM_dma.c"
+          },
+          {
+            "path": "../../APP/Src/YM_epwm.c"
+          },
+          {
+            "path": "../../APP/Src/YM_gpio.c"
+          },
+          {
+            "path": "../../APP/Src/YM_rgb.c"
+          },
+          {
+            "path": "../../APP/Src/YM_timer.c"
+          },
+          {
+            "path": "../../APP/Src/YM_uart.c"
           }
         ],
         "folders": []
@@ -131,7 +128,7 @@
               "id": 1,
               "mem": {
                 "startAddr": "0x20000000",
-                "size": "0x5000"
+                "size": "0x1000"
               },
               "isChecked": true,
               "noInit": false
@@ -142,8 +139,8 @@
               "tag": "IROM",
               "id": 1,
               "mem": {
-                "startAddr": "0x08000000",
-                "size": "0x10000"
+                "startAddr": "0x00",
+                "size": "0x20000"
               },
               "isChecked": true,
               "isStartup": true

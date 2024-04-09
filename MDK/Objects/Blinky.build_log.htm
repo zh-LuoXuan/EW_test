@@ -3,70 +3,83 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: ¦ÌVision V5.39.0.0
-Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Char Aznable, ew, LIC=QF82M-XU4NT-SBHEJ-U2HU1-URX7B-IWXEV
+IDE-Version: ¦ÌVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: f f
+f
+User-based license: Keil MDK Community (non-commercial free of charge)
+Valid until: Jun 1 2033. Cached until: Apr 16 2024
  
 Tool Versions:
-Toolchain:       MDK-ARM Plus  Version: 5.39.0.0
-Toolchain Path:  D:\Keil_MDK539\ARM\ARMCLANG\Bin
-C Compiler:      ArmClang.exe V6.21
-Assembler:       Armasm.exe V6.21
-Linker/Locator:  ArmLink.exe V6.21
-Library Manager: ArmAr.exe V6.21
-Hex Converter:   FromElf.exe V6.21
-CPU DLL:         SARMCM3.DLL V5.39.0.0
+Toolchain:       Keil MDK Community (non-commercial free of charge  Version: 5.38.0.0
+Toolchain Path:  D:\Keil_538a\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
 Dialog DLL:      DARMCM1.DLL V1.19.6.0
-Target DLL:      CMSIS_AGDI.dll V1.33.16.0
+Target DLL:      CMSIS_AGDI.dll V1.33.15.0
 Dialog DLL:      TARMCM1.DLL V1.14.6.0
  
 <h2>Project:</h2>
-D:\evowera\CMS32M67xx_20240312\EW_test_RGB_Done\MDK\YM502_Test_Demo.uvprojx
-Project File Date:  04/06/2024
+E:\ZL\Git_Clone\EW_test_CCP_RGB\MDK\YM502_Test_Demo.uvprojx
+Project File Date:  04/09/2024
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.21', folder: 'D:\Keil_MDK539\ARM\ARMCLANG\Bin'
-Build target 'CMS32M67xx'
-compiling YM_rgb.c...
-compiling Sys_OptionByte.c...
-compiling YM_epwm.c...
-compiling YM_uart.c...
-compiling YM_dma.c...
+*** Using Compiler 'V6.19', folder: 'D:\Keil_538a\ARM\ARMCLANG\Bin'
+Rebuild target 'CMS32M67xx'
 compiling main.c...
-compiling YM_led.c...
-compiling delay.c...
-compiling flash.c...
-compiling system_CMS32M67xx.c...
-compiling dma.c...
+compiling retarget.c...
+compiling YM_ccp.c...
+compiling YM_dma.c...
+compiling Sys_OptionByte.c...
+compiling YM_uart.c...
+compiling YM_timer.c...
+compiling YM_gpio.c...
+compiling YM_epwm.c...
 compiling timer.c...
+compiling YM_rgb.c...
+compiling dma.c...
+compiling gpio.c...
+compiling system_CMS32M67xx.c...
+compiling bsp_SysTick.c...
+compiling cgc.c...
+compiling flash.c...
+compiling ccp.c...
+compiling uart.c...
+compiling epwm.c...
+compiling delay.c...
+assembling startup_CMS32M67xx.s...
 linking...
-Program Size: Code=2876 RO-data=228 RW-data=4 ZI-data=1052  
+Program Size: Code=4860 RO-data=228 RW-data=4 ZI-data=1140  
 ".\Objects\Blinky.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
                 http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
-                ARM::CMSIS@5.9.0
+                ARM.CMSIS.5.9.0
                 CMSIS (Common Microcontroller Software Interface Standard)
    * Component: CORE Version: 5.6.0
 
 Package Vendor: Cmsemicon
                 http://www.mcu.com.cn/pack/Cmsemicon.CMS32M67xx.0.1.6.pack
-                Cmsemicon::CMS32M67xx@0.1.6
+                Cmsemicon.CMS32M67xx.0.1.6
                 Cmsemicon CMS32M67xx Device Family Pack
    * Component: Startup Version: 1.0.0
 
 <h2>Collection of Component include folders:</h2>
   ./RTE/_CMS32M67xx
-  D:/Keil_MDK539/ARM/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
-  D:/Keil_MDK539/ARM/Packs/Cmsemicon/CMS32M67xx/0.1.6/Device/Include
+  D:/Keil_538a/ARM/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  D:/Keil_538a/ARM/Packs/Cmsemicon/CMS32M67xx/0.1.6/Device/Include
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:CORE@5.6.0
+   * Component: ARM::CMSIS:CORE:5.6.0
 
-   * Component: Cmsemicon::Device:Startup@1.0.0
+   * Component: Cmsemicon::Device:Startup:1.0.0
       Source file:   Device/Source/system_CMS32M67xx.c
       Source file:   Device/Source/ARM/startup_CMS32M67xx.s
 Build Time Elapsed:  00:00:02

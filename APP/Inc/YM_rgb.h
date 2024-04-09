@@ -2,7 +2,7 @@
  * @Author: zh-LuoXuan 1153589792@qq.com
  * @Date: 2024-03-26 22:21:43
  * @LastEditors: EW_Luo 1153589792@qq.com
- * @LastEditTime: 2024-04-03 10:49:38
+ * @LastEditTime: 2024-04-07 17:47:30
  * @FilePath: \EIDE (工作区)d:\evowera\CMS32M67xx_20240312\YM502_Test_Demo\APP\Inc\YM_rgb.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -13,11 +13,11 @@
 #include "gpio.h"
 #include "YM_ccp.h"
 
-// #define WHITE                (uint32_t) (0xFFFFFF)
+#define WHITE                (uint32_t) (0xFFFFFF)
 #define CYAN                 (uint32_t) (0xABEFF4)
 #define PURPLE               (uint32_t) (0xB2ADEA)
 
-#define WHITE                 (uint32_t) (0x555555)
+// #define WHITE                 (uint32_t) (0x555555)
 // #define CYAN                  (uint32_t) (0xA4A5A6)
 // #define PURPLE                (uint32_t) (0xA7A8A9)
 
@@ -46,7 +46,7 @@ typedef enum
 {
     Off,
     On,
-}RGB_Status_e;
+}RGB_State_e;
 
 typedef enum
 {
@@ -63,19 +63,17 @@ typedef enum
 
 typedef struct
 {
-    uint8_t WhiteBuff[24];
-    uint8_t PurpleBuff[24];
-    uint8_t CyanBuff[24];
+    uint8_t* ColorBuffPoint;
     uint8_t breath_val;
-    RGB_Status_e Status;
+    RGB_State_e State;
     RGB_Mode_e Mode;
     RGB_Color_e Color;
+    RGB_Color_e Last_Color;
 }RGB_DataTypdef;
 
 extern RGB_DataTypdef RGB_DataStracture;
-// extern uint16_t testData[24];
 
 void RGB_Init_Config(void);
-const uint8_t* RGB_GetColorBuffPoint(void);
+void RGB_GetColorBuffPoint(RGB_DataTypdef* RGB_Stracture);
 
 #endif

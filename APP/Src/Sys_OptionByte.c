@@ -1,8 +1,8 @@
 /*
  * @Author: zh-LuoXuan 1153589792@qq.com
  * @Date: 2024-04-05 21:38:15
- * @LastEditors: zh-LuoXuan 1153589792@qq.com
- * @LastEditTime: 2024-04-07 01:23:59
+ * @LastEditors: EW_Luo 1153589792@qq.com
+ * @LastEditTime: 2024-04-08 10:03:28
  * @FilePath: \EIDE (工作区)d:\evowera\CMS32M67xx_20240312\EW_test_RGB_Done\APP\Src\Sys_OptionByte.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -49,5 +49,4 @@ void Option_Byte_Config(OPB_Type Option_Byte, uint8_t Config_Data)
         FMC->FLSTS = FMC_FLSTS_OVF_Msk;
     }
     FMC->FLPROT = 0xF0;
-
 }

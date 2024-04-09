@@ -25,7 +25,6 @@
 #include <stdint.h>
 #include "CMS32M67xx.h"
 #include "system_CMS32M67xx.h"
-#include "flash.h"
 #include "Sys_OptionByte.h"
 
 /*----------------------------------------------------------------------------
@@ -76,7 +75,8 @@ __root const uint8_t user_opt_data[4] @ (0x000000C0) =
 #elif defined(__CC_ARM)
 const uint8_t user_opt_data[4] __attribute__((used)) __attribute__((section(".ARM.__AT_0x000000C0"))) =
 #elif defined(__GNUC__)
-const volatile uint8_t user_opt_data[4] __attribute__((used, section(".option_byte"))) = 
+const uint8_t user_opt_data[4] __attribute__((used, section(".ARM.__AT_0x000000C0"))) =
+// const volatile uint8_t user_opt_data[4] __attribute__((used, section(".option_byte"))) = 
 #endif
 {
 
@@ -159,7 +159,7 @@ const volatile uint8_t user_opt_data[4] __attribute__((used, section(".option_by
  */
 // <h> HOCO Control Option Byte (C2H)
 //   <o.0..4> High-speed OCO clock setting                  <0xF0=> fHOCO = 72MHz, fIH = 72MHz
-//															<0xF1=> fHOCO = 72MHz, fIH = 36MHz
+//															                            <0xF1=> fHOCO = 72MHz, fIH = 36MHz
 //                                                          <0xF2=> fHOCO = 72MHz, fIH = 18MHz
 //                                                          <0xF3=> fHOCO = 72MHz, fIH = 9MHz
 //                                                          <0xF4=> fHOCO = 72MHz, fIH = 4.5MHz
@@ -196,7 +196,7 @@ const volatile uint8_t user_opt_data[4] __attribute__((used, section(".option_by
          This means system core clock frequency after call to SystemInit() */
 uint32_t SystemCoreClock;  		/* System Clock Frequency (Core Clock)*/
 
-  
+
 /*----------------------------------------------------------------------------
   Clock functions
  *----------------------------------------------------------------------------*/
@@ -204,13 +204,12 @@ uint32_t CLK_GetHocoFreq(void)
 {
   uint32_t freq;
   uint8_t frqsel;
+  uint8_t data = 0xF0;
+
   frqsel  = *(uint8_t *)0x000000C2U;
-/*------------------------USER_CONFIG_LUOXUAN---------------------------------*/
-  frqsel |= 0xF0;
-  CGC->HOCODIV &= 0x00;
-/*----------------------------------------------------------------------------*/
   frqsel &= 0xF8;  	/* Mask the lower 3 bits */
   frqsel |= CGC->HOCODIV;	/* Refer the value of HOCODIV */ 
+		   
   freq = 1000000U;  /* fIH = 1MHz except for the following cases */
 		
   switch(frqsel)
@@ -259,6 +258,7 @@ void SystemCoreClockUpdate (void)            /* Get Core Clock Frequency      */
          register settings.
          This function can be used to retrieve the system core clock frequeny
          after user changed register sittings. */
+
   SystemCoreClock = CLK_GetHocoFreq();
 }
 
@@ -277,8 +277,7 @@ void SystemInit (void)
   CGC->WDTCFG3 = 0x4D;
   DBG->DBGSTOPCR = 0;
 
-  
-  Option_Byte_Config(HOCO_CTRL_BYTE, 0xF8);
+  // Option_Byte_Config(HOCO_CTRL_BYTE, 0xF8);
   SystemCoreClock = CLK_GetHocoFreq();
 
   /* NVIC Clear Pending IRQ */
@@ -299,6 +298,7 @@ void SystemInit (void)
 
   /* restart watchdog timer */
   WDT->WDTE = 0xACU;   
+
 }
 
 

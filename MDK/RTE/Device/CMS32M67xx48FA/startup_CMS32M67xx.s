@@ -150,7 +150,8 @@ SysTick_Handler PROC
                 EXPORT  SysTick_Handler           [WEAK]
                 B       .
                 ENDP
-Reserved_IRQHandler PROC
+Reserved_IRQHandler\
+                PROC
                 EXPORT  Reserved_IRQHandler       [WEAK]
                 B       .
                 ENDP

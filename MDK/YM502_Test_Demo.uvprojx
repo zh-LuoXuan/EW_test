@@ -10,7 +10,7 @@
       <TargetName>CMS32M67xx</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6210000::V6.21::ARMCLANG</pCCUsed>
+      <pCCUsed>6190000::V6.19::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -392,7 +392,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>App</GroupName>
+          <GroupName>Hardware</GroupName>
           <Files>
             <File>
               <FileName>retarget.c</FileName>
@@ -425,16 +425,6 @@
               <FilePath>..\APP\Src\YM_uart.c</FilePath>
             </File>
             <File>
-              <FileName>YM_led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\APP\Src\YM_led.c</FilePath>
-            </File>
-            <File>
-              <FileName>YM_touch.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\APP\Src\YM_touch.c</FilePath>
-            </File>
-            <File>
               <FileName>YM_epwm.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APP\Src\YM_epwm.c</FilePath>
@@ -448,6 +438,11 @@
               <FileName>Sys_OptionByte.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APP\Src\Sys_OptionByte.c</FilePath>
+            </File>
+            <File>
+              <FileName>YM_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\Src\YM_gpio.c</FilePath>
             </File>
           </Files>
         </Group>
