@@ -1,32 +1,11 @@
-/*******************************************************************************
-* Copyright (C) 2019 China Micro Semiconductor Limited Company. All Rights Reserved.
-*
-* This software is owned and published by:
-* CMS LLC, No 2609-10, Taurus Plaza, TaoyuanRoad, NanshanDistrict, Shenzhen, China.
-*
-* BY DOWNLOADING, INSTALLING OR USING THIS SOFTWARE, YOU AGREE TO BE BOUND
-* BY ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT.
-*
-* This software contains source code for use with CMS
-* components. This software is licensed by CMS to be adapted only
-* for use in systems utilizing CMS components. CMS shall not be
-* responsible for misuse or illegal use of this software for devices not
-* supported herein. CMS is providing this software "AS IS" and will
-* not be responsible for issues arising from incorrect user implementation
-* of the software.
-*
-* This software may be replicated in part or whole for the licensed use,
-* with the restriction that this Disclaimer and Copyright notice must be
-* included with each copy of this software, whether used in part or whole,
-* at all times.
-*/
-
-/*****************************************************************************/
-/** \file YM_uart.h
-**
-** History:
-** 
-*****************************************************************************/
+/*
+ * @Author: EW_Luo 1153589792@qq.com
+ * @Date: 2024-04-08 15:52:51
+ * @LastEditors: EW_Luo 1153589792@qq.com
+ * @LastEditTime: 2024-04-25 16:53:32
+ * @FilePath: \EIDE (工作区)e:\ZL\Git_Clone\EW_test_breath\APP\Inc\YM_uart.h
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 #ifndef __YM_UART_H_
 #define __YM_UART_H_
 
@@ -35,58 +14,19 @@ extern "C"
 {
 #endif
 
-/*****************************************************************************/
-/* Include files */
-/*****************************************************************************/
 #include "uart.h"
 #include "common.h"
 #include "cgc.h"
 #include "gpio.h"
-/*****************************************************************************/
-/* Global pre-processor symbols/macros ('#define') */
-/*****************************************************************************/
-
-							
-/*****************************************************************************/
-/* Global type definitions ('typedef') */
-/*****************************************************************************/
 
 
-/*****************************************************************************/
-/* Global variable declarations ('extern', definition in C source) */
-/*****************************************************************************/
+#define UART1_REC_MAX_LEN                   (32U)
+#define SOF                                 (0xCA)
+#define BUFFER_LEN_MSK                      (0x1F)
 
 
-/*****************************************************************************/
-/* Global function prototypes ('extern', definition in C source) */
-/*****************************************************************************/
-/*****************************************************************************
- ** \brief	UART0_Config
- **			
- ** \param [in] none
- ** \return  none
- ** \note	
-*****************************************************************************/
-void  UART0_Config(void);
-
-/******************************************************************************
- ** \brief	 Uart0_putchar
- **			  
- ** \param [in] 
- ** \return  none
- ** \note   
-*****************************************************************************/
-void Uart0_putchar(char ch);
-
-/******************************************************************************
- ** \brief	 Uart0_getchar
- **			 
- ** \param [in] 
- ** \return  
- ** \note   
-*****************************************************************************/
-char Uart0_getchar(void);
-
+void get_Uart1_RxData(void);
+void UART1_Init_Config(uint32_t bitRate);
 
 #ifdef __cplusplus
 }

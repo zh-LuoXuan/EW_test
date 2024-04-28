@@ -204,7 +204,6 @@ uint32_t CLK_GetHocoFreq(void)
 {
   uint32_t freq;
   uint8_t frqsel;
-  uint8_t data = 0xF0;
 
   frqsel  = *(uint8_t *)0x000000C2U;
   frqsel &= 0xF8;  	/* Mask the lower 3 bits */

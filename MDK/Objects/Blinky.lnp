@@ -1,5 +1,6 @@
 --cpu Cortex-M0+
 ".\objects\main.o"
+".\objects\init_config.o"
 ".\objects\retarget.o"
 ".\objects\ym_ccp.o"
 ".\objects\ym_dma.o"
@@ -19,6 +20,7 @@
 ".\objects\cgc.o"
 ".\objects\epwm.o"
 ".\objects\flash.o"
+".\objects\userlib.o"
 ".\objects\startup_cms32m67xx.o"
 ".\objects\system_cms32m67xx.o"
 --library_type=microlib --strict --scatter ".\Objects\Blinky.sct"

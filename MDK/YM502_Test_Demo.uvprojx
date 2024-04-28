@@ -14,16 +14,16 @@
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>CMS32M67xx48FA</Device>
+          <Device>CMS32M67xx32NB</Device>
           <Vendor>Cmsemicon</Vendor>
           <PackID>Cmsemicon.CMS32M67xx.0.1.6</PackID>
           <PackURL>http://www.mcu.com.cn/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x01000) IROM(0x00000000,0x20000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN2 -FF0CMS32M67xxGH -FS00 -FL020000 -FF1CMS32M67xx_DataFlash -FS1500200 -FL1400 -FP0($$Device:CMS32M67xx48FA$Flash\CMS32M67xxGH.FLM) -FP1($$Device:CMS32M67xx48FA$Flash\CMS32M67xx_DataFlash.FLM))</FlashDriverDll>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN2 -FF0CMS32M67xxGH -FS00 -FL020000 -FF1CMS32M67xx_DataFlash -FS1500200 -FL1400 -FP0($$Device:CMS32M67xx32NB$Flash\CMS32M67xxGH.FLM) -FP1($$Device:CMS32M67xx32NB$Flash\CMS32M67xx_DataFlash.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:CMS32M67xx48FA$Device\Include\CMS32M67xx.h</RegisterFile>
+          <RegisterFile>$$Device:CMS32M67xx32NB$Device\Include\CMS32M67xx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -33,7 +33,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:CMS32M67xx48FA$SVD\CMS32M67xx.svd</SFDFile>
+          <SFDFile>$$Device:CMS32M67xx32NB$SVD\CMS32M67xx.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\CMSIS\Include;..\Device\Include;..\Driver\inc;..\..\..\..\Device\CMS32X506\Include;..\APP\Inc</IncludePath>
+              <IncludePath>..\CMSIS\Include;..\Device\Include;..\Driver\inc;..\..\..\..\Device\CMS32X506\Include;..\APP\Inc;..\UserLib;..\INIT</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -388,6 +388,16 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\MAIN\main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>INIT</GroupName>
+          <Files>
+            <File>
+              <FileName>init_config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\INIT\init_config.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -497,6 +507,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>USERLib</GroupName>
+          <Files>
+            <File>
+              <FileName>userlib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UserLib\userlib.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
@@ -602,32 +622,32 @@
         <targetInfos/>
       </file>
       <file attr="config" category="source" condition="Startup ARM" name="Device\Source\ARM\startup_CMS32M67xx.s" version="1.0.0">
-        <instance index="0" removed="1">RTE\Device\CMS32M67xx32NB\startup_CMS32M67xx.s</instance>
+        <instance index="0">RTE\Device\CMS32M67xx32NB\startup_CMS32M67xx.s</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Cmsemicon" Cversion="1.0.0" condition="CMS32M67xx CMSIS-CORE"/>
         <package name="CMS32M67xx" schemaVersion="1.4" url="http://www.mcu.com.cn/pack/" vendor="Cmsemicon" version="0.1.6"/>
-        <targetInfos/>
+        <targetInfos>
+          <targetInfo name="CMS32M67xx"/>
+        </targetInfos>
       </file>
       <file attr="config" category="source" name="Device\Source\system_CMS32M67xx.c" version="1.0.0">
-        <instance index="0" removed="1">RTE\Device\CMS32M67xx32NB\system_CMS32M67xx.c</instance>
+        <instance index="0">RTE\Device\CMS32M67xx32NB\system_CMS32M67xx.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Cmsemicon" Cversion="1.0.0" condition="CMS32M67xx CMSIS-CORE"/>
         <package name="CMS32M67xx" schemaVersion="1.4" url="http://www.mcu.com.cn/pack/" vendor="Cmsemicon" version="0.1.6"/>
-        <targetInfos/>
+        <targetInfos>
+          <targetInfo name="CMS32M67xx"/>
+        </targetInfos>
       </file>
       <file attr="config" category="source" condition="Startup ARM" name="Device\Source\ARM\startup_CMS32M67xx.s" version="1.0.0">
-        <instance index="0">RTE\Device\CMS32M67xx48FA\startup_CMS32M67xx.s</instance>
+        <instance index="0" removed="1">RTE\Device\CMS32M67xx48FA\startup_CMS32M67xx.s</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Cmsemicon" Cversion="1.0.0" condition="CMS32M67xx CMSIS-CORE"/>
         <package name="CMS32M67xx" schemaVersion="1.4" url="http://www.mcu.com.cn/pack/" vendor="Cmsemicon" version="0.1.6"/>
-        <targetInfos>
-          <targetInfo name="CMS32M67xx"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="source" name="Device\Source\system_CMS32M67xx.c" version="1.0.0">
-        <instance index="0">RTE\Device\CMS32M67xx48FA\system_CMS32M67xx.c</instance>
+        <instance index="0" removed="1">RTE\Device\CMS32M67xx48FA\system_CMS32M67xx.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Cmsemicon" Cversion="1.0.0" condition="CMS32M67xx CMSIS-CORE"/>
         <package name="CMS32M67xx" schemaVersion="1.4" url="http://www.mcu.com.cn/pack/" vendor="Cmsemicon" version="0.1.6"/>
-        <targetInfos>
-          <targetInfo name="CMS32M67xx"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="source" condition="Startup ARM" name="Device\Source\ARM\startup_CMS32M67xx.s" version="1.0.0">
         <instance index="0" removed="1">RTE\Device\CMS32M67xx48FB\startup_CMS32M67xx.s</instance>

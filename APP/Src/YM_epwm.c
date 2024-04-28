@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2024-03-25 17:47:04
  * @LastEditors: EW_Luo 1153589792@qq.com
- * @LastEditTime: 2024-03-26 15:21:32
+ * @LastEditTime: 2024-04-26 18:25:31
  * @FilePath: \EIDE (工作区)e:\ZL\CMS32M67xx_20240312\YM502_Test_Demo\APP\Src\YM_epwm.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -79,13 +79,13 @@ void EPWM_Init_Config(void)
 	/*
 	(6)设置中断
 	*/
-	// EPWM_EnableZeroInt(EPWM_CH_0_MSK);								/*开启零点中断*/			
-	// NVIC_EnableIRQ(EPWM_IRQn);
+//	EPWM_EnableZeroInt(EPWM_CH_0_MSK);								/*开启零点中断*/			
+//	NVIC_EnableIRQ(EPWM_IRQn);
 
 	/*
 	(6)设置优先级
 	*/	
-	// NVIC_SetPriority(EPWM_IRQn,3);					/*优先级0~3， 0最高、3最低*/
+//	NVIC_SetPriority(EPWM_IRQn,3);					/*优先级0~3， 0最高、3最低*/
 	
 	/*
 	(7)设置IO口输出
@@ -114,4 +114,12 @@ void EPWM_Init_Config(void)
 	(8)开启EPWM
 	*/		
 	EPWM_Start(EPWM_CH_0_MSK | EPWM_CH_1_MSK | EPWM_CH_2_MSK | EPWM_CH_3_MSK | EPWM_CH_4_MSK | EPWM_CH_5_MSK);
+}
+
+void EPWM_IRQHandler()
+{
+	EPWM_ClearZeroIntFlag(EPWM0);
+	EPWM_ClearZeroIntFlag(EPWM1);
+	EPWM_ClearZeroIntFlag(EPWM2);
+	EPWM_ClearZeroIntFlag(EPWM3);
 }

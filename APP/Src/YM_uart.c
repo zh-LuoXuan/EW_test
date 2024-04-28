@@ -1,39 +1,103 @@
 /*
- * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @Date: 2024-03-25 12:22:03
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-03-25 14:40:34
- * @FilePath: \EIDE (å·¥ä½œåŒº)e:\ZL\CMS32M67xx_20240312\YM502_Template\APP\Src\YM_uart.c
- * @Description: è¿™æ˜¯é»˜è®¤è®¾ç½®,è¯·è®¾ç½®`customMade`, æ‰“å¼€koroFileHeaderæŸ¥çœ‹é…ç½® è¿›è¡Œè®¾ç½®: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @Author: EW_Luo 1153589792@qq.com
+ * @Date: 2024-04-08 15:52:51
+ * @LastEditors: EW_Luo 1153589792@qq.com
+ * @LastEditTime: 2024-04-25 17:40:56
+ * @FilePath: \EIDE (¹¤×÷Çø)e:\ZL\Git_Clone\EW_test_breath\APP\Src\YM_uart.c
+ * @Description: ÕâÊÇÄ¬ÈÏÉèÖÃ,ÇëÉèÖÃ`customMade`, ´ò¿ªkoroFileHeader²é¿´ÅäÖÃ ½øÐÐÉèÖÃ: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include "YM_uart.h"
+#include "YM_rgb.h"
 
+volatile uint8_t rxTimes = 0;
+volatile uint8_t rx_ind = 0;
+volatile uint8_t UART1RxBuffer[UART1_REC_MAX_LEN];
 
-void  UART0_Config(void)
+/**
+ * @brief UART1 ³õÊ¼»¯ÅäÖÃ
+ * 
+ * @param [in] bitRate: ²¨ÌØÂÊ
+ * 
+ * @return void
+ */
+void UART1_Init_Config(uint32_t bitRate)
 {	
 	
-	CGC_PER12PeriphClockCmd(CGC_PER12Periph_UART0,ENABLE);
-	UART_ConfigRunMode(UART0, 9600, UART_WLS_8, UART_PARITY_NONE,UART_STOP_BIT_1);
+	CGC_PER12PeriphClockCmd(CGC_PER12Periph_UART1, ENABLE);
+	UART_ConfigRunMode(UART1, bitRate, UART_WLS_8, UART_PARITY_NONE,UART_STOP_BIT_1);
 	
-	GPIO_PinAFOutConfig(P00CFG,IO_OUTCFG_P00_TXD0);	
-	GPIO_Init(PORT0,PIN0,OUTPUT);
+//	GPIO_PinAFOutConfig(P24CFG, IO_OUTCFG_P24_TXD1);	
+//	GPIO_Init(PORT2, PIN4, OUTPUT);
 	
-	RESTPinGpio_Set(ENABLE);
-	GPIO_PinAFInConfig(UART0RXDCFG,UART0CFG_P01_RXD);	
-	GPIO_Init(PORT0,PIN1,INPUT);
+	GPIO_PinAFInConfig(UART1RXDCFG, UART1CFG_P23_RXD);	
+	GPIO_Init(PORT2, PIN3, INPUT);
+
+	UART_EnableRBRInt(UART1);
+	NVIC_SetPriority(UART1_IRQn, 2);
+	NVIC_EnableIRQ(UART1_IRQn);
 
 }
 
-
-void Uart0_putchar(char ch)
+/**
+ * @brief »ñÈ¡UART1½ÓÊÕµÄÊý¾Ý
+ * 
+ * @param void
+ * 
+ * @return void
+ */
+void get_Uart1_RxData(void)
 {
-	while(!(UART0->LSR & UART_LSR_THRE_Msk));
-	UART0->THR = ch;
+	uint8_t Checksum;
+	uint8_t payload[4];
+    if(UART1RxBuffer[rx_ind] == SOF)
+    {
+		
+        uint8_t begin_ind = rx_ind;
+        for (uint8_t i = 0; i < 4; i++)
+		{
+			begin_ind++;
+			begin_ind &= BUFFER_LEN_MSK;
+			payload[i] = UART1RxBuffer[begin_ind];
+		}
+        begin_ind++;
+        begin_ind &= BUFFER_LEN_MSK;
+        Checksum = UART1RxBuffer[begin_ind];
+        if(Checksum == 0xA5)
+        {
+			RGB_DataStracture.ColorRGB[Current] = payload[0];
+            RGB_DataStracture.ColorRGB[Current] <<= 8;
+            RGB_DataStracture.ColorRGB[Current] += payload[1];
+            RGB_DataStracture.ColorRGB[Current] <<= 8;
+            RGB_DataStracture.ColorRGB[Current] += payload[2];
+            RGB_DataStracture.ColorRGB[Current] <<= 8;
+            RGB_DataStracture.ColorRGB[Current] += payload[3];
+            
+            UART1RxBuffer[rx_ind] = 0;
+            rx_ind++;
+			rx_ind &= BUFFER_LEN_MSK;
+            UART1RxBuffer[rx_ind] = 0;
+            rx_ind++;
+			rx_ind &= BUFFER_LEN_MSK;
+            UART1RxBuffer[rx_ind] = 0;
+            rx_ind++;
+			rx_ind &= BUFFER_LEN_MSK;
+            UART1RxBuffer[rx_ind] = 0;
+            rx_ind++;
+			rx_ind &= BUFFER_LEN_MSK;
+            UART1RxBuffer[rx_ind] = 0;
+            rx_ind++;
+			rx_ind &= BUFFER_LEN_MSK;
+            UART1RxBuffer[rx_ind] = 0;
+        } 
+		
+    }
+    rx_ind++;
+	rx_ind &= BUFFER_LEN_MSK;
 }
 
-
-char Uart0_getchar(void)
+void UART1_IRQHandler(void)
 {
-	while(!(UART0->LSR & UART_LSR_RDR_Msk));
-	return  UART0->RBR;
+	UART1RxBuffer[rxTimes++] = UART1->RBR;
+	if(rxTimes == UART1_REC_MAX_LEN)
+		rxTimes = 0;
 }

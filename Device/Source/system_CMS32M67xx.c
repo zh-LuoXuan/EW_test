@@ -159,7 +159,7 @@ const uint8_t user_opt_data[4] __attribute__((used, section(".ARM.__AT_0x000000C
  */
 // <h> HOCO Control Option Byte (C2H)
 //   <o.0..4> High-speed OCO clock setting                  <0xF0=> fHOCO = 72MHz, fIH = 72MHz
-//															                            <0xF1=> fHOCO = 72MHz, fIH = 36MHz
+//															<0xF1=> fHOCO = 72MHz, fIH = 36MHz
 //                                                          <0xF2=> fHOCO = 72MHz, fIH = 18MHz
 //                                                          <0xF3=> fHOCO = 72MHz, fIH = 9MHz
 //                                                          <0xF4=> fHOCO = 72MHz, fIH = 4.5MHz
@@ -204,7 +204,6 @@ uint32_t CLK_GetHocoFreq(void)
 {
   uint32_t freq;
   uint8_t frqsel;
-  uint8_t data = 0xF0;
 
   frqsel  = *(uint8_t *)0x000000C2U;
   frqsel &= 0xF8;  	/* Mask the lower 3 bits */

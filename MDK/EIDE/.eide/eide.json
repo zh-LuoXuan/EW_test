@@ -96,10 +96,28 @@
         "folders": []
       },
       {
+        "name": "INIT",
+        "files": [
+          {
+            "path": "../../INIT/init_config.c"
+          }
+        ],
+        "folders": []
+      },
+      {
         "name": "MAIN",
         "files": [
           {
             "path": "../../MAIN/main.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "USERLib",
+        "files": [
+          {
+            "path": "../../UserLib/userlib.c"
           }
         ],
         "folders": []
@@ -177,7 +195,9 @@
           "../../Device/Include",
           "../../Driver/inc",
           "../../Flash",
-          "../../CMSIS/Core/Include"
+          "../../CMSIS/Core/Include",
+          "../../UserLib",
+          "../../INIT"
         ],
         "libList": [],
         "sourceDirList": [],

@@ -6,4 +6,7 @@
   D:\Keil_538a\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h \
   D:\Keil_538a\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h \
   ..\Device\Include\system_CMS32M67xx.h ..\APP\Inc\YM_ccp.h \
-  ..\Driver\inc\cgc.h ..\Driver\inc\ccp.h
+  ..\Driver\inc\cgc.h ..\Driver\inc\ccp.h ..\UserLib\userlib.h \
+  D:\Keil_538a\ARM\ARMCLANG\Bin\..\include\float.h ..\APP\Inc\YM_dma.h \
+  ..\Driver\inc\dma.h ..\Driver\inc\timer.h \
+  D:\Keil_538a\ARM\ARMCLANG\Bin\..\include\stdbool.h

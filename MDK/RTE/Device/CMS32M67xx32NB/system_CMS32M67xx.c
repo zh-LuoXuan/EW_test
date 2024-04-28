@@ -74,7 +74,7 @@ __root const uint8_t user_opt_data[4] @ (0x000000C0) =
 #elif defined(__CC_ARM)
 const uint8_t user_opt_data[4] __attribute__((used)) __attribute__((section(".ARM.__AT_0x000000C0"))) =
 #elif defined(__GNUC__)
-const volatile uint8_t user_opt_data[4] __attribute__((section(".option_byte"))) = 
+const uint8_t user_opt_data[4] __attribute__((used)) __attribute__((section(".ARM.__AT_0x000000C0"))) =
 #endif
 {
 
@@ -168,7 +168,7 @@ const volatile uint8_t user_opt_data[4] __attribute__((section(".option_byte")))
 //                                                          <0xE4=> fHOCO = 64MHz, fIH =  4MHz
 //                                                          <0xE5=> fHOCO = 64MHz, fIH =  2MHz 
 // </h>
-    0xE2, 
+    0xF0, 
 
 /**
  * @brief Flash Protect Control BYTE

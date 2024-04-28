@@ -8,4 +8,5 @@
   ..\Device\Include\system_CMS32M67xx.h ..\Driver\inc\cgc.h \
   ..\Driver\inc\gpio.h ..\Driver\inc\timer.h \
   D:\Keil_538a\ARM\ARMCLANG\Bin\..\include\stdbool.h ..\APP\Inc\YM_ccp.h \
-  ..\Driver\inc\ccp.h ..\APP\Inc\YM_rgb.h
+  ..\Driver\inc\ccp.h ..\APP\Inc\YM_rgb.h ..\APP\Inc\YM_dma.h \
+  ..\Driver\inc\dma.h

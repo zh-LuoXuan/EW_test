@@ -1,4 +1,4 @@
-./objects/main.o: ..\MAIN\main.c ..\INIT\init_config.h \
+./objects/init_config.o: ..\INIT\init_config.c ..\INIT\init_config.h \
   D:\Keil_538a\ARM\ARMCLANG\Bin\..\include\stdio.h \
   D:\Keil_538a\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\Device\Include\CMS32M67xx.h ..\CMSIS\Include\core_cm0plus.h \
